@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.3">
+<title>Schools and Auditors August 2025 | Schools and Auditors</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_import/custom.2b251270.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="preload" as="style" href="./_npm/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_import/custom.2b251270.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="stylesheet" type="text/css" href="./_npm/leaflet@1.9.4/dist/leaflet.css">
+<link rel="modulepreload" href="./_observablehq/client.cc78147e.js">
+<link rel="modulepreload" href="./_observablehq/runtime.9393ab6d.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.24b62b2e.js">
+<link rel="modulepreload" href="./_npm/leaflet@1.9.4/721623d8.js">
+<link rel="modulepreload" href="./_import/Leaflet.fullscreen.9b7d0525.js">
+<link rel="modulepreload" href="./_npm/@fortawesome/fontawesome-svg-core@7.0.0/750b31ca.js">
+<link rel="modulepreload" href="./_npm/@fortawesome/free-solid-svg-icons@7.0.0/1835f9e0.js">
+<link rel="modulepreload" href="./_import/components/utils.1af4d62d.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/72f4716c.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.90adaea0.js">
+<link rel="modulepreload" href="./_npm/lodash@4.17.21/1ecf91d1.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/9cffc2bd.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/18cbf477.js">
+<link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32"><link rel="prerender" href="./_file/Leaflet.fullscreen.174ad661.js">
+<script type="module">
+
+import {define} from "./_observablehq/client.cc78147e.js";
+import {registerFile} from "./_observablehq/stdlib.24b62b2e.js";
+
+registerFile("./data/schools202508.csv", {"name":"./data/schools202508.csv","mimeType":"text/csv","path":"./_file/data/schools202508.f2e210a4.csv","lastModified":1754646097517,"size":394739});
+
+define({id: "69795b47", inputs: ["FileAttachment"], outputs: ["L","icon","layer","faCircle","faSchoolCircleCheck","extractSchoolCoordinates","createSchoolMapMarkers","createSelectableSchoolTable","createFilterableFieldTable","refreshFilteredDisplay","createDisplayRefresher","updateFilterAndRefresh","renderFilterTables","rawSchools","schools","ftc","noteDiv"], body: async (FileAttachment) => {
+const [L, {}, {icon, layer}, {faCircle, faSchoolCircleCheck}, {extractSchoolCoordinates, createSchoolMapMarkers, createSelectableSchoolTable, createFilterableFieldTable, refreshFilteredDisplay, createDisplayRefresher, updateFilterAndRefresh, renderFilterTables}] = await Promise.all([import("./_npm/leaflet@1.9.4/721623d8.js"), import("./_import/Leaflet.fullscreen.9b7d0525.js"), import("./_npm/@fortawesome/fontawesome-svg-core@7.0.0/750b31ca.js"), import("./_npm/@fortawesome/free-solid-svg-icons@7.0.0/1835f9e0.js"), import("./_import/components/utils.1af4d62d.js")]);
+// Cell 1: Import libraries and load data
+// Lodash is already imported in utils.js
+
+// Load the data and pre-process coordinates
+const rawSchools = await FileAttachment("./data/schools202508.csv").csv();
+// Pre-process all schools to extract coordinates once
+const schools = rawSchools.map(school => {
+  extractSchoolCoordinates(school); // This now stores coordinates on the school object
+  return school;
+});
+
+// Create and insert the note div before #field_tables_container
+const ftc = document.getElementById('field_tables_container1');
+
+const noteDiv = document.createElement('div');
+noteDiv.innerHTML = `
+  <input type="checkbox" id="note1_toggle" aria-expanded="false" aria-controls="note1_content">
+  <div id="note1_div" class="note">
+    <label for="note1_toggle" aria-label="How to use this map (press Space to toggle)">How to use this map</label>
+    <ul id="note1_content" aria-labelledby="note1_toggle">
+    </li>Click one or more checkboxes above the map to select audit service provider (ASP), appointed auditor (AA), and/or School Type. It will filter the lists and map display.</li>
+<li>Click one or more checkboxes below the map to select by Regional council, Territorial authority, and/or Financial Service Provider. It will filter the lists and map display.</li>
+</li>Select one or more schools from the sortable lists on the right of (on a mobile: under) the map. Click on a school's marker on the map to see all available details.</li>
+<li>Click on any table heading to sort the data.</li>
+    </ul>
+  </div>
+`;
+ftc.parentNode.insertBefore(noteDiv,ftc);
+return {L,icon,layer,faCircle,faSchoolCircleCheck,extractSchoolCoordinates,createSchoolMapMarkers,createSelectableSchoolTable,createFilterableFieldTable,refreshFilteredDisplay,createDisplayRefresher,updateFilterAndRefresh,renderFilterTables,rawSchools,schools,ftc,noteDiv};
+}});
+
+define({id: "25c8c69e", outputs: ["columns","layout"], body: () => {
+// Cell 2: Define configuration options
+const columns = ["School name","ASP","AA","School Type","Regional council","Territorial authority","Financial Service Provider"];
+const layout = "fixed";
+return {columns,layout};
+}});
+
+define({id: "1be8d621", inputs: ["L"], outputs: ["schools_map","osm","schoolMarkerLayer","schoolMarkerReferences"], body: (L) => {
+// Cell 3: Initialize map
+const schools_map = L.map('schools_div')
+    .setView([-40.9, 175.232], 5);
+
+schools_map.addControl(new L.Control.Fullscreen());
+
+const osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+})
+    .addTo(schools_map);
+
+// Initialize map layers
+const schoolMarkerLayer = L.layerGroup().addTo(schools_map);
+const schoolMarkerReferences = [];
+return {schools_map,osm,schoolMarkerLayer,schoolMarkerReferences};
+}});
+
+define({id: "abcb23db", outputs: ["filterState"], body: () => {
+// Cell 4: Define filter state (reactive)
+const filterState = {
+    "ASP": [],
+    "AA": [],
+    "School Type": [],
+    "Regional council": [],
+    "Territorial authority": [],
+    "Financial Service Provider": []
+};
+return {filterState};
+}});
+
+define({id: "4fb2a7b0", inputs: ["columns","layout","schools"], outputs: ["displayOptions"], body: (columns,layout,schools) => {
+// Cell 5: Create display options object
+const displayOptions = {
+    columns,
+    layout,
+    allData: schools
+};
+return {displayOptions};
+}});
+
+define({id: "b667cdb1", inputs: ["createDisplayRefresher","schools","filterState","schoolMarkerLayer","schoolMarkerReferences","schools_map","displayOptions","Inputs","html"], outputs: ["refreshView","resetButton","resetButtonContainer","fieldTablesContainer"], body: (createDisplayRefresher,schools,filterState,schoolMarkerLayer,schoolMarkerReferences,schools_map,displayOptions,Inputs,html) => {
+// Cell 6: Create refresh function and reset button
+const refreshView = createDisplayRefresher(
+    schools, 
+    filterState, 
+    schoolMarkerLayer, 
+    schoolMarkerReferences, 
+    schools_map, 
+    displayOptions, 
+    ["field_tables_container1", "field_tables_container2"]
+);
+
+// Add reset button
+const resetButton = Inputs.button("Reset filters", {
+    value: null, 
+    reduce: () => {
+        // Clear all filter selections
+        filterState["ASP"] = [];
+        filterState["AA"] = [];
+        filterState["School Type"] = [];
+        filterState["Regional council"] = [];
+        filterState["Territorial authority"] = [];
+        filterState["Financial Service Provider"] = [];
+        
+        // Reset map to default view
+        schools_map.setView([-40.9, 175.232], 5);
+        
+        // Refresh the display with cleared filters
+        refreshView();
+    }
+});
+
+// Create a container for the reset button and add it to the page
+const resetButtonContainer = html`<div class="reset-button-container"></div>`;
+resetButtonContainer.appendChild(resetButton);
+
+// Add the reset button to the DOM immediately
+const fieldTablesContainer = document.getElementById('field_tables_container1');
+if (fieldTablesContainer) {
+    fieldTablesContainer.parentNode.insertBefore(resetButtonContainer, fieldTablesContainer.nextSibling);
+}
+
+// Return the container as the last expression so Observable will display it
+// This ensures the button is visible when the cell is re-evaluated
+resetButtonContainer
+return {refreshView,resetButton,resetButtonContainer,fieldTablesContainer};
+}});
+
+define({id: "af35670b", inputs: ["filterState","refreshView"], body: (filterState,refreshView) => {
+// Cell 7: Initial display and handle reactivity
+// This cell will re-run when filterState changes
+filterState;  // Reference filterState to make this cell depend on it
+
+// Refresh the display
+refreshView();
+}});
+
+</script>
+</head>
+<body>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<div class="observablehq observablehq--block"><!--:69795b47:--></div>
+<div class="observablehq observablehq--block"><!--:25c8c69e:--></div>
+<div class="observablehq observablehq--block"><!--:1be8d621:--></div>
+<div class="observablehq observablehq--block"><!--:abcb23db:--></div>
+<div class="observablehq observablehq--block"><!--:4fb2a7b0:--></div>
+<div class="observablehq observablehq--block"><!--:b667cdb1:--></div>
+<div class="observablehq observablehq--block"><!--:af35670b:--></div>
+<style>
+/* Add styling for schools with missing coordinates */
+.missing-coordinates {
+  color: #ff0000;
+  font-style: italic;
+}
+</style>
+<div class="field-tables-container" id="field_tables_container1">
+  <!-- Field tables will be inserted here by JavaScript -->
+</div>
+<div class="grid grid-cols-4" style="grid-auto-rows: auto;">
+  <div id="schools_div" class="card grid-colspan-2" style="height:625px;"></div>
+  <div class="card grid-colspan-2" id="table_div">
+  </div>
+</div>
+<div class="field-tables-container" id="field_tables_container2">
+  <!-- Field tables will be inserted here by JavaScript -->
+</div>
+</main>
+<footer id="observablehq-footer">
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-08-11T13:38:38">Aug 11, 2025</a>.</div>
+</footer>
+</div>
+</body>
+</html>
