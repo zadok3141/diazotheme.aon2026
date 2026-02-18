@@ -1,0 +1,1561 @@
+{
+  "scenarios": [
+    {
+      "label": "Central Government Report 2021",
+      "urls": {
+        "local": "http://localhost:8080/oag/2021/central-government",
+        "production": "https://oag.parliament.nz/2021/central-government"
+      },
+      "features": [
+        "pdf-download",
+        "summary",
+        "epub",
+        "media-kit",
+          "traditional-report-layout"
+      ],
+        "delay": 3000,
+      "selectors": [
+        "document"
+      ]
+    },
+    {
+      "label": "Homepage",
+        "misMatchThreshold": 0.1,
+      "urls": {
+        "local": "http://localhost:8080/oag",
+        "production": "https://oag.parliament.nz/"
+      },
+      "features": [
+          "social-media",
+          "navigation",
+        "banner",
+        "searchbox",
+        "mosaic-layout",
+        "homepage"
+      ],
+        "removeSelectors": ["#p6oagbanner"],
+      "delay": 1000,
+      "selectors": [
+        "document"
+      ],
+        "requireSameDimensions": false
+    },
+    {
+      "label": "OAG Styles Test Page",
+      "urls": {
+        "local": "http://localhost:8080/oag/documentation/our-styles",
+        "production": "https://oag.parliament.nz/documentation/our-styles"
+      },
+      "features": [
+        "oag-styles",
+        "portlets",
+        "showcase"
+      ],
+      "delay": 3000,
+      "selectors": [
+        "document"
+      ],
+        "requiresAuth": true
+    },
+    {
+        "label": "Annual Report 2021-22 - Animations",
+        "urls": {
+            "local": "http://localhost:8080/oag/2022/annual-report-2021-22/docs",
+            "production": "https://oag.parliament.nz/2022/annual-report-2021-22/docs"
+        },
+        "features": [
+            "animations",
+            "scroll-triggered",
+            "navigation-bar",
+            "mosaic-layout",
+            "annual-report",
+            "banner"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ]
+    },
+    {
+        "label": "Annual Report 2019/20 - Year in numbers",
+        "urls": {
+            "local": "http://localhost:8080/oag/2020/annual-report/our-year-in-numbers.htm",
+            "production": "https://oag.parliament.nz/2020/annual-report/our-year-in-numbers.htm"
+        },
+        "features": [
+            "annual-report",
+            "unique-layout"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ]
+    },
+    {
+        "label": "Annual Report 2018/19 - Landing page",
+        "urls": {
+            "local": "http://localhost:8080/oag/2019/annual-report/index",
+            "production": "https://oag.parliament.nz/2019/annual-report/index"
+        },
+        "features": [
+            "annual-report",
+            "unique-layout",
+            "diazo-rule"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ]
+    },
+      {
+    "label": "Campaign Manager email subscription form",
+    "urls": {
+        "local": "http://localhost:8080/oag/contact-us/email-subs",
+        "production": "https://oag.parliament.nz/contact-us/email-subs"
+    },
+    "features": [
+        "iframe",
+        "form"
+    ],
+    "delay": 2000,
+    "selectors": [
+        "document"
+    ]
+      },
+    {
+        "label": "Crossword - Drinking water - Schools resources",
+        "urls": {
+            "local": "http://localhost:8080/oag/schools/students/drinking-water/water-crossword",
+            "production": "https://oag.parliament.nz/schools/students/drinking-water/water-crossword"
+        },
+        "features": [
+            "unique-layout",
+            "diazo-rule"
+        ],
+        "delay": 2000,
+        "misMatchThreshold": 0.1,
+        "selectors": [
+            "document"
+        ]
+    },
+    {
+        "label": "Crossword - Wananga inquiry - Schools resources",
+        "urls": {
+            "local": "http://localhost:8080/oag/schools/students/wananga-inquiry/wananga-crossword",
+            "production": "https://oag.parliament.nz/schools/students/wananga-inquiry/wananga-crossword"
+        },
+        "features": [
+            "unique-layout",
+            "diazo-rule"
+        ],
+        "delay": 2000,
+        "misMatchThreshold": 0.1,
+        "selectors": [
+            "document"
+        ]
+    },
+    {
+        "label": "Crossword - Dunedin stadium - Schools resources",
+        "urls": {
+            "local": "http://localhost:8080/oag/schools/students/dunedin-stadium/dunedin-crossword",
+            "production": "https://oag.parliament.nz/schools/students/dunedin-stadium/dunedin-crossword"
+        },
+        "features": [
+            "unique-layout",
+            "diazo-rule"
+        ],
+        "delay": 2000,
+        "misMatchThreshold": 0.1,
+        "selectors": [
+            "document"
+        ]
+    },
+    {
+        "label": "Crossword - Paraparaumu Aerodrome - Schools resources",
+        "urls": {
+            "local": "http://localhost:8080/oag/schools/students/paraparaumu-aerodrome/parapara-crossword",
+            "production": "https://oag.parliament.nz/schools/students/paraparaumu-aerodrome/parapara-crossword"
+        },
+        "features": [
+            "unique-layout",
+            "diazo-rule"
+        ],
+        "delay": 2000,
+        "misMatchThreshold": 0.1,
+        "selectors": [
+            "document"
+        ]
+    },
+    {
+        "label": "Housing roles - static content with js height adjustment",
+        "urls": {
+            "local": "http://localhost:8080/oag/2021/housing/roles-and-responsibilities",
+            "production": "https://oag.parliament.nz/2021/housing/roles-and-responsibilities"
+        },
+        "features": [
+            "unique-layout",
+            "htdocs"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ]
+    },
+{
+    "label": "Housing roles - old .oagfb flexbox style replaced with bootstrap in html",
+        "urls": {
+            "local": "http://localhost:8080/oag/2021/housing/introduction",
+            "production": "https://oag.parliament.nz/2021/housing/introduction"
+        },
+        "features": [
+            "oag-styles",
+            "unique-layout",
+            "htdocs"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ]
+    },
+
+    {
+        "label": "Integrity framework 2022 Landing page - outdated",
+        "urls": {
+            "local": "http://localhost:8080/oag/2022/integrity-framework/",
+            "production": "https://oag.parliament.nz/2022/integrity-framework/"
+        },
+        "features": [
+            "unique-layout",
+            "htdocs"
+        ],
+        "delay": 3000,
+        "selectors": [
+            "document"
+        ]
+    },
+    {
+        "label": "Our work by region",
+        "urls": {
+            "local": "http://localhost:8080/oag/reports/region",
+            "production": "https://oag.parliament.nz/reports/region"
+        },
+        "features": [
+            "iframe"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ]
+    },
+    {
+        "label": "2019-20 port company data",
+        "urls": {
+            "local": "http://localhost:8080/oag/++theme++oag2025/static/portsmap-july/index.html",
+            "production": "https://oag.parliament.nz/++theme++oag2025/static/portsmap-july/index.html"
+        },
+        "features": [
+            "htdocs"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ]
+    },
+    {
+        "label": "Integrity town quiz",
+        "urls": {
+            "local": "http://localhost:8080/oag/good-practice/conflicts-of-interest/quiz-2020",
+            "production": "https://oag.parliament.nz/good-practice/conflicts-of-interest/quiz-2020"
+        },
+        "features": [
+            "htdocs"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ]
+    },
+    {
+        "label": "Schools audit map",
+        "urls": {
+            "local": "http://localhost:8080/oag/data/schools/index.htm",
+            "production": "https://oag.parliament.nz/data/schools/index.htm"
+        },
+        "features": [
+            "htdocs",
+            "iframe",
+            "unique-layout"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ]
+    },
+    {
+        "label": "Integrity town sensitive expenditure videos",
+        "urls": {
+            "local": "http://localhost:8080/oag/good-practice/sensitive-expenditure/videos",
+            "production": "https://oag.parliament.nz/good-practice/sensitive-expenditure/videos"
+        },
+        "features": [
+            "htdocs",
+            "iframe"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ]
+    },
+      {
+          "label": "Description is now lead",
+        "urls": {
+            "local": "http://localhost:8080/oag/2025/health-insights/part3.htm",
+            "production": "https://oag.parliament.nz/2025/health-insights/part3.htm"
+        },
+        "features": [
+            "traditional-report-layout",
+            "style-change"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ]
+      },
+      {
+          "label": "Description/lead in mosaic pages is different",
+        "urls": {
+            "local": "http://localhost:8080/oag/events",
+            "production": "https://oag.parliament.nz/events"
+        },
+        "features": [
+            "traditional-report-layout",
+            "style-change"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ]
+      },
+      {
+          "label": "Discreet text",
+        "urls": {
+            "local": "http://localhost:8080/oag/data/fraud/types/by-year/types-2013",
+            "production": "https://oag.parliament.nz/data/fraud/types/by-year/types-2013"
+        },
+        "features": [
+            "data",
+            "style-change",
+            "oag-styles"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ]
+      },
+      {
+          "label": "Pullquote text",
+        "urls": {
+            "local": "http://localhost:8080/oag/blog/2013/police",
+            "production": "https://oag.parliament.nz/blog/2013/police"
+        },
+        "features": [
+            "blogs",
+            "blog-post",
+            "style-change",
+            "oag-styles"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ]
+      },
+      {
+          "label": "Pre tag",
+        "urls": {
+            "local": "http://localhost:8080/oag/2024/integrity-framework/part5.htm",
+            "production": "https://oag.parliament.nz/2024/integrity-framework/part5.htm"
+        },
+        "features": [
+            "style-change",
+            "about-us",
+            "careers",
+            "oag-styles"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ]
+      },
+      {
+          "label": "Callout style replacement",
+        "urls": {
+            "local": "http://localhost:8080/oag/2020/draft-annual-plan/index.htm",
+            "production": "https://oag.parliament.nz/2020/draft-annual-plan/index.htm"
+        },
+        "features": [
+            "style-change",
+            "oag-styles"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ]
+      },
+      {
+          "label": "Related items",
+        "urls": {
+            "local": "http://localhost:8080/oag/2023/whanau-ora",
+            "production": "https://oag.parliament.nz/2023/whanau-ora"
+        },
+        "features": [
+            "style-change",
+            "oag-styles"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ]
+    },
+    {
+        "label": "Search section viewlet",
+        "urls": {
+            "local": "http://localhost:8080/oag/auditing-standards",
+            "production": "https://oag.parliament.nz/auditing-standards"
+        },
+        "features": [
+            "searchbox",
+            "unique-layout"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ]
+    },
+    {
+        "label": "Search section viewlet with live results",
+        "urls": {
+            "local": "http://localhost:8080/oag/auditing-standards",
+            "production": "https://oag.parliament.nz/auditing-standards"
+        },
+        "features": [
+            "searchbox",
+            "unique-layout"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ],
+        "keyPressSelectors": [
+            {
+                "selector": "#sectionSearchGadget",
+                "keyPress": "appropriation"
+            }
+        ],
+        "postInteractionWait": 1000
+    },
+      {
+          "label": "Search results page from auditing standards section",
+          "urls": {
+              "local": "http://localhost:8080/oag/@@search?path=%2Foag%2Fauditing-standards&oagSearchReturn=The+Auditor-General%27s+auditing+standards&SearchableText=appropriation",
+              "production": "https://oag.parliament.nz/@@search?path=%2Foag%2Fauditing-standards&oagSearchReturn=The+Auditor-General%27s+auditing+standards&SearchableText=appropriation"
+          },
+          "referers": {
+              "local": "http://localhost:8080/oag/auditing-standards",
+              "production": "https://oag.parliament.nz/auditing-standards"
+        },
+        "features": [
+            "searchbox",
+            "unique-layout"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Search results page from normal page",
+        "urls": {
+            "local": "http://localhost:8080/oag/@@search?oagSearchReturn=Publications&SearchableText=appropriation",
+            "production": "https://oag.parliament.nz/@@search?oagSearchReturn=Publications&SearchableText=appropriation"
+        },
+        "referers": {
+            "local": "http://localhost:8080/oag/auditing-standards",
+            "production": "https://oag.parliament.nz/auditing-standards"
+        },
+        "features": [
+            "searchbox",
+            "unique-layout"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Search results page from Category link",
+        "urls": {
+            "local": "http://localhost:8080/oag/@@search?Subject%3Alist=Climate%20change",
+            "production": "https://oag.parliament.nz/@@search?Subject%3Alist=Climate%20change"
+        },
+        "referers": {
+            "local": "http://localhost:8080/oag/blog/2023/climate-change-our-submissions",
+            "production": "https://oag.parliament.nz/blog/2023/climate-change-our-submissions"
+        },
+        "features": [
+            "searchbox",
+            "unique-layout"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Wall of images",
+        "urls": {
+            "local": "http://localhost:8080/oag/schools/the-auditor-general/gallery",
+            "production": "https://oag.parliament.nz/schools/the-auditor-general/gallery"
+        },
+        "features": [
+            "schools",
+            "unique-layout"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ]
+    },
+    {
+        "label": "Definition lists",
+        "urls": {
+            "local": "http://localhost:8080/oag/auditing-standards/ag-2",
+            "production": "https://oag.parliament.nz/auditing-standards/ag-2"
+        },
+        "features": [
+            "auditing-standards",
+            "oag-styles"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "dl"
+        ]
+    },
+    {
+        "label": "Nested ol lists",
+        "urls": {
+            "local": "http://localhost:8080/oag/auditing-standards/ag-isa-nz-810",
+            "production": "https://oag.parliament.nz/auditing-standards/ag-isa-nz-810"
+        },
+        "features": [
+            "auditing-standards",
+            "oag-styles"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ]
+    },
+    {
+        "label": "Breadcrumb chevrons",
+        "urls": {
+            "local": "http://localhost:8080/oag/good-practice/audit-committees/experiences",
+            "production": "https://oag.parliament.nz/good-practice/audit-committees/experiences"
+        },
+        "features": [
+            "good-practice",
+            "oag-styles",
+            "style-change"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Navigation portlets",
+        "urls": {
+            "local": "http://localhost:8080/oag/2025/health-insights/part1.htm",
+            "production": "https://oag.parliament.nz/2025/health-insights/part1.htm"
+        },
+        "features": [
+            "oag-styles",
+            "navigation",
+            "traditional-report-layout"
+        ],
+        "delay": 2000,
+        "selectors": [
+            "document"
+        ]
+    },
+    {
+        "label": "Navigation portlets hover",
+        "urls": {
+            "local": "http://localhost:8080/oag/2025/health-insights/part1.htm",
+            "production": "https://oag.parliament.nz/2025/health-insights/part1.htm"
+        },
+        "features": [
+            "oag-styles",
+            "navigation",
+            "traditional-report-layout"
+        ],
+        "delay": 2000,
+        "hoverSelector": ".section-summary-htm",
+        "misMatchThreshold": 0.1,
+        "selectors": [
+            ".section-summary-htm"
+        ]
+    },
+    {
+        "label": "Navigation portlets with level indents",
+        "urls": {
+            "local": "http://localhost:8080/oag/good-practice/performance-reporting/good-practice-examples/part-1",
+            "production": "https://oag.parliament.nz/good-practice/performance-reporting/good-practice-examples/part-1"
+        },
+        "features": [
+            "oag-styles",
+            "navigation",
+            "good-practice"
+        ],
+        "delay": 2000,
+        "selectors": [
+            ".section-performance-reporting"
+        ]
+    },
+    {
+        "label": "Content Links - Default State",
+        "urls": {
+            "local": "http://localhost:8080/oag/documentation/our-styles",
+            "production": "https://oag.parliament.nz/documentation/our-styles"
+        },
+        "features": [
+            "link-styles",
+            "oag-styles"
+        ],
+        "delay": 1500,
+        "selectors": [
+            "#linktesting"
+        ],
+        "misMatchThreshold": 0,
+        "requireSameDimensions": false,
+"requiresAuth": true
+    },
+    {
+      "label": "Content Links - Hover State",
+      "urls": {
+          "local": "http://localhost:8080/oag/documentation/our-styles",
+        "production": "https://oag.parliament.nz/documentation/our-styles"
+      },
+      "features": [
+        "link-styles",
+        "oag-styles",
+          "hover"
+      ],
+      "delay": 1500,
+        "hoverSelector": "#normallink",
+      "selectors": [
+        "#linktesting"
+      ],
+        "misMatchThreshold": 0.1,
+        "postInteractionWait": 500,
+        "requireSameDimensions": false,
+        "requiresAuth": true
+    },
+    {
+        "label": "Images in tables - alignment",
+      "urls": {
+          "local": "http://localhost:8080/oag/2025/health-insights/at-a-glance.htm",
+        "production": "https://oag.parliament.nz/2025/health-insights/at-a-glance.htm"
+      },
+      "features": [
+        "image-alignment",
+          "table-cell-alignment",
+          "oag-styles"
+      ],
+      "delay": 3000,
+      "selectors": [
+          "document"
+      ],
+        "requireSameDimensions": false,
+        "hideSelectors": [
+            "#content-header",
+            "#mainnavigation-wrapper",
+            "#hero",
+            "#above-content-wrapper",
+            "header",
+            "#viewlet-above-content-body",
+            "header#content-header",
+            "#viewlet-above-content-title",
+            "h1.documentFirstHeading",
+            "#viewlet-below-content-title",
+            "div.documentDescription"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Right aligned images",
+      "urls": {
+          "local": "http://localhost:8080/oag/2025/monitoring-integrity/part3.htm",
+        "production": "https://oag.parliament.nz/2025/monitoring-integrity/part3.htm"
+      },
+      "features": [
+        "image-alignment",
+          "table-cell-alignment",
+          "oag-styles"
+      ],
+      "delay": 3000,
+      "selectors": [
+          "document"
+      ],
+        "requireSameDimensions": false,
+        "hideSelectors": [
+            "#content-header",
+            "#mainnavigation-wrapper",
+            "#hero",
+            "#above-content-wrapper",
+            "header",
+            "#viewlet-above-content-body",
+            "header#content-header",
+            "#viewlet-above-content-title",
+            "h1.documentFirstHeading",
+            "#viewlet-below-content-title",
+            "div.documentDescription"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Left aligned images",
+        "urls": {
+            "local": "http://localhost:8080/oag/2018/public-sector-data/index.htm",
+            "production": "https://oag.parliament.nz/2018/public-sector-data/index.htm"
+        },
+        "features": [
+            "image-alignment",
+            "oag-styles"
+        ],
+        "delay": 3000,
+        "selectors": [
+            "document"
+        ],
+        "requireSameDimensions": false,
+        "hideSelectors": [
+            "#content-header",
+            "#mainnavigation-wrapper",
+            "#hero",
+            "#above-content-wrapper",
+            "header",
+            "#viewlet-above-content-body",
+            "header#content-header",
+            "#viewlet-above-content-title",
+            "h1.documentFirstHeading",
+            "#viewlet-below-content-title",
+            "div.documentDescription"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Footer and colophon - normal page",
+        "urls": {
+            "local": "http://localhost:8080/oag/2018/public-sector-data/index.htm",
+            "production": "https://oag.parliament.nz/2018/public-sector-data/index.htm"
+        },
+        "features": [
+            "footer",
+            "oag-styles"
+        ],
+        "delay": 1500,
+        "selectors": [
+            "#portal-footer"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Footer and colophon - Home page",
+        "urls": {
+            "local": "http://localhost:8080/oag/",
+            "production": "https://oag.parliament.nz/"
+        },
+        "features": [
+            "footer",
+            "homepage",
+            "oag-styles"
+        ],
+        "delay": 1500,
+        "selectors": [
+            "#portal-footer"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Feedback bar - Home page",
+        "urls": {
+            "local": "http://localhost:8080/oag/",
+            "production": "https://oag.parliament.nz/"
+        },
+        "features": [
+            "homepage",
+            "oag-styles"
+        ],
+        "delay": 3000,
+        "selectors": [
+            "document"
+        ],
+        "removeSelectors": [
+            "header",
+            "#mainnavigation-wrapper",
+            "#hero",
+            "#above-content-wrapper",
+            "#viewlet-above-content-body",
+            "#viewlet-above-content-title",
+            "h1.documentFirstHeading",
+            "#viewlet-below-content-title",
+            "div.documentDescription",
+            "#parent-fieldname-text > div:not(:nth-last-of-type(-n+2))",
+            "#parent-fieldname-text > ul",
+            "#parent-fieldname-text > h2",
+            "#parent-fieldname-text > p"
+        ],
+        "hideSelectors": ["#p6oagbanner"],
+        "misMatchThreshold": 0.12,
+        "requireSameDimensions": false
+    },
+    {
+        "label": "Listing view - media-releases",
+        "urls": {
+            "local": "http://localhost:8080/oag/media/media-releases",
+            "production": "https://oag.parliament.nz/oag/media/media-releases"
+        },
+        "features": [
+            "showcase",
+            "listing-view",
+            "oag-styles",
+            "landing-page"
+        ],
+        "delay": 1500,
+        "selectors": [
+            "document"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Listing view - Events",
+        "urls": {
+            "local": "http://localhost:8080/oag/events/docs",
+            "production": "https://oag.parliament.nz/oag/events/docs"
+        },
+        "features": [
+            "showcase",
+            "listing-view",
+            "oag-styles",
+            "events"
+        ],
+        "delay": 1500,
+        "selectors": [
+            "document"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Listing view - blog",
+        "urls": {
+            "local": "http://localhost:8080/oag/blog",
+            "production": "https://oag.parliament.nz/oag/blog"
+        },
+        "features": [
+            "showcase",
+            "listing-view",
+            "oag-styles",
+            "blog"
+        ],
+        "delay": 1500,
+        "selectors": [
+            "document"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Listing view - latest-posts",
+        "urls": {
+            "local": "http://localhost:8080/oag/blog/latest-posts",
+            "production": "https://oag.parliament.nz/oag/blog/latest-posts"
+        },
+        "features": [
+            "showcase",
+            "listing-view",
+            "oag-styles",
+            "blog"
+        ],
+        "delay": 1500,
+        "selectors": [
+            "document"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Listing view - Members Interests act",
+        "urls": {
+            "local": "http://localhost:8080/oag/about-us/what-we-do/members-interests-act/index.htm",
+            "production": "https://oag.parliament.nz/oag/about-us/what-we-do/members-interests-act/index.htm"
+        },
+        "features": [
+            "showcase",
+            "listing-view",
+            "oag-styles",
+            "unique-layout"
+        ],
+        "delay": 1500,
+        "selectors": [
+            "document"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Listing view - 2024",
+        "urls": {
+            "local": "http://localhost:8080/oag/2024",
+            "production": "https://oag.parliament.nz/oag/2024"
+        },
+        "features": [
+            "showcase",
+        "listing-view",
+            "oag-styles",
+            "traditional-report-layout"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Big text style - annual reports",
+        "urls": {
+            "local": "http://localhost:8080/oag/2022/annual-report-2021-22/capability/independence",
+            "production": "https://oag.parliament.nz/2022/annual-report-2021-22/capability/independence"
+        },
+        "features": [
+            "showcase",
+            "oag-styles",
+            "annual-report"
+        ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Forms - feedback",
+        "urls": {
+            "local": "http://localhost:8080/oag/contact-us/wed-like-your-feedback",
+            "production": "https://oag.parliament.nz/contact-us/wed-like-your-feedback"
+        },
+        "features": [
+            "showcase",
+            "forms"
+        ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Forms - comments and questions",
+        "urls": {
+            "local": "http://localhost:8080/oag/contact-us/comments-questions",
+            "production": "https://oag.parliament.nz/contact-us/comments-questions"
+        },
+        "features": [
+            "showcase",
+            "forms"
+        ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Forms - lamia application",
+        "urls": {
+            "local": "http://localhost:8080/oag/2020/lamia/application",
+            "production": "https://oag.parliament.nz/2020/lamia/application"
+        },
+        "features": [
+            "showcase",
+            "forms"
+        ],
+        "delay": 1500,
+        "selectors": [
+            "document"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Forms - data error",
+        "urls": {
+            "local": "http://localhost:8080/oag/data/spotted-an-error",
+            "production": "https://oag.parliament.nz/data/spotted-an-error"
+        },
+        "features": [
+            "showcase",
+            "forms",
+            "data"
+        ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Forms - data suggestions",
+        "urls": {
+            "local": "http://localhost:8080/oag/data/suggestions-to-offer",
+            "production": "https://oag.parliament.nz/data/suggestions-to-offer"
+        },
+        "features": [
+            "showcase",
+            "forms",
+            "data"
+        ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Events - event view",
+        "urls": {
+            "local": "http://localhost:8080/oag/events/good-practice-events/integrity-framework-launch",
+            "production": "https://oag.parliament.nz/events/good-practice-events/integrity-framework-launch"
+        },
+        "features": [
+            "showcase",
+            "events"
+        ],
+      "delay": 3000,
+      "selectors": [
+        "document"
+      ],
+        "misMatchThreshold": 0.1,
+        "hideSelectors": [
+            "aside#portal-column-two"
+        ]
+    },
+    {
+        "label": "Table of content - autotoc - in page",
+        "urls": {
+            "local": "http://localhost:8080/oag/documentation/our-styles",
+            "production": "https://oag.parliament.nz/documentation/our-styles"
+        },
+        "features": [
+            "showcase",
+            "toc",
+            "oag-styles"
+        ],
+      "delay": 3000,
+      "selectors": [
+        "document"
+      ],
+        "misMatchThreshold": 0.1,
+        "requiresAuth": true
+    },
+    {
+        "label": "Tables - Pre-2025 styles",
+        "urls": {
+            "local": "http://localhost:8080/oag/documentation/pre-2025-table-styles",
+            "production": "https://oag.parliament.nz/documentation/pre-2025-table-styles"
+        },
+        "features": [
+            "showcase",
+            "tables",
+            "oag-styles"
+        ],
+        "delay": 1500,
+        "selectors": [
+            "document"
+        ],
+        "misMatchThreshold": 0.1,
+        "requiresAuth": true
+    },
+    {
+        "label": "Tables - bootstrap-based styles",
+        "urls": {
+            "local": "http://localhost:8080/oag/documentation/table-styles",
+            "production": "https://oag.parliament.nz/documentation/table-styles"
+        },
+        "features": [
+            "showcase",
+            "table",
+            "oag-styles"
+        ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+        "misMatchThreshold": 0.1,
+        "requiresAuth": true
+    },
+    {
+        "label": "Tables - Recent work",
+        "urls": {
+            "local": "http://localhost:8080/oag/2025/annual-report/appendices/appendix-2",
+            "production": "https://oag.parliament.nz/2025/annual-report/appendices/appendix-2"
+        },
+        "features": [
+            "showcase",
+            "table",
+            "oag-styles",
+            "annual-report"
+        ],
+        "delay": 1500,
+        "selectors": [
+            "document"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Tables - text alignment",
+        "urls": {
+            "local": "http://localhost:8080/oag/documentation/text-alignment-especially-in-tables",
+            "production": "https://oag.parliament.nz/documentation/text-alignment-especially-in-tables"
+        },
+        "features": [
+            "showcase",
+            "table",
+            "oag-styles"
+        ],
+        "delay": 1500,
+        "selectors": [
+            "document"
+        ],
+        "misMatchThreshold": 0.1,
+        "requiresAuth": true
+    },
+    {
+        "label": "Tables - expense report",
+        "urls": {
+            "local": "http://localhost:8080/oag/about-us/corporate/accounting-for-travel",
+            "production": "https://oag.parliament.nz/about-us/corporate/accounting-for-travel"
+        },
+        "features": [
+            "showcase",
+            "table",
+            "oag-styles"
+        ],
+        "delay": 3000,
+        "selectors": [
+            "document"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+        "label": "News item lead image",
+        "urls": {
+            "local": "http://localhost:8080/oag/media/2025/oranga-tamariki",
+            "production": "https://oag.parliament.nz/media/2025/oranga-tamariki"
+        },
+        "features": [
+            "showcase",
+            "news-item",
+            "oag-styles"
+        ],
+        "delay": 1500,
+        "selectors": [
+            "document"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+        "label": "404 Error page",
+        "urls": {
+            "local": "http://localhost:8080/oag/thisshouldproducea404",
+            "production": "https://oag.parliament.nz/thisshouldproducea404"
+        },
+        "features": [
+            "showcase",
+            "system",
+            "oag-styles"
+        ],
+        "delay": 1500,
+        "selectors": [
+            "document"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Schools landing page",
+        "urls": {
+            "local": "http://localhost:8080/oag/schools",
+            "production": "https://oag.parliament.nz/schools"
+        },
+        "features": [
+            "showcase",
+            "unique-layout",
+            "schools",
+            "oag-styles"
+        ],
+        "delay": 1500,
+        "selectors": [
+            "document"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Schools For students",
+        "urls": {
+            "local": "http://localhost:8080/oag/schools/students",
+            "production": "https://oag.parliament.nz/schools/students"
+        },
+        "features": [
+            "showcase",
+            "unique-layout",
+            "schools",
+            "oag-styles"
+        ],
+        "delay": 1500,
+        "selectors": [
+            "document"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Schools For teachers",
+        "urls": {
+            "local": "http://localhost:8080/oag/schools/teachers",
+            "production": "https://oag.parliament.nz/schools/teachers"
+        },
+        "features": [
+            "showcase",
+            "unique-layout",
+            "schools",
+            "oag-styles"
+        ],
+        "delay": 1500,
+        "selectors": [
+            "document"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+        "label": "Annual Report 2021-22 - content listing portlet",
+        "urls": {
+            "local": "http://localhost:8080/oag/2022/annual-report-2021-22/statement-of-responsbility",
+            "production": "https://oag.parliament.nz/2022/annual-report-2021-22/statement-of-responsbility"
+        },
+        "features": [
+            "showcase",
+            "mosaic-layout",
+            "annual-report",
+            "navigation"
+        ],
+        "delay": 1500,
+        "selectors": [
+            "document"
+        ],
+        "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Mosaic - 2023 Annual Report - Our Work Impact",
+      "urls": {
+        "local": "http://localhost:8080/oag/2023/annual-report/our-work/impacts/impact-3",
+        "production": "https://oag.parliament.nz/2023/annual-report/our-work/impacts/impact-3"
+      },
+      "features": [
+        "mosaic-layout",
+        "annual-report",
+        "customContentLayout"
+      ],
+      "delay": 2000,
+      "selectors": [
+        "document"
+      ]
+    },
+    {
+      "label": "Mosaic - 2023 Annual Report - Integrity Practices",
+      "urls": {
+        "local": "http://localhost:8080/oag/2023/annual-report/highlights/integrity-practices",
+        "production": "https://oag.parliament.nz/2023/annual-report/highlights/integrity-practices"
+      },
+      "features": [
+        "mosaic-layout",
+        "annual-report",
+        "customContentLayout"
+      ],
+      "delay": 2000,
+      "selectors": [
+        "document"
+      ]
+    },
+    {
+      "label": "Mosaic - 2023 Annual Report - Capability",
+      "urls": {
+        "local": "http://localhost:8080/oag/2023/annual-report/capability/index.htm",
+        "production": "https://oag.parliament.nz/2023/annual-report/capability/index.htm"
+      },
+      "features": [
+        "mosaic-layout",
+        "annual-report",
+        "customContentLayout"
+      ],
+      "delay": 2000,
+      "selectors": [
+        "document"
+      ]
+    },
+    {
+      "label": "Mosaic - 2023 Annual Report - Remuneration",
+      "urls": {
+        "local": "http://localhost:8080/oag/2023/annual-report/finances/appropriations/remuneration",
+        "production": "https://oag.parliament.nz/2023/annual-report/finances/appropriations/remuneration"
+      },
+      "features": [
+        "mosaic-layout",
+        "annual-report",
+        "finances",
+        "customContentLayout"
+      ],
+      "delay": 2000,
+      "selectors": [
+        "document"
+      ]
+    },
+    {
+      "label": "Mosaic - 2023 Annual Report - Financial Position",
+      "urls": {
+        "local": "http://localhost:8080/oag/2023/annual-report/finances/financial-statements/financial-position",
+        "production": "https://oag.parliament.nz/2023/annual-report/finances/financial-statements/financial-position"
+      },
+      "features": [
+        "mosaic-layout",
+        "annual-report",
+        "finances",
+        "customContentLayout"
+      ],
+      "delay": 2000,
+      "selectors": [
+        "document"
+      ]
+    },
+    {
+      "label": "Mosaic - 2023 Annual Report - Audit RDA",
+      "urls": {
+        "local": "http://localhost:8080/oag/2023/annual-report/finances/appropriations/audit-and-assurance-rda",
+        "production": "https://oag.parliament.nz/2023/annual-report/finances/appropriations/audit-and-assurance-rda"
+      },
+      "features": [
+        "mosaic-layout",
+        "annual-report",
+        "finances",
+        "customContentLayout"
+      ],
+      "delay": 2000,
+      "selectors": [
+        "document"
+      ]
+    },
+    {
+      "label": "Mosaic - 2023 Annual Report - Auditor Report",
+      "urls": {
+        "local": "http://localhost:8080/oag/2023/annual-report/finances/auditor-report",
+        "production": "https://oag.parliament.nz/2023/annual-report/finances/auditor-report"
+      },
+      "features": [
+        "mosaic-layout",
+        "annual-report",
+        "finances",
+        "customContentLayout"
+      ],
+      "delay": 2000,
+      "selectors": [
+        "document"
+      ]
+    },
+    {
+      "label": "Mosaic - 2022 Annual Report - Note 16",
+      "urls": {
+        "local": "http://localhost:8080/oag/2022/annual-report-2021-22/our-finances/notes-to-financial-statements/note-16",
+        "production": "https://oag.parliament.nz/2022/annual-report-2021-22/our-finances/notes-to-financial-statements/note-16"
+      },
+      "features": [
+        "mosaic-layout",
+        "annual-report",
+        "customContentLayout"
+      ],
+      "delay": 2000,
+      "selectors": [
+        "document"
+      ]
+    },
+    {
+      "label": "Mosaic - 2022 Annual Report - Audit RDA",
+      "urls": {
+        "local": "http://localhost:8080/oag/2022/annual-report-2021-22/our-finances/appropriations/audit-and-assurance-rda",
+        "production": "https://oag.parliament.nz/2022/annual-report-2021-22/our-finances/appropriations/audit-and-assurance-rda"
+      },
+      "features": [
+        "mosaic-layout",
+        "annual-report",
+        "customContentLayout"
+      ],
+      "delay": 2000,
+      "selectors": [
+        "document"
+      ]
+    },
+    {
+      "label": "Mosaic - 2022 Annual Report - AG Overview",
+      "urls": {
+        "local": "http://localhost:8080/oag/2022/annual-report-2021-22/auditor-generals-overview",
+        "production": "https://oag.parliament.nz/2022/annual-report-2021-22/auditor-generals-overview"
+      },
+      "features": [
+        "mosaic-layout",
+        "annual-report",
+        "customContentLayout"
+      ],
+      "delay": 2000,
+      "selectors": [
+        "document"
+      ]
+    },
+    {
+      "label": "Mosaic - Auditing Standards - AG-ISA-NZ-240",
+      "urls": {
+        "local": "http://localhost:8080/oag/auditing-standards/ag-isa-nz-240",
+        "production": "https://oag.parliament.nz/auditing-standards/ag-isa-nz-240"
+      },
+      "features": [
+        "mosaic-layout",
+        "auditing-standards",
+        "customContentLayout"
+      ],
+      "delay": 2000,
+      "selectors": [
+        "document"
+      ]
+    },
+    {
+      "label": "Mosaic - 2025 School Audits",
+      "urls": {
+        "local": "http://localhost:8080/oag/2025/school-audits-2023/index.htm",
+        "production": "https://oag.parliament.nz/2025/school-audits-2023/index.htm"
+      },
+      "features": [
+        "mosaic-layout",
+        "traditional-report-layout",
+        "customContentLayout"
+      ],
+      "delay": 2000,
+      "selectors": [
+        "document"
+      ]
+    },
+    {
+      "label": "Mosaic - 2024 Annual Plan",
+      "urls": {
+        "local": "http://localhost:8080/oag/2024/annual-plan/index.htm",
+        "production": "https://oag.parliament.nz/2024/annual-plan/index.htm"
+      },
+      "features": [
+        "mosaic-layout",
+        "traditional-report-layout",
+        "customContentLayout"
+      ],
+      "delay": 2000,
+      "selectors": [
+        "document"
+      ]
+    },
+    {
+      "label": "Mosaic - 2025 Auckland Transport",
+      "urls": {
+        "local": "http://localhost:8080/oag/2025/auckland-transport/index.htm",
+        "production": "https://oag.parliament.nz/2025/auckland-transport/index.htm"
+      },
+      "features": [
+        "mosaic-layout",
+        "traditional-report-layout",
+        "customContentLayout"
+      ],
+      "delay": 2000,
+      "selectors": [
+        "document"
+      ]
+    },
+    {
+      "label": "Mosaic - 2024 Election Report",
+      "urls": {
+        "local": "http://localhost:8080/oag/2024/election-2023/index.htm",
+        "production": "https://oag.parliament.nz/2024/election-2023/index.htm"
+      },
+      "features": [
+        "mosaic-layout",
+        "traditional-report-layout",
+        "customContentLayout"
+      ],
+      "delay": 2000,
+      "selectors": [
+        "document"
+      ]
+    },
+    {
+      "label": "Mosaic - 2024 Food Safety",
+      "urls": {
+        "local": "http://localhost:8080/oag/2024/food-safety/index.htm",
+        "production": "https://oag.parliament.nz/2024/food-safety/index.htm"
+      },
+      "features": [
+        "mosaic-layout",
+        "traditional-report-layout",
+        "customContentLayout"
+      ],
+      "delay": 2000,
+        "hideSelectors": [".lilportlet-v"],
+      "selectors": [
+        "document"
+      ]
+    },
+    {
+        "label": "Bootstrap Cheatsheet",
+      "urls": {
+          "local": "http://localhost:8080/oag/@@test-rendering-cheatsheet",
+          "production": "https://oag.parliament.nz/@@test-rendering-cheatsheet"
+      },
+      "features": [
+        "oag-styles"
+      ],
+      "delay": 3000,
+      "selectors": [
+        "document"
+      ],
+        "misMatchThreshold": 0.01
+    },
+    {
+        "label": "Table of content - left padding and xs overlap",
+        "urls": {
+            "local": "http://localhost:8080/oag/auditing-standards/copy_of_guide-to-the-code/part-3",
+            "production": "https://oag.parliament.nz/auditing-standards/copy_of_guide-to-the-code/part-3"
+        },
+        "features": [
+            "oag-styles",
+"toc"
+        ],
+        "delay": 3000,
+        "selectors": [
+            "document"
+        ],
+        "requiresAuth": true,
+        "misMatchThreshold": 0.001,
+        "removeSelectors": ["#parent-fieldname-text > table", "#parent-fieldname-text > h2", "#parent-fieldname-text > p"],
+        "selectorExpansion": true,
+        "requireSameDimensions": false
+    }
+]
+}

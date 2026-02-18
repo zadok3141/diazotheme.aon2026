@@ -1,0 +1,438 @@
+{
+  "scenarios": [
+    {
+      "label": "Content Links - Default State",
+      "urls": {
+          "local": "http://localhost:8080/oag/documentation/our-styles",
+        "production": "https://oag.parliament.nz/documentation/our-styles"
+      },
+      "features": [
+        "link-styles",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "#linktesting"
+      ],
+        "misMatchThreshold": 0,
+        "requireSameDimensions": false,
+        "requiresAuth": true
+    },
+    {
+      "label": "Breadcrumb Links - Default State",
+      "urls": {
+        "local": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+        "production": "https://oag.parliament.nz/documentation/portlets-and-link-styles"
+      },
+      "features": [
+        "link-styles",
+        "oag-styles",
+        "breadcrumbs"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "#portal-breadcrumbs"
+      ],
+      "misMatchThreshold": 0.01,
+    "requiresAuth": true
+    },
+    {
+      "label": "Main Navigation Links - Default State",
+      "urls": {
+        "local": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+        "production": "https://oag.parliament.nz/documentation/portlets-and-link-styles"
+      },
+      "features": [
+        "link-styles",
+        "navigation",
+        "navbar"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "#portal-globalnav"
+      ],
+      "misMatchThreshold": 0.01,
+    "requiresAuth": true
+    },
+    {
+      "label": "Calendar Portlet Links - Default State",
+      "urls": {
+        "local": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+        "production": "https://oag.parliament.nz/documentation/portlets-and-link-styles"
+      },
+      "features": [
+        "link-styles",
+        "portlets",
+        "calendar"
+      ],
+      "delay": 1500,
+      "selectors": [
+        ".portlet-calendar"
+      ],
+      "misMatchThreshold": 0.01,
+    "requiresAuth": true
+    },
+    {
+      "label": "Collection Portlet Links - Default State",
+      "urls": {
+        "local": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+        "production": "https://oag.parliament.nz/documentation/portlets-and-link-styles"
+      },
+      "features": [
+        "link-styles",
+        "portlets",
+        "collection"
+      ],
+      "delay": 1500,
+      "selectors": [
+        ".portletCollection"
+      ],
+      "misMatchThreshold": 0.01,
+    "requiresAuth": true
+    },
+    {
+      "label": "Navigation Tree Portlet Links - Default State",
+      "urls": {
+        "local": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+        "production": "https://oag.parliament.nz/documentation/portlets-and-link-styles"
+      },
+      "features": [
+        "link-styles",
+        "portlets",
+        "navigation-tree"
+      ],
+      "delay": 1500,
+      "selectors": [
+        ".portletNavigationTree"
+      ],
+      "misMatchThreshold": 0.01,
+    "requiresAuth": true
+    },
+    {
+      "label": "Footer Site Actions Links - Default State",
+      "urls": {
+        "local": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+        "production": "https://oag.parliament.nz/documentation/portlets-and-link-styles"
+      },
+      "features": [
+        "link-styles",
+        "footer",
+        "site-actions"
+      ],
+      "delay": 1500,
+      "selectors": [
+        ".site-actions .row"
+      ],
+      "misMatchThreshold": 0.01,
+    "requiresAuth": true
+    },
+    {
+        "label": "Table of contents link - Default State",
+        "urls": {
+            "local": "http://localhost:8080/oag/documentation/our-styles",
+            "production": "https://oag.parliament.nz/documentation/our-styles"
+        },
+        "features": [
+            "link-styles",
+            "oag-styles",
+            "content"
+        ],
+        "delay": 1500,
+        "selectors": [
+            ".autotoc-nav"
+        ],
+        "misMatchThreshold": 0.01,
+        "requiresAuth": true
+    },
+    {
+      "label": "Pagination Links - Default State",
+      "urls": {
+        "local": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+        "production": "https://oag.parliament.nz/documentation/portlets-and-link-styles"
+      },
+      "features": [
+        "link-styles",
+        "oag-styles",
+        "pagination"
+      ],
+      "delay": 1500,
+      "selectors": [
+        ".pagination"
+      ],
+      "misMatchThreshold": 0.01,
+    "requiresAuth": true
+    },
+    {
+        "label": "Heading Links - Default State",
+        "urls": {
+            "local": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+            "production": "https://oag.parliament.nz/documentation/portlets-and-link-styles"
+        },
+        "features": [
+            "showcase",
+            "link-styles",
+            "oag-styles"
+        ],
+        "delay": 1500,
+        "selectors": [
+            "h1 a"
+        ],
+        "misMatchThreshold": 0,
+        "requireSameDimensions": false,
+        "requiresAuth": true
+    },
+    {
+        "label": "Buttons - Default State",
+        "urls": {
+            "local": "http://localhost:8080/oag/@@test-rendering-cheatsheet",
+            "production": "https://oag.parliament.nz/@@test-rendering-cheatsheet"
+        },
+        "features": [
+            "showcase",
+            "link-styles",
+            "button-styles",
+            "oag-styles"
+        ],
+        "delay": 1500,
+        "selectors": [
+            "article#buttons"
+        ],
+        "misMatchThreshold": 0,
+        "requireSameDimensions": false,
+        "requiresAuth": true
+    },
+    {
+      "label": "Content Links - Hover State",
+      "urls": {
+          "local": "http://localhost:8080/oag/documentation/our-styles",
+        "production": "https://oag.parliament.nz/documentation/our-styles"
+      },
+      "features": [
+        "link-styles",
+        "oag-styles",
+          "hover"
+      ],
+      "delay": 1500,
+        "hoverSelector": "#normallink",
+      "selectors": [
+        "#linktesting"
+      ],
+        "misMatchThreshold": 0.01,
+        "postInteractionWait": 500,
+        "requireSameDimensions": false,
+        "requiresAuth": true
+    },
+    {
+      "label": "Breadcrumb Links - Hover State",
+      "urls": {
+        "local": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+        "production": "https://oag.parliament.nz/documentation/portlets-and-link-styles"
+      },
+      "features": [
+        "link-styles",
+        "oag-styles",
+        "breadcrumbs",
+        "hover"
+      ],
+      "delay": 1500,
+      "hoverSelector": "#portal-breadcrumbs .breadcrumb-item a",
+      "selectors": [
+        "#portal-breadcrumbs"
+      ],
+      "misMatchThreshold": 0.01,
+        "postInteractionWait": 500,
+    "requiresAuth": true
+    },
+    {
+      "label": "Main Navigation Links - Hover State",
+      "urls": {
+        "local": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+        "production": "https://oag.parliament.nz/documentation/portlets-and-link-styles"
+      },
+      "features": [
+        "link-styles",
+        "navigation",
+        "navbar",
+        "hover"
+      ],
+      "delay": 1500,
+      "hoverSelector": "#portal-globalnav .nav-item a",
+      "selectors": [
+        "#portal-globalnav"
+      ],
+      "misMatchThreshold": 0.01,
+      "postInteractionWait": 500,
+    "requiresAuth": true
+    },
+    {
+      "label": "Calendar Portlet Links - Hover State",
+      "urls": {
+        "local": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+        "production": "https://oag.parliament.nz/documentation/portlets-and-link-styles"
+      },
+      "features": [
+        "link-styles",
+        "portlets",
+        "calendar",
+        "hover"
+      ],
+      "delay": 1500,
+      "hoverSelector": ".portlet-calendar .calendarPrevious",
+      "selectors": [
+        ".portlet-calendar"
+      ],
+      "misMatchThreshold": 0.01,
+      "postInteractionWait": 500,
+    "requiresAuth": true
+    },
+    {
+      "label": "Collection Portlet Links - Hover State",
+      "urls": {
+        "local": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+        "production": "https://oag.parliament.nz/documentation/portlets-and-link-styles"
+      },
+      "features": [
+        "link-styles",
+        "portlets",
+        "collection",
+        "hover"
+      ],
+      "delay": 1500,
+      "hoverSelector": ".portletCollection .portletItem a",
+      "selectors": [
+        ".portletCollection"
+      ],
+      "misMatchThreshold": 0.01,
+      "postInteractionWait": 500,
+    "requiresAuth": true
+    },
+    {
+      "label": "Navigation Tree Portlet Links - Hover State",
+      "urls": {
+        "local": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+        "production": "https://oag.parliament.nz/documentation/portlets-and-link-styles"
+      },
+      "features": [
+        "link-styles",
+        "portlets",
+        "navigation-tree",
+        "hover"
+      ],
+      "delay": 3000,
+        "hoverSelector": ".section-report-by-year-portlet",
+      "selectors": [
+        ".portletNavigationTree"
+      ],
+      "misMatchThreshold": 0.01,
+      "postInteractionWait": 500,
+    "requiresAuth": true
+    },
+    {
+      "label": "Pagination Links - Hover State",
+      "urls": {
+        "local": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+        "production": "https://oag.parliament.nz/documentation/portlets-and-link-styles"
+      },
+      "features": [
+        "link-styles",
+        "oag-styles",
+        "pagination",
+        "hover"
+      ],
+      "delay": 1500,
+      "hoverSelector": ".pagination a.previous",
+      "selectors": [
+        ".pagination"
+      ],
+      "misMatchThreshold": 0.01,
+      "postInteractionWait": 500,
+    "requiresAuth": true
+    },
+    {
+      "label": "Footer Site Actions Links - Hover State",
+      "urls": {
+        "local": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+        "production": "https://oag.parliament.nz/documentation/portlets-and-link-styles"
+      },
+      "features": [
+        "link-styles",
+        "footer",
+        "site-actions",
+        "hover"
+      ],
+      "delay": 1500,
+        "hoverSelector": ".portletItem .action-item-contact",
+      "selectors": [
+        ".site-actions .row"
+      ],
+      "misMatchThreshold": 0.01,
+      "postInteractionWait": 500,
+    "requiresAuth": true
+    },
+    {
+        "label": "Table of contents link - Hover State",
+        "urls": {
+            "local": "http://localhost:8080/oag/documentation/our-styles",
+            "production": "https://oag.parliament.nz/documentation/our-styles"
+        },
+        "features": [
+            "link-styles",
+            "oag-styles",
+            "content"
+        ],
+        "delay": 1500,
+        "hoverSelector": "#autotoc-item-autotoc-0",
+        "selectors": [
+            ".autotoc-nav"
+        ],
+        "misMatchThreshold": 0.01,
+        "postInteractionWait": 500,
+        "requiresAuth": true
+    },
+    {
+        "label": "Heading Links - Hover State",
+        "urls": {
+            "local": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+            "production": "https://oag.parliament.nz/documentation/portlets-and-link-styles"
+        },
+        "features": [
+            "showcase",
+            "link-styles",
+            "oag-styles",
+            "hover"
+        ],
+        "delay": 1500,
+        "hoverSelectors": [
+            "h1 a"
+        ],
+        "selectors": [
+            "h1 a"
+      ],
+        "misMatchThreshold": 0.01,
+        "postInteractionWait": 500,
+        "requireSameDimensions": false,
+        "requiresAuth": true
+    },
+    {
+        "label": "Buttons - Hover State",
+        "urls": {
+            "local": "http://localhost:8080/oag/@@test-rendering-cheatsheet",
+            "production": "https://oag.parliament.nz/@@test-rendering-cheatsheet"
+        },
+        "features": [
+            "showcase",
+            "link-styles",
+            "button-styles",
+            "oag-styles"
+        ],
+        "delay": 1500,
+        "selectors": [
+            "article#buttons"
+        ],
+        "hoverSelectors": ["button.btn-primary","button.btn-secondary","button.btn-success","button.btn-danger","button.btn-warning","button.btn-info","button.btn-light","button.btn-dark"],
+        "misMatchThreshold": 0,
+        "requireSameDimensions": false,
+        "requiresAuth": true
+    }
+  ]
+}

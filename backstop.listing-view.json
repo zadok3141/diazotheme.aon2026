@@ -1,0 +1,628 @@
+{
+  "scenarios": [
+    {
+      "label": "Listing view - 1998",
+      "urls": {
+        "local": "http://localhost:8080/oag/1998",
+        "production": "https://oag.parliament.nz/oag/1998"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2000",
+      "urls": {
+        "local": "http://localhost:8080/oag/2000/index.htm",
+        "production": "https://oag.parliament.nz/oag/2000/index.htm"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2001",
+      "urls": {
+        "local": "http://localhost:8080/oag/2001/index.htm",
+        "production": "https://oag.parliament.nz/oag/2001/index.htm"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2002",
+      "urls": {
+        "local": "http://localhost:8080/oag/2002/index.htm",
+        "production": "https://oag.parliament.nz/oag/2002/index.htm"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2003",
+      "urls": {
+        "local": "http://localhost:8080/oag/2003/index.htm",
+        "production": "https://oag.parliament.nz/oag/2003/index.htm"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2004",
+      "urls": {
+        "local": "http://localhost:8080/oag/2004/index.htm",
+        "production": "https://oag.parliament.nz/oag/2004/index.htm"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2005",
+      "urls": {
+        "local": "http://localhost:8080/oag/2005",
+        "production": "https://oag.parliament.nz/oag/2005"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2006",
+      "urls": {
+        "local": "http://localhost:8080/oag/2006",
+        "production": "https://oag.parliament.nz/oag/2006"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2007",
+      "urls": {
+        "local": "http://localhost:8080/oag/2007",
+        "production": "https://oag.parliament.nz/oag/2007"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2008",
+      "urls": {
+        "local": "http://localhost:8080/oag/2008",
+        "production": "https://oag.parliament.nz/oag/2008"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - publications-produced-during-2008",
+      "urls": {
+        "local": "http://localhost:8080/oag/2008/publications-produced-during-2008",
+        "production": "https://oag.parliament.nz/oag/2008/publications-produced-during-2008"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2009",
+      "urls": {
+        "local": "http://localhost:8080/oag/2009",
+        "production": "https://oag.parliament.nz/oag/2009"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2010",
+      "urls": {
+        "local": "http://localhost:8080/oag/2010",
+        "production": "https://oag.parliament.nz/oag/2010"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2011",
+      "urls": {
+        "local": "http://localhost:8080/oag/2011",
+        "production": "https://oag.parliament.nz/oag/2011"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2012",
+      "urls": {
+        "local": "http://localhost:8080/oag/2012/index.htm",
+        "production": "https://oag.parliament.nz/oag/2012/index.htm"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2013",
+      "urls": {
+        "local": "http://localhost:8080/oag/2013",
+        "production": "https://oag.parliament.nz/oag/2013"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2014",
+      "urls": {
+        "local": "http://localhost:8080/oag/2014",
+        "production": "https://oag.parliament.nz/oag/2014"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2015",
+      "urls": {
+        "local": "http://localhost:8080/oag/2015",
+        "production": "https://oag.parliament.nz/oag/2015"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2016",
+      "urls": {
+        "local": "http://localhost:8080/oag/2016",
+        "production": "https://oag.parliament.nz/oag/2016"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2017",
+      "urls": {
+        "local": "http://localhost:8080/oag/2017",
+        "production": "https://oag.parliament.nz/oag/2017"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2018",
+      "urls": {
+        "local": "http://localhost:8080/oag/2018",
+        "production": "https://oag.parliament.nz/oag/2018"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2019",
+      "urls": {
+        "local": "http://localhost:8080/oag/2019",
+        "production": "https://oag.parliament.nz/oag/2019"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2020",
+      "urls": {
+        "local": "http://localhost:8080/oag/2020",
+        "production": "https://oag.parliament.nz/oag/2020"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2021",
+      "urls": {
+        "local": "http://localhost:8080/oag/2021",
+        "production": "https://oag.parliament.nz/oag/2021"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2022",
+      "urls": {
+        "local": "http://localhost:8080/oag/2022",
+        "production": "https://oag.parliament.nz/oag/2022"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2023",
+      "urls": {
+        "local": "http://localhost:8080/oag/2023",
+        "production": "https://oag.parliament.nz/oag/2023"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2024",
+      "urls": {
+        "local": "http://localhost:8080/oag/2024",
+        "production": "https://oag.parliament.nz/oag/2024"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - 2025",
+      "urls": {
+        "local": "http://localhost:8080/oag/2025",
+        "production": "https://oag.parliament.nz/oag/2025"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - Members Interests act",
+      "urls": {
+        "local": "http://localhost:8080/oag/about-us/what-we-do/members-interests-act/index.htm",
+        "production": "https://oag.parliament.nz/oag/about-us/what-we-do/members-interests-act/index.htm"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - blog",
+      "urls": {
+        "local": "http://localhost:8080/oag/blog",
+        "production": "https://oag.parliament.nz/oag/blog"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - latest-posts",
+      "urls": {
+        "local": "http://localhost:8080/oag/blog/latest-posts",
+        "production": "https://oag.parliament.nz/oag/blog/latest-posts"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - documentation",
+      "urls": {
+        "local": "http://localhost:8080/oag/documentation",
+        "production": "https://oag.parliament.nz/oag/documentation"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - Events",
+      "urls": {
+        "local": "http://localhost:8080/oag/events/docs",
+        "production": "https://oag.parliament.nz/oag/events/docs"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - conflicts-resources",
+      "urls": {
+        "local": "http://localhost:8080/oag/good-practice/conflicts-of-interest/conflicts-resources",
+        "production": "https://oag.parliament.nz/oag/good-practice/conflicts-of-interest/conflicts-resources"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - media",
+      "urls": {
+        "local": "http://localhost:8080/oag/media",
+        "production": "https://oag.parliament.nz/oag/media"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - media-releases",
+      "urls": {
+        "local": "http://localhost:8080/oag/media/media-releases",
+        "production": "https://oag.parliament.nz/oag/media/media-releases"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - pre-1998",
+      "urls": {
+        "local": "http://localhost:8080/oag/pre-1998",
+        "production": "https://oag.parliament.nz/oag/pre-1998"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - accountability",
+      "urls": {
+        "local": "http://localhost:8080/oag/reports/accountability",
+        "production": "https://oag.parliament.nz/oag/reports/accountability"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    },
+    {
+      "label": "Listing view - transcripts",
+      "urls": {
+        "local": "http://localhost:8080/oag/transcripts",
+        "production": "https://oag.parliament.nz/oag/transcripts"
+      },
+      "features": [
+        "listing-view",
+        "oag-styles"
+      ],
+      "delay": 1500,
+      "selectors": [
+        "document"
+      ],
+      "misMatchThreshold": 0.0
+    }
+  ]
+}

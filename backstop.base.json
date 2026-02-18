@@ -1,0 +1,77 @@
+{
+  "id": "aon2026_theme",
+  "viewports": [
+    {
+      "label": "xs",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "label": "sm",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "label": "md",
+      "width": 820,
+      "height": 1180
+    },
+    {
+      "label": "lg",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "label": "xl",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "label": "xxl",
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "onBeforeScript": "puppet/onBefore.js",
+  "onReadyScript": "puppet/onReady.js",
+  "hideSelectors": [
+    ".oagbanner"
+  ],
+  "scenarios": [],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "json_report": "backstop_data/json_report"
+  },
+  "report": [
+    "browser",
+    "json"
+  ],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ],
+    "headless": true,
+    "ignoreHTTPSErrors": true
+  },
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false,
+  "misMatchThreshold": 0.1,
+  "requireSameDimensions": true,
+  "resembleOutputOptions": {
+    "errorColor": {
+      "red": 255,
+      "green": 0,
+      "blue": 255
+    },
+    "errorType": "movement",
+    "transparency": 0.3,
+    "ignoreAntialiasing": true
+  }
+}

@@ -1,0 +1,393 @@
+{
+  "id": "aon2026_theme",
+  "viewports": [
+    {
+      "label": "lg",
+      "width": 1280,
+      "height": 800
+    }
+  ],
+  "onBeforeScript": "puppet/onBefore.js",
+  "onReadyScript": "puppet/onReady.js",
+  "hideSelectors": [
+    ".oagbanner"
+  ],
+  "scenarios": [
+    {
+      "label": "Content Links - Default State",
+      "url": "http://localhost:8080/oag/documentation/our-styles",
+      "delay": 1500,
+      "selectors": [
+        "#linktesting"
+      ],
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": false,
+      "requiresAuth": true,
+      "hideSelectors": [
+        ".oagbanner"
+      ]
+    },
+    {
+      "label": "Breadcrumb Links - Default State",
+      "url": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+      "delay": 1500,
+      "selectors": [
+        "#portal-breadcrumbs"
+      ],
+      "misMatchThreshold": 0.01,
+      "requireSameDimensions": true,
+      "requiresAuth": true,
+      "hideSelectors": [
+        ".oagbanner"
+      ]
+    },
+    {
+      "label": "Main Navigation Links - Default State",
+      "url": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+      "delay": 1500,
+      "selectors": [
+        "#portal-globalnav"
+      ],
+      "misMatchThreshold": 0.01,
+      "requireSameDimensions": true,
+      "requiresAuth": true,
+      "hideSelectors": [
+        ".oagbanner"
+      ]
+    },
+    {
+      "label": "Calendar Portlet Links - Default State",
+      "url": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+      "delay": 1500,
+      "selectors": [
+        ".portlet-calendar"
+      ],
+      "misMatchThreshold": 0.01,
+      "requireSameDimensions": true,
+      "requiresAuth": true,
+      "hideSelectors": [
+        ".oagbanner"
+      ]
+    },
+    {
+      "label": "Collection Portlet Links - Default State",
+      "url": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+      "delay": 1500,
+      "selectors": [
+        ".portletCollection"
+      ],
+      "misMatchThreshold": 0.01,
+      "requireSameDimensions": true,
+      "requiresAuth": true,
+      "hideSelectors": [
+        ".oagbanner"
+      ]
+    },
+    {
+      "label": "Navigation Tree Portlet Links - Default State",
+      "url": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+      "delay": 1500,
+      "selectors": [
+        ".portletNavigationTree"
+      ],
+      "misMatchThreshold": 0.01,
+      "requireSameDimensions": true,
+      "requiresAuth": true,
+      "hideSelectors": [
+        ".oagbanner"
+      ]
+    },
+    {
+      "label": "Footer Site Actions Links - Default State",
+      "url": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+      "delay": 1500,
+      "selectors": [
+        ".site-actions .row"
+      ],
+      "misMatchThreshold": 0.01,
+      "requireSameDimensions": true,
+      "requiresAuth": true,
+      "hideSelectors": [
+        ".oagbanner"
+      ]
+    },
+    {
+      "label": "Table of contents link - Default State",
+      "url": "http://localhost:8080/oag/documentation/our-styles",
+      "delay": 1500,
+      "selectors": [
+        ".autotoc-nav"
+      ],
+      "misMatchThreshold": 0.01,
+      "requireSameDimensions": true,
+      "requiresAuth": true,
+      "hideSelectors": [
+        ".oagbanner"
+      ]
+    },
+    {
+      "label": "Pagination Links - Default State",
+      "url": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+      "delay": 1500,
+      "selectors": [
+        ".pagination"
+      ],
+      "misMatchThreshold": 0.01,
+      "requireSameDimensions": true,
+      "requiresAuth": true,
+      "hideSelectors": [
+        ".oagbanner"
+      ]
+    },
+    {
+      "label": "Heading Links - Default State",
+      "url": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+      "delay": 1500,
+      "selectors": [
+        "h1 a"
+      ],
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": false,
+      "requiresAuth": true,
+      "hideSelectors": [
+        ".oagbanner"
+      ]
+    },
+    {
+      "label": "Buttons - Default State",
+      "url": "http://localhost:8080/oag/@@test-rendering-cheatsheet",
+      "delay": 1500,
+      "selectors": [
+        "article#buttons"
+      ],
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": false,
+      "requiresAuth": true,
+      "hideSelectors": [
+        ".oagbanner"
+      ]
+    },
+    {
+      "label": "Content Links - Hover State",
+      "url": "http://localhost:8080/oag/documentation/our-styles",
+      "delay": 1500,
+      "selectors": [
+        "#linktesting"
+      ],
+      "misMatchThreshold": 0.01,
+      "requireSameDimensions": false,
+      "hoverSelector": "#normallink",
+      "postInteractionWait": 500,
+      "requiresAuth": true,
+      "hideSelectors": [
+        ".oagbanner"
+      ]
+    },
+    {
+      "label": "Breadcrumb Links - Hover State",
+      "url": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+      "delay": 1500,
+      "selectors": [
+        "#portal-breadcrumbs"
+      ],
+      "misMatchThreshold": 0.01,
+      "requireSameDimensions": true,
+      "hoverSelector": "#portal-breadcrumbs .breadcrumb-item a",
+      "postInteractionWait": 500,
+      "requiresAuth": true,
+      "hideSelectors": [
+        ".oagbanner"
+      ]
+    },
+    {
+      "label": "Main Navigation Links - Hover State",
+      "url": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+      "delay": 1500,
+      "selectors": [
+        "#portal-globalnav"
+      ],
+      "misMatchThreshold": 0.01,
+      "requireSameDimensions": true,
+      "hoverSelector": "#portal-globalnav .nav-item a",
+      "postInteractionWait": 500,
+      "requiresAuth": true,
+      "hideSelectors": [
+        ".oagbanner"
+      ]
+    },
+    {
+      "label": "Calendar Portlet Links - Hover State",
+      "url": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+      "delay": 1500,
+      "selectors": [
+        ".portlet-calendar"
+      ],
+      "misMatchThreshold": 0.01,
+      "requireSameDimensions": true,
+      "hoverSelector": ".portlet-calendar .calendarPrevious",
+      "postInteractionWait": 500,
+      "requiresAuth": true,
+      "hideSelectors": [
+        ".oagbanner"
+      ]
+    },
+    {
+      "label": "Collection Portlet Links - Hover State",
+      "url": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+      "delay": 1500,
+      "selectors": [
+        ".portletCollection"
+      ],
+      "misMatchThreshold": 0.01,
+      "requireSameDimensions": true,
+      "hoverSelector": ".portletCollection .portletItem a",
+      "postInteractionWait": 500,
+      "requiresAuth": true,
+      "hideSelectors": [
+        ".oagbanner"
+      ]
+    },
+    {
+      "label": "Navigation Tree Portlet Links - Hover State",
+      "url": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+      "delay": 3000,
+      "selectors": [
+        ".portletNavigationTree"
+      ],
+      "misMatchThreshold": 0.01,
+      "requireSameDimensions": true,
+      "hoverSelector": ".section-report-by-year-portlet",
+      "postInteractionWait": 500,
+      "requiresAuth": true,
+      "hideSelectors": [
+        ".oagbanner"
+      ]
+    },
+    {
+      "label": "Pagination Links - Hover State",
+      "url": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+      "delay": 1500,
+      "selectors": [
+        ".pagination"
+      ],
+      "misMatchThreshold": 0.01,
+      "requireSameDimensions": true,
+      "hoverSelector": ".pagination a.previous",
+      "postInteractionWait": 500,
+      "requiresAuth": true,
+      "hideSelectors": [
+        ".oagbanner"
+      ]
+    },
+    {
+      "label": "Footer Site Actions Links - Hover State",
+      "url": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+      "delay": 1500,
+      "selectors": [
+        ".site-actions .row"
+      ],
+      "misMatchThreshold": 0.01,
+      "requireSameDimensions": true,
+      "hoverSelector": ".portletItem .action-item-contact",
+      "postInteractionWait": 500,
+      "requiresAuth": true,
+      "hideSelectors": [
+        ".oagbanner"
+      ]
+    },
+    {
+      "label": "Table of contents link - Hover State",
+      "url": "http://localhost:8080/oag/documentation/our-styles",
+      "delay": 1500,
+      "selectors": [
+        ".autotoc-nav"
+      ],
+      "misMatchThreshold": 0.01,
+      "requireSameDimensions": true,
+      "hoverSelector": "#autotoc-item-autotoc-0",
+      "postInteractionWait": 500,
+      "requiresAuth": true,
+      "hideSelectors": [
+        ".oagbanner"
+      ]
+    },
+    {
+      "label": "Heading Links - Hover State",
+      "url": "http://localhost:8080/oag/documentation/portlets-and-link-styles",
+      "delay": 1500,
+      "selectors": [
+        "h1 a"
+      ],
+      "misMatchThreshold": 0.01,
+      "requireSameDimensions": false,
+      "hoverSelectors": [
+        "h1 a"
+      ],
+      "postInteractionWait": 500,
+      "requiresAuth": true,
+      "hideSelectors": [
+        ".oagbanner"
+      ]
+    },
+    {
+      "label": "Buttons - Hover State",
+      "url": "http://localhost:8080/oag/@@test-rendering-cheatsheet",
+      "delay": 1500,
+      "selectors": [
+        "article#buttons"
+      ],
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": false,
+      "hoverSelectors": [
+        "button.btn-primary",
+        "button.btn-secondary",
+        "button.btn-success",
+        "button.btn-danger",
+        "button.btn-warning",
+        "button.btn-info",
+        "button.btn-light",
+        "button.btn-dark"
+      ],
+      "requiresAuth": true,
+      "hideSelectors": [
+        ".oagbanner"
+      ]
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/link_styles_bitmaps_reference_local",
+    "bitmaps_test": "backstop_data/link_styles_bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/link_styles_html_report",
+    "json_report": "backstop_data/link_styles_json_report"
+  },
+  "report": [
+    "browser",
+    "json"
+  ],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ],
+    "headless": true,
+    "ignoreHTTPSErrors": true
+  },
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false,
+  "misMatchThreshold": 0.1,
+  "requireSameDimensions": true,
+  "resembleOutputOptions": {
+    "errorColor": {
+      "red": 255,
+      "green": 0,
+      "blue": 255
+    },
+    "errorType": "movement",
+    "transparency": 0.3,
+    "ignoreAntialiasing": true
+  }
+}

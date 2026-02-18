@@ -1,0 +1,38 @@
+{
+  "validFeatures": [
+    "breadcrumbs",
+    "button-styles",
+    "calendar",
+    "collection",
+    "content",
+    "footer",
+    "hover",
+    "link-styles",
+    "navbar",
+    "navigation",
+    "navigation-tree",
+    "oag-styles",
+    "pagination",
+    "portlets",
+    "showcase",
+    "site-actions"
+  ],
+  "featureCounts": {
+    "link-styles": 22,
+    "oag-styles": 12,
+    "hover": 9,
+    "portlets": 6,
+    "showcase": 4,
+    "breadcrumbs": 2,
+    "button-styles": 2,
+    "calendar": 2,
+    "collection": 2,
+    "content": 2,
+    "footer": 2,
+    "navbar": 2,
+    "navigation": 2,
+    "navigation-tree": 2,
+    "pagination": 2,
+    "site-actions": 2
+  }
+}
