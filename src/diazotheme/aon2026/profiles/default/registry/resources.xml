@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="diazotheme.aon2026"
+>
+
+  <!-- AON2026 JavaScript Bundle -->
+  <records interface="plone.base.interfaces.resources.IBundleRegistry"
+           prefix="plone.bundles/aon2026-theme"
+  >
+    <value key="enabled">True</value>
+    <value key="jscompilation">++theme++aon2026/js/main.min.js</value>
+    <value key="last_compilation">2026-01-01 00:00:00</value>
+    <value key="compile">False</value>
+    <value key="depends">plone</value>
+    <value key="load_async">False</value>
+    <value key="load_defer">False</value>
+  </records>
+
+</registry>

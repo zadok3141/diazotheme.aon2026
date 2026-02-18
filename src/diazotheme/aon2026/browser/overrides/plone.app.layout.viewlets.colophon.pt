@@ -1,0 +1,77 @@
+<div id="portal-colophon"
+     i18n:domain="plone"
+>
+  <div class="colophonWrapper">
+    <ul>
+      <li class="hiddenStructure"
+          id="colophon-accessibility"
+      >
+        <a href="https://oag.parliament.nz/about-this-site/accessibility"
+           title="Accessibility"
+           i18n:ignore=""
+           i18n:ignore-attributes="title"
+        >accessibility</a>
+      </li>
+      <li id="colophon-address"
+          title="address"
+          i18n:ignore="title"
+      >
+            Office of the Auditor-General, 100 Molesworth Street, Thorndon, Wellington 6011 | +64&nbsp;4&nbsp;917&nbsp;1500 |
+        <span class="link-mailto"><a href="mailto:enquiry@oag.parliament.nz">enquiry@oag.parliament.nz</a></span>
+      </li>
+      <li id="colophon-copyright"
+          title="crown copyright"
+          i18n:ignore=""
+      ><a href="https://oag.parliament.nz/about-this-site/#copyright">&copy; crown copyright 2001-<span tal:define="
+                  now modules/DateTime/DateTime;
+                "
+                tal:content="now/year"
+          ></span></a>
+      </li></ul>
+    <ul class="oag-social"
+        id="document-actions-social"
+    >
+      <li id="document-actions-facebook">
+        <a href="https://facebook.com//auditorgeneralnz"
+           title="Follow us on Facebook"
+           i18n:ignore-attributes="title"
+        >
+          <span class="fab fa-facebook"></span>
+        </a>
+      </li>
+      <li id="document-actions-instagram">
+        <a href="https://www.instagram.com/auditorgeneralnz/"
+           title="Follow us on Instagram"
+           i18n:ignore-attributes="title"
+        >
+          <span class="fab fa-instagram">
+          </span>
+        </a>
+      </li>
+      <li id="document-actions-linkedin">
+        <a href="https://www.linkedin.com/company/oag-new-zealand/"
+           title="Follow us on LinkedIn"
+           i18n:ignore-attributes="title"
+        >
+          <span class="fab fa-linkedin"></span>
+        </a>
+      </li>
+      <li id="document-actions-oagrss">
+        <a href="https://oag.parliament.nz/atom.xml"
+           title="Subscribe to our RSS feed"
+           i18n:ignore-attributes="title"
+        >
+          <span class="fas fa-rss"></span>
+        </a>
+      </li>
+      <li id="document-actions-oagsubs">
+        <a href="https://oag.parliament.nz/contact-us/email-subs"
+           title="Subscribe to email updates"
+           i18n:ignore-attributes="title"
+        >
+          <span class="fas fa-envelope"></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

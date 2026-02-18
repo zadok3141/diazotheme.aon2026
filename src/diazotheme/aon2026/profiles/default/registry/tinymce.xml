@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<registry>
+  <records interface="plone.base.interfaces.ITinyMCESchema"
+           prefix="plone"
+  >
+
+    <value key="content_css"
+           purge="false"
+    >
+      <element>++theme++aon2026/tinymce/tinymce-formats.css</element>
+      <element>++theme++aon2026/tinymce/tinymce-ui-content.css</element>
+    </value>
+
+    <!-- Add Cite to block styles dropdown -->
+    <value key="block_styles"
+           purge="false"
+    >
+      <element>Cite|cite</element>
+    </value>
+
+    <!-- Add Maori language format to inline styles dropdown -->
+    <value key="inline_styles"
+           purge="false"
+    >
+      <element>Maori|maori</element>
+    </value>
+
+    <!-- Custom TinyMCE format definitions for maori and cite -->
+    <value key="formats"
+           purge="false"
+    >{
+    "maori": {
+        "inline": "span",
+        "attributes": {
+            "lang": "mi",
+            "xml:lang": "mi"
+        }
+    },
+    "cite": {
+        "block": "cite"
+    }
+}</value>
+
+  </records>
+</registry>

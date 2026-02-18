@@ -5,4 +5,16 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
+  <record field="allowed_sizes"
+          interface="Products.CMFPlone.interfaces.controlpanel.IImagingSchema"
+          name="plone.allowed_sizes"
+  >
+    <value purge="false">
+      <element>hp3 300:200</element>
+      <element>hp2 410:273</element>
+      <element>hpv 360:240</element>
+      <element>hplr 700:467</element>
+    </value>
+  </record>
+
 </registry>

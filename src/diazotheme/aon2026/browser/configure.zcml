@@ -22,4 +22,45 @@
       type="plone"
       />
 
+  <!-- Search section view and viewlet -->
+
+  <browser:page
+      name="search_section_view"
+      for="plone.app.contenttypes.interfaces.IDocument"
+      class=".common.SearchSectionView"
+      template="templates/document.pt"
+      permission="zope2.View"
+      layer="diazotheme.aon2026.interfaces.IBrowserLayer"
+      menu="plone_displayviews"
+      title="Search Section View"
+      />
+  <browser:menuItem
+      menu="plone_displayviews"
+      title="Search section view"
+      for="plone.app.contenttypes.interfaces.IDocument"
+      action="@@search_section_view"
+      layer="diazotheme.aon2026.interfaces.IBrowserLayer"
+      />
+
+  <browser:viewlet
+      name="search_section"
+      for="plone.app.contenttypes.interfaces.IDocument"
+      view=".common.SearchSectionView"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+      class=".viewlets.SearchSectionViewlet"
+      template="templates/searchsectionbox.pt"
+      permission="zope2.View"
+      layer="diazotheme.aon2026.interfaces.IBrowserLayer"
+      />
+
+  <!-- Override search results page so path querystring is forwarded correctly -->
+  <browser:page
+      name="search"
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      class="Products.CMFPlone.browser.search.Search"
+      template="templates/search.pt"
+      permission="zope2.View"
+      layer="diazotheme.aon2026.interfaces.IBrowserLayer"
+      />
+
 </configure>

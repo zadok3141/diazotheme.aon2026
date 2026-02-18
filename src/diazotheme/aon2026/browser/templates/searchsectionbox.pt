@@ -1,0 +1,65 @@
+<div class="d-flex flex-column position-relative"
+     id="portal-searchsection"
+     tal:define="
+       navigation_root_url view/navigation_root_url;
+     "
+     i18n:domain="plone"
+>
+
+  <form class="d-flex ${python: view.livesearch and 'pat-livesearch'} ${python: view.show_images and 'show_images'}"
+        id="searchSection_form"
+        action="@@search"
+        role="search"
+        tal:attributes="
+          action string:${navigation_root_url}/@@search;
+          data-pat-livesearch string:ajaxUrl:${navigation_root_url}/@@ajax-search;
+        "
+  >
+
+    <label class="hiddenStructure"
+           for="sectionSearchGadget"
+           i18n:translate="text_search"
+    >Search this section</label>
+
+    <div class="searchSection">
+      <input class="noborder"
+             id="searchbox_currentfolder_only"
+             name="path"
+             type="hidden"
+             tal:attributes="
+               value view/folder_path;
+             "
+      />
+    </div>
+    <input name="oagSearchReturn"
+           type="hidden"
+           tal:attributes="
+             value context/title|nothing;
+           "
+    />
+
+    <input class="searchField form-control me-2"
+           id="sectionSearchGadget"
+           name="SearchableText"
+           placeholder="Search section"
+           size="18"
+           title="Search Section"
+           type="text"
+           value=""
+           tal:attributes="
+             value request/form/SearchableText|nothing;
+           "
+           i18n:attributes="title title_search_site;
+                        placeholder title_search_site"
+    />
+
+    <button class="searchButton btn btn-primary"
+            type="submit"
+            i18n:translate="label_search"
+    >
+      Search
+    </button>
+
+  </form>
+
+</div>
