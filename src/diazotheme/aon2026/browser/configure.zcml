@@ -1,0 +1,25 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="diazotheme.aon2026"
+    >
+
+  <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
+  <include
+      package="z3c.jbot"
+      file="meta.zcml"
+      />
+  <browser:jbot
+      directory="overrides"
+      layer="diazotheme.aon2026.interfaces.IBrowserLayer"
+      />
+
+  <!-- Publish static files -->
+  <plone:static
+      directory="static"
+      name="diazotheme.aon2026"
+      type="plone"
+      />
+
+</configure>

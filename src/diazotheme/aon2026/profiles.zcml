@@ -1,0 +1,32 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="diazotheme.aon2026"
+    >
+
+  <genericsetup:registerProfile
+      name="default"
+      title="OAG Intranet Theme: Install"
+      description="Package to configure a new OAG Intranet Theme site"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/default"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="OAG Intranet Theme: Uninstall"
+      description="Uninstall OAG Intranet Theme setup."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/uninstall"
+      />
+
+  <!-- Hide Uninstall Profile-->
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="diazotheme.aon2026"
+      />
+
+
+  <include package=".upgrades" />
+
+</configure>
