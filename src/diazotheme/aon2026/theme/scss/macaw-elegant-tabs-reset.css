@@ -1,0 +1,22 @@
+/*
+--------
+* Global VARS
+--------
+*/
+:root {
+  --macaw-heading-font-family: "Ubuntu", sans-serif;
+  --macaw-body-font-family: "Oxygen", sans-serif;
+  --macaw-code-font-family: "menlo", "monaco", "consolas", "Courier New", "monospace";
+  --macaw-skobeloff-color: #156064;
+  --macaw-warm-black-color: #10474a;
+  --macaw-black-color: #000;
+  --macaw-white-color: #fff;
+  --macaw-blue-color: #226ce0;
+  --macaw-gold-color: #e9b872;
+  --macaw-body-bg-color: var(--macaw-skobeloff-color);
+  --macaw-body-text-color: var(--macaw-white-color);
+  --macaw-link-text-color: var(--macaw-gold-color);
+  --macaw-code-bg-color: var(--macaw-black-color);
+  --macaw-code-text-color: var(--macaw-white-color);
+  --macaw-hr-border-color: var(--macaw-warm-black-color);
+}

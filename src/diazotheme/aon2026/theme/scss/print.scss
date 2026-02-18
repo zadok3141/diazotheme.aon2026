@@ -1,0 +1,7 @@
+@media print {
+    #portal-searchsection, #portal-column-one, #portal-column-two, #section-next-prev {
+        display: none;
+        visibility: hidden;
+    }
+
+}

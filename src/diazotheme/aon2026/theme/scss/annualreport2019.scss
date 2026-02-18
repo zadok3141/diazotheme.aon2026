@@ -1,0 +1,102 @@
+// 2019 Annual Report Customizations
+// Converted from LESS to Sass
+
+// Import variables from the main theme
+
+// Report-specific variables
+$oag-report-color: #60766F; // Pantone 5545 U
+$oag-report-th-bg-color: #cadad2;
+$oag-report-td-bg-color: #e3ede8;
+$oag-font-oversized: math.floor(b.$font-size-base * 3.7);
+
+
+// Landing page
+.section-2019.subsection-annual-report-index {
+    div.outer-wrapper {
+        background: rgb(255,255,255);
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(202,218,210,1) 100%);
+    }
+    footer#portal-footer-wrapper {
+        background: rgba(202,218,210,1);
+    }
+
+    article header {
+      display: none;
+      }
+
+    .ar-title,
+    .ar-reports,
+    .ar-numbers1,
+    .ar-numbers2,
+    .ar-toc {
+        border-top: 2px dashed $oag-black;
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+
+    .ar-toc {
+        a {
+            font-size: b.$h1-font-size;
+            font-weight: b.$font-weight-bold;
+            line-height: 1.25;
+        }
+    }
+
+    .ar-numbers1l {
+        border-right: 2px dashed $oag-black;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    h2 {
+        font-size: $oag-font-oversized;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    h3 {
+        font-size: b.$h2-font-size;
+        color: $oag-black;
+        margin-top: 11px;
+    }
+
+    .number-highlight {
+        font-size: b.$h1-font-size;
+        font-weight: b.$font-weight-bold;
+        line-height: 1.25;
+    }
+
+    .ar-reports {
+        p {
+            white-space: pre-line;
+            padding-top: 2em;
+        }
+        img {
+            padding-right: 2em;
+        }
+    }
+
+    .ar-numbers1  {
+        p {
+            white-space: pre-line;
+            text-align: center;
+            margin: 2rem auto 0 auto;
+            width: 35%;
+        }
+    }
+
+    .ar-numbers1r {
+        div {
+            margin-bottom: 4rem;
+        }
+    }
+
+    .ar-numbers2 {
+        img {
+            width: 200px;
+        }
+    }
+
+}

@@ -1,0 +1,42 @@
+/* Replace old callout style with Bootstrap 5 light alert style */
+.callout {
+        --bs-alert-color: var(--bs-light-text-emphasis);
+        --bs-alert-bg: var(--bs-light-bg-subtle);
+        --bs-alert-border-color: var(--bs-light-border-subtle);
+        --bs-alert-link-color: var(--bs-light-text-emphasis);
+        --bs-alert-margin-bottom: 1rem;
+        --bs-alert-border: var(--bs-border-width) solid var(--bs-alert-border-color);
+        --bs-alert-border-radius: var(--bs-border-radius);
+        position: relative;
+        padding: 1rem 1rem;
+        margin-top: var(--bs-alert-margin-bottom);
+        margin-bottom: var(--bs-alert-margin-bottom);
+        color: var(--bs-alert-color);
+        background-color: var(--bs-alert-bg);
+        border: 3px solid var(--bs-alert-border-color);
+        border-radius: 0.25rem;
+        animation-fill-mode: forwards !important;
+        animation-delay: 1s !important;
+        animation: 1.5s ease-in alert-animation;
+        a {
+            font-weight: 700;
+            position: relative;
+            text-decoration-line: none;
+            color: var(--bs-alert-color);
+
+
+            font-weight: 700;
+            color: var(--bs-alert-link-color);
+            &::after {
+                content: '';
+                position: absolute;
+                height: 2px;
+                left: 0px;
+                bottom: 0px;
+                background-color: var(--bs-alert-color);
+                animation: 1.6s ease-in alert-link-animation;
+                animation-delay: 3s;
+                animation-fill-mode: forwards;
+            }
+        }
+}

@@ -1,0 +1,1139 @@
+// Setup
+
+// @mosaic-font-size-base: 15px;
+// @mosaic-font-size-headline: floor((@mosaic-font-size-base * 3.5)); // 63px italic
+// @mosaic-font-size-title: floor((@mosaic-font-size-base * 2)); // 36px bold
+// @mosaic-font-size-subtitle: floor((@mosaic-font-size-base * 1.6)); // 32px
+// @mosaic-font-size-intro: floor((@mosaic-font-size-base * 1.5)); // 27px
+// @mosaic-font-size-body: @mosaic-font-size-base; // 18px
+
+// @mosaic-color-title: @oag-bark;
+// @mosaic-color-intro: @oag-black;
+// @mosaic-color-body: @oag-black;
+$mosaic-color-title: $oag-bark;
+$mosaic-color-intro: $oag-black;
+$mosaic-color-body: $oag-black;
+
+// // Image ratios are 1.5
+// @mosaic-3p-img-width: 300px; // hp3 300:200
+// @mosaic-2p-img-width: 410px; // hp2 410:273
+// @mosaic-2p-img-height: 273px;
+// @mosaic-vp-img-width: 360px; // hpv 360:240
+// @mosaic-lr-img-width: 700px; // hplr 700:468
+$mosaic-3p-img-width: 300px; // hp3 300:200
+$mosaic-2p-img-width: 410px; // hp2 410:273
+$mosaic-2p-img-height: 273px;
+$mosaic-vp-img-width: 360px; // hpv 360:240
+$mosaic-lr-img-width: 700px; // hplr 700:468
+
+// // Home page specific settings
+// @hp-font-size-base: 15px;
+// @hp-bg-color: #eef3f9;
+$hp-bg-color: #eef3f0;
+
+body.section-home {
+    // @mosaic-font-size-base: @hp-font-size-base;
+    // @mosaic-font-size-headline: floor((@hp-font-size-base * 3.5)); // 52px italic
+    // @mosaic-font-size-banner-headline: floor((@hp-font-size-base) * 3.2667); // 49px
+    // @mosaic-font-size-title: floor((@hp-font-size-base * 2)); // 30px bold
+    // @mosaic-font-size-subtitle: floor((@hp-font-size-base * 1.6)); // 24px
+    // @mosaic-font-size-intro: floor((@hp-font-size-base * 1.5)); // 22px
+    // @mosaic-font-size-banner-sml: floor((@hp-font-size-base * 1.25)); // 18px
+    // @mosaic-font-size-body: @hp-font-size-base; // 16px
+
+    .plone-breadcrumb {
+        margin-bottom: 0;
+    }
+
+    // Homepage banner tile. Do not use anywhere but on the homepage
+
+    .mosaic-oaghpbanner-tile {
+        // stops multiple banners overlapping on page
+        position: relative;
+    }
+
+    .hpbanner {
+        background-size: contain;
+        width: 100%;
+        aspect-ratio: 3.53;
+        background-repeat: no-repeat ;
+        background-image: url('++theme++oag2025/static/img/banner-default.png');
+    }
+    .hpbanner-text {
+        position: absolute;
+        top: 0;
+        padding-top: 3%;
+        max-width: 55vw;
+    }
+    .hpbanner-h1 {
+        margin-left: calc(100vw * .17);
+        padding-bottom: 0.5em;
+        //font-size: @mosaic-font-size-banner-headline;
+        color: white;
+        line-height: 1.2;
+        a {
+            color: #ade5ff;
+    }
+    .hpbanner-p {
+        margin-left: calc(100vw * .17);
+        //font-size: @mosaic-font-size-intro;
+        color: white;
+        line-height: 1.4;
+        a {
+            color: #ade5ff;
+        }
+    }
+    @include b.media-breakpoint-down(lg) {
+        .hpbanner {
+            background-image: url('++theme++oag2025/static/img/banner-default.png');;
+        }
+        .hpbanner-text {
+            position: static;
+            padding-top: 0;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            max-width: none;
+        }
+        .hpbanner-h1 {
+            padding-top: 1em;
+        }
+        .hpbanner-h1, .hpbanner-p {
+            color: $mosaic-color-body;
+            margin-left: 0;
+            text-align: center;
+            a {
+                color: b.$plone-link-color;
+            }
+        }
+    }
+    @include b.media-breakpoint-down(sm) {
+        .hpbanner-h1 {
+            // font-size: @mosaic-font-size-title;
+        }
+        .hpbanner-p {
+            // font-size: @mosaic-font-size-banner-sml;
+        }
+    }
+
+    // Video tile
+    .hpvideo-p {
+        // font-size: @mosaic-font-size-body;
+    }
+
+    // Three portlets tile
+    .hp3portlets-h2 {
+        // font-size: @mosaic-font-size-title;
+    }
+    .hp3portlets-h3 {
+        // font-size: @mosaic-font-size-subtitle;
+    }
+    .hp3portlets-p {
+        p {
+            // font-size: @mosaic-font-size-body;
+        }
+    }
+
+    // Two portlets tile
+    .hp2portlets-h3 {
+        // font-size: @mosaic-font-size-subtitle;
+    }
+    .hp2portlets-p {
+        p {
+            // font-size: @mosaic-font-size-body;
+        }
+    }
+
+    // Six portlets tile
+    .hp6portlets-h2 {
+        // font-size: @mosaic-font-size-title;
+    }
+    .hp6portlets-h3 {
+            // font-size: @mosaic-font-size-subtitle;
+    }
+    .hp6portlets-p {
+        p {
+            // font-size: @mosaic-font-size-body;
+        }
+    }
+
+    // Three Vertical portlets tile
+    .hp3verticals-h2 {
+        // font-size: @mosaic-font-size-title;
+    }
+    .hp3verticals-h3 {
+            // font-size: @mosaic-font-size-subtitle;
+    }
+    .hp3verticals-p {
+        p {
+            // font-size: @mosaic-font-size-body;
+        }
+    }
+
+    // Social media tile doesnt need adapting (FontAwesome sizes)
+
+    // Image left and image right tiles
+    .lilportlets, .rilportlets {
+        // font-size: @mosaic-font-size-body;
+    }
+    .lilportlets-h2, .rilportlets-h2 {
+            // font-size: @mosaic-font-size-subtitle;
+    }
+    .lilportlets-p, .rilportlets-p {
+        p {
+            // font-size: @mosaic-font-size-body;
+        }
+    }
+
+    // Values tile
+    .valuestile-h2 {
+        // font-size: @mosaic-font-size-title;
+        line-height: b.$line-height-base;
+    }
+    .macaw-tabs.macaw-elegant-tabs {
+        .valuestile-h3 {
+            // font-size: @mosaic-font-size-subtitle;
+            line-height: b.$line-height-base;
+        }
+        .valuestile-p {
+            // font-size: @mosaic-font-size-body;
+        }
+    }
+
+    // Thin banner doesn't need adapting (won't be used on Homepage)
+
+    // Rich text tile
+    .mosaic-IRichTextBehavior-text-tile {
+        // font-size: @mosaic-font-size-body;
+    }
+}
+}
+
+// Full width layout
+
+body.fullwidth_mosaic_layout {
+    #content {
+        max-width: 100%;
+        margin-bottom: 0;
+    }
+    .mosaic-width-full {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .plone-breadcrumb {
+        // margin-bottom: 0;
+    }
+    // No top or bottom padding here so consecutive banner images
+    // are continuous.
+    .mosaic-grid-row {
+        //	padding-bottom: 1.5em;
+    }
+    div.mosaic-grid-row:nth-of-type(even) {
+        background-color: $hp-bg-color;
+        a {
+            color: b.$plone-link-color-on-grey;
+        }
+    }
+    #portal-footer-wrapper {
+        padding-top: 0;
+    }
+    .mosaic-grid-cell {
+        a {
+            border-bottom: 1px solid transparent;
+        }
+        a:hover {
+            text-decoration-line: none;
+            border-bottom: 1px solid b.$plone-link-color;
+        }
+    }
+}
+
+// General layout
+
+.mosaic-tile {
+	padding-bottom: 1.5em;
+}
+
+.mosaic-position-leftmost {
+    padding-left: 0;
+}
+
+// Read more button links
+    a.readmore {
+        border-bottom: none;
+    }
+    a.readmore:hover {
+        text-decoration-line: none;
+        border-bottom: 1px solid b.$plone-link-color;
+    }
+
+// Random banner tile
+
+span.oagbanner img {
+    aspect-ratio: 5.2;
+    width: 100%
+}
+
+h1.oagbannerheading {
+    background-color: b.$breadcrumb-bg;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-weight: b.$font-weight-normal;
+    font-size: b.$font-size-base;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: $oag-bark;
+}
+
+@include b.media-breakpoint-down(lg) {
+    h1.oagbannerheading {
+        // font-size: @mosaic-font-size-body;
+        padding: 0.75em b.$grid-gutter-width;
+    }
+}
+
+@include b.media-breakpoint-down(sm) {
+    span.oagbanner img {
+        aspect-ratio: 2.19;
+    }
+    span.oagshortened {
+        display: none;
+    }
+}
+
+// Video tile
+
+$homepage-video-width: 512px !default;
+$homepage-video-height: 288px !default;
+
+.mosaic-oaghpvideo-tile>.mosaic-tile-content {
+    padding-top: math.div((math.div($homepage-video-height, 0.7)-$homepage-video-height), 2);
+    padding-bottom: math.div((math.div($homepage-video-height, 0.7)-$homepage-video-height), 2);
+}
+.hpvideo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+}
+.hpvideo-v {
+    width: $homepage-video-width;
+    height: $homepage-video-height;
+}
+.hpvideo-p {
+    margin-top: 1rem;
+    // font-size: @mosaic-font-size-body;
+    color: $mosaic-color-body;
+    width: $homepage-video-width;
+    max-width: 100%;
+}
+@include b.media-breakpoint-down(sm) {
+    $homepage-video-width: 256px;
+    $homepage-video-height: 144px;
+
+    .mosaic-oaghpvideo-tile>.mosaic-tile-content {
+        padding-top: math.div((math.div($homepage-video-height, 0.7) - $homepage-video-height), 2);
+        padding-bottom: math.div((math.div($homepage-video-height, 0.7) - $homepage-video-height), 2);
+    }
+    .hpvideo-v {
+        width: $homepage-video-width;
+        height: $homepage-video-height;
+    }
+    .hpvideo-p {
+        width: $homepage-video-width;
+    }
+}
+@include b.media-breakpoint-up(md) {
+    $homepage-video-width: 970px;
+    $homepage-video-height: 546px;A
+
+    .mosaic-oaghpvideo-tile>.mosaic-tile-content {
+        padding-top: math.div((math.div($homepage-video-height, 0.7) - $homepage-video-height), 2);
+        padding-bottom: math.div((math.div($homepage-video-height, 0.7) - $homepage-video-height), 2);
+    }
+    .hpvideo-v {
+        width: $homepage-video-width;
+        height: $homepage-video-height;
+    }
+    .hpvideo-p {
+        width: $homepage-video-width;
+    }
+}
+
+
+// Three portlets tile
+
+.hp3portlets-container {
+    padding-top: 1.5em;
+    margin: 0 b.$grid-gutter-width;
+}
+.hp3portlets {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.5em;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.hp3portlets-h2 {
+    // font-size: @mosaic-font-size-title;
+    color: $mosaic-color-title;
+    font-weight: b.$font-weight-bold;
+    text-align: center;
+    margin-bottom: calc(b.$line-height-base * 2);
+    line-height: b.$line-height-base;
+}
+.hp3portlets-h3 {
+    width: $mosaic-3p-img-width;
+    p {
+        // font-size: @mosaic-font-size-subtitle;
+        font-weight: b.$font-weight-bold;
+        color: $mosaic-color-intro;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+.hp3portlets-p {
+    width: $mosaic-3p-img-width;
+    p {
+        // font-size: @mosaic-font-size-body;
+        color: $mosaic-color-body;
+    }
+}
+.section-reports, .section-good-practive {
+    .hp3portlets {
+        margin-left: 15px;
+    }
+}
+.hp3portlets-tweet {
+    p {
+        margin-left: 10px;
+        margin-top: 0;
+    }
+}
+@include b.media-breakpoint-down(md) {
+    .hp3portlets {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hp3portlet  {
+        margin-bottom: 2.5em;
+    }
+}
+@include b.media-breakpoint-between(md, xl) {
+    .section-reports, .section-good-practice {
+        .hp3portlets-p, .hp3portlets-h3 {
+            width:  230px;
+        }
+    }
+}
+
+
+// Two portlets tile
+
+.hp2portlets {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+}
+.hp2portlets-h3 {
+    width: $mosaic-2p-img-width;
+    // font-size: @mosaic-font-size-subtitle;
+    font-weight: b.$font-weight-bold;
+    color: $mosaic-color-intro;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: b.$line-height-base;
+}
+.hp2portlets-p {
+    width: $mosaic-2p-img-width;
+    p {
+        // font-size: @mosaic-font-size-body;
+        color: $mosaic-color-body;
+    }
+}
+.hp2portlets-v {
+    width: $mosaic-2p-img-width;
+    height: $mosaic-2p-img-height;
+}
+@include b.media-breakpoint-down(md) {
+    .hp2portlets {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hp2portlet  {
+        margin-bottom: 2.5em;
+    }
+}
+@include b.media-breakpoint-down(sm) {
+    .hp2portlet{
+        width: 256px;
+    }
+    .hp2portlets-v {
+        width: 256px;
+        height: 144px;
+    }
+    .hp2portlets-p, .hp2portlets-h3 {
+        width: 256px;
+    }
+    .hp2portlet img {
+        width: 256px;
+    }
+}
+
+
+// Six portlets tile
+
+.hp6portlets {
+    padding-bottom: 1.5em;
+}
+.hp6portlets-row {
+    display: flex;
+    justify-content: space-around;
+}
+.hp6portlet {
+    border-top: 1px solid b.$gray-400;
+    padding-top: 1.5em;
+    padding-bottom: 2em;
+}
+.hp6portlets-h2 {
+    // font-size: @mosaic-font-size-title;
+    color: $mosaic-color-title;
+    font-weight: b.$font-weight-bold;
+    text-align: center;
+    margin-bottom: calc(b.$line-height-base * 2);
+    padding-top: 1.5em;
+    line-height: b.$line-height-base;
+}
+.hp6portlets-h3 {
+    width:550px;
+    // font-size: @mosaic-font-size-subtitle;
+    color: $mosaic-color-intro;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: b.$line-height-base;
+}
+.hp6warning {
+    width: 550px;
+}
+.hp6portlets-p {
+    width: 550px;
+    p {
+        // font-size: @mosaic-font-size-body;
+        color: $mosaic-color-body;
+    }
+}
+@include b.media-breakpoint-down(lg) {
+    .hp6portlets-h3, .hp6portlets-p, .hp6warning {
+        width: 320px;
+    }
+}
+@include b.media-breakpoint-down(md) {
+    .hp6portlets {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hp6portlets-h3, .hp6portlets-p, .hp6warning {
+        width: 300px;
+    }
+}
+@media (max-width: 640px) {
+    .hp6portlets-row {
+        flex-direction: column;
+        align-items:center;
+    }
+}
+
+
+// Three Vertical portlets tile
+
+.hp3verticals {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+}
+.hp3vertical{
+    display: flex;
+    max-width: 900px;
+    margin-bottom: 1.5em;
+}
+.hp3verticals-right {
+    margin-left: 2.5em;
+}
+.hp3verticals-h2 {
+    // font-size: @mosaic-font-size-title;
+    color: $mosaic-color-title;
+    font-weight: b.$font-weight-bold;
+    text-align: center;
+    margin-bottom: calc(b.$line-height-base * 2);
+}
+.hp3verticals-h3 {
+    // font-size: @mosaic-font-size-subtitle;
+    font-weight: b.$font-weight-bold;
+    color: $mosaic-color-intro;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem;
+    line-height: b.$line-height-base;
+}
+.hp3verticals-p {
+    p {
+        // font-size: @mosaic-font-size-body;
+        color: $mosaic-color-body;
+    }
+}
+@include b.media-breakpoint-down(md) {
+    .hp3vertical {
+        width: 700px;
+    }
+}
+@include b.media-breakpoint-down(sm) {
+    .hp3verticals-right {
+        margin-left: 0;
+    }
+    .hp3vertical {
+        flex-direction: column;
+        width: $mosaic-vp-img-width;
+        padding-left: 6.25%;
+        padding-right: 6.25%;
+    }
+}
+@media (max-width: 340px) {
+    .hp3vertical {
+        padding-left:0;
+        padding-right:0;
+    }
+}
+
+
+
+// Feedback tile
+// css is duplicated from mosaic.scss so is in twice until we retire mosaic
+
+.mosaic-oaghpfeedback-tile {
+    background-color: b.$body-bg;
+    padding-bottom: 3em;
+    margin-bottom: -1.5em;
+}
+.hpfeedback {
+    width: 100%;
+    background-color: $oag-bark;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hpfeedback div {
+    margin: auto;
+    width: 66%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+.hpfeedback-b {
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 0 !important;
+}
+.hpemailsub-b {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 229px;
+    border-bottom: 0 !important;
+}
+.hppagetop-b {
+    float:right;
+    margin-top: -50px;
+    margin-right: 15px;
+    border-bottom: 0 !important;
+}
+@include b.media-breakpoint-down(md) {
+    .hppagetop-b {
+        margin-top: -23px;
+        img {
+            width: 42px;
+            height: 42px;
+        }
+    }
+}
+@include b.media-breakpoint-down(sm) {
+    .hppagetop-b {
+        margin-top: -10px;
+        img {
+        width: 29px;
+        height: 29px;
+        }
+    }
+}
+
+// Social media tile
+// Duplicated outside mosaic in oag2025.scss
+
+#hpsocial {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-top: 1em;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    li a {
+        // font-size: calc(@mosaic-font-size-headline / 2);
+    }
+}
+.hpsocial {
+    margin-top: 2em;
+}
+#hpsocial-facebook,
+#hpsocial-linkedin,
+#hpsocial-instagram,
+#hpsocial-oagrss,
+#hpsocial-oagsubs,
+#hpsocial-sharing,
+#hpsocial-feedback {
+    a {
+        border-bottom-width: 0;
+    }
+}
+@include b.media-breakpoint-down(sm) {
+    #hpsocial {
+        width: 100%;
+        li a {
+            // font-size: @mosaic-font-size-title;
+        }
+    }
+}
+
+
+// Image left and image right tiles
+
+.lilportlets, .rilportlets {
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding: 1.5em b.$grid-gutter-width;
+    // font-size: @mosaic-font-size-body;
+    scroll-snap-type: y mandatory;
+}
+.lilportlets-h2, .rilportlets-h2 {
+        // font-size: @mosaic-font-size-subtitle;
+        font-weight: b.$font-weight-bold;
+        color: $mosaic-color-intro;
+        margin-bottom: 1rem;
+        line-height: b.$line-height-base;
+}
+.lilportlets-p, .rilportlets-p {
+    p {
+        // font-size: @mosaic-font-size-body;
+        color: $mosaic-color-body;
+    }
+}
+
+.lilportlets-h2, .lilportlets-p {
+    margin-left: 2rem;
+}
+.rilportlets-h2, .rilportlets-p {
+    margin-right: 2rem;
+}
+.lilportlet, .rilportlet {
+    width: 50%;
+    max-width: $mosaic-lr-img-width;
+    img {
+        aspect-ratio: 1.5;
+    }
+}
+.lilportlet-v, .rilportlet-v {
+    width: 100%;
+    aspect-ratio: 16 /9;
+}
+.rilportlet img {
+    padding-left: 2em;
+}
+@include b.media-breakpoint-down(md) {
+    .lilportlets, .rilportlets {
+        flex-wrap: wrap;
+    }
+    .lilportlet, .rilportlet {
+        width: 100%;
+    }
+    .lilportlet img {
+        margin-bottom: 1em;
+    }
+}
+
+
+// Nav bar tile
+
+.navbartile {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: -6px;
+    margin-bottom: 0;
+    padding-left: calc(b.$grid-gutter-width );
+    li {
+        padding-left: calc(b.$grid-gutter-width / 2 );
+        padding-right: calc(b.$grid-gutter-width / 2 );
+        margin-right: calc(b.$grid-gutter-width / 2 );
+        &.navbarsection {
+            padding-top: 0.7em;
+            padding-bottom: 0.7em;
+        }
+    }
+}
+
+
+// Values tile
+.valuestile-h2 {
+    max-width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    // font-size: @mosaic-font-size-title;
+    color: $mosaic-color-title;
+    font-weight: b.$font-weight-bold;
+    text-align: center;
+    margin-bottom: calc(b.$line-height-base * 2);
+    padding-top: 1.5em;
+}
+
+.macaw-tabs.macaw-elegant-tabs {
+    max-width: 80vw;
+    border-bottom: 2px solid $oag-bark;
+    padding-bottom: 0;
+    margin-bottom: 1.5em;
+    .valuestile-h3 {
+        // font-size: @mosaic-font-size-subtitle;
+        font-weight: b.$font-weight-bold;
+        margin-left: 3%;
+        padding-top: 16px;
+        max-width: 66vw;
+    }
+    .valuestile-p {
+        // font-size: @mosaic-font-size-body;
+        margin-left: 3%;
+        max-width: 66vw;
+        padding-bottom: 16px;
+    }
+}
+.macaw-tabs.macaw-elegant-tabs > [role=tabpanel] > * {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.macaw-tabs.macaw-elegant-tabs > [role=tabpanel]:focus {
+    margin-bottom: -6px;
+    border-bottom: 8px solid $oag-teal;
+}
+.macaw-tabs.macaw-elegant-tabs {
+    border-right: none;
+}
+.macaw-tabs.macaw-elegant-tabs > [role=tablist] > * {
+    border-right: none;
+    border-radius: 0;
+}
+.macaw-tabs.macaw-elegant-tabs > [role=tablist] > [role=tab] {
+    border-bottom: 2px solid $oag-teal;
+    padding-bottom: 1.875rem;
+}
+.macaw-tabs.macaw-elegant-tabs > [role=tablist] > [role=tab][area-selected=true] {
+    border-bottom: 8px solid $oag-teal;
+}
+@media only screen and (min-width: 1260px) {
+    .macaw-tabs.macaw-elegant-tabs {
+        max-width: 80vw;
+    }
+}
+@media only screen and (max-width: 575px) {
+    .macaw-tabs.macaw-elegant-tabs > [role=tabpanel] {
+        margin-bottom: 8px;
+    }
+    .macaw-tabs.macaw-elegant-tabs > [role=tabpanel]:focus {
+        margin-bottom: 0;
+    }
+    .macaw-tabs.macaw-elegant-tabs.vertical > [role=tablist] > [role=tab] .label {
+        display: block;
+    }
+    .macaw-tabs.macaw-elegant-tabs > [role=tablist] > [role=tab] {
+        border-bottom: none;
+    }
+}
+
+
+// Thin banner tiles
+
+// Not padding between thinbanner and following tile which is always
+// a reportnav tile
+.mosaic-tile.mosaic-oagthinbanner-tile {
+  margin-top: -2rem;
+    padding-bottom: 0;
+}
+// but if the thinbanner and reportnav tiles are in the same row, we
+// do want padding
+// .mosaic-grid-cell:has(.mosaic-oagannualreportnav-tile) {
+//     padding-bottom: 1.5em;
+// }
+
+
+
+.thinbanner {
+    background-size: contain;
+    width: 100%;
+    aspect-ratio: 19.21;
+    background-repeat: no-repeat ;
+    background-image: url('++theme++oag2025/static/img/thinbanner-default.png');
+    background-position: right;
+    background-color: $oag-bottle;
+}
+.thinbanner-text {
+    position: absolute;
+    top: -2rem;
+    max-width: 50vw;
+}
+.thinbanner-h1 {
+    margin-left: b.$grid-gutter-width;
+    font-size: b.$h2-font-size;
+    // font-size: @mosaic-font-size-intro;
+    line-height: 1.4;
+    margin-top: 2%;
+    p {
+        margin: 0;
+    }
+}
+@include b.media-breakpoint-down(xl) {
+.thinbanner-text {
+  top: -2.5rem;
+  }
+}
+@include b.media-breakpoint-down(lg) {
+.thinbanner-text {
+  top: -2.5rem;
+  }
+.thinbanner-h1 {
+  font-size: b.$h4-font-size;
+  }
+}
+@include b.media-breakpoint-down(md) {
+.thinbanner-text {
+  top:-2rem;
+  }
+    .thinbanner-h1 {
+        margin-top: 0;
+        font-size: b.$h5-font-size;
+    }
+}
+@include b.media-breakpoint-down(sm) {
+    .thinbanner {
+        min-height: 39px;
+        background-size: cover;
+    }
+    .thinbanner-text {
+        max-width: 100%;
+    }
+    .thinbanner-h1 {
+        // font-size: @mosaic-font-size-body;
+        margin-top: 2%;
+    }
+}
+
+
+// Plain Heading tile (Dublin core, built-in)
+
+.mosaic-IDublinCore-title-tile {
+    background-color: b.$body-bg;
+    h1 {
+        // font-size: @mosaic-font-size-title;
+        padding-left: b.$grid-gutter-width;
+        margin-top: calc(b.$line-height-base / 2) !important;
+    }
+}
+
+
+// Document description tile(Dublin cor, built-in)
+
+.mosaic-IDublinCore-description-tile {
+    padding-left: b.$grid-gutter-width;
+    padding-right: b.$grid-gutter-width;
+}
+
+.mosaic-tile-content div.documentDescription {
+    font-size: 20px;
+    color: $oag-black;
+    font-weight: normal;
+    padding-top: 0.75em;
+}
+
+// Rich text tile
+
+.mosaic-IRichTextBehavior-text-tile, .mosaic-plone\.app\.standardtiles\.html-tile {
+    background-color: b.$body-bg;
+    padding-left: b.$grid-gutter-width;
+    padding-right: b.$grid-gutter-width;
+    // font-size: @mosaic-font-size-body;
+    padding-top: 1.5em;
+}
+
+
+// page header left margins
+
+#portal-breadcrumbs .container-fluid {
+    padding-left: b.$grid-gutter-width;
+}
+
+// Iframe tile
+
+#iframetile {
+    aspect-ratio: 1.78;
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// Mosaic view
+// Content stretches to screen width on mosaic pages
+// (Normally restricted to 900px for comfortable reading)
+body.mosaic-grid {
+    article#content {
+        max-width: none;
+    }
+}
+
+// color variants for tiles and navigation view.
+// Set background and link colours here (and text colour?)
+
+// default @oag-bottle
+// /2022/annual-report-2021-22 uses the default
+
+// No alternate coloured background for tile rows in the annual report
+body.subsection-annual-report-2021-22 {
+    div.mosaic-grid-row:nth-of-type(odd) {
+        background-color: transparent;
+    }
+    div.mosaic-grid-row:nth-of-type(even) {
+        background-color: transparent;
+    }
+    .plone-breadcrumb {
+        margin-bottom: 0;
+    }
+    main#main-container {
+        margin-top : 0;
+    }
+    .contentlisting-tile .card-header {
+      background: $oag-bottle;
+      a {
+        color: white;
+        }
+      }
+}
+
+.navbartile {
+    background-color: $oag-bottle;
+    li {
+        &.currentnavbarsection {
+            background-color: darken($oag-bottle, 15%);
+            a {
+                color: white !important;
+            }
+        }
+        a {
+            color: white !important;
+        }
+    }
+}
+
+.thinbanner-h1 { // thin banner background is in background image
+    color: white;
+    a {
+        color: #ade5ff;
+    }
+}
+
+.mosaic-tile-content #accordion {
+    .portletHeader {
+        background-color: $oag-bottle;
+        > a {
+            border-bottom: 0;
+            color: white;
+            &:hover {
+                color: white !important;
+                border-bottom: 1px solid b.$gray-400;
+            }
+        }
+    }
+}
+
+// /2023/annual-report
+body.section-2023.subsection-annual-report {
+  .thinbanner {
+  background-image: url('++theme++oag2025/static/img/moss-banner.png');
+  background-color: $oag-moss;
+}
+    div.mosaic-grid-row:nth-of-type(even) {
+        background-color: transparent;
+    }
+    .plone-breadcrumb {
+        margin-bottom: 0;
+    }
+    main#main-container {
+        margin-top : 0;
+    }
+    // No alternate coloured background for tile rows in the annual report
+    div.mosaic-grid-row:nth-of-type(odd) {
+        background-color: transparent;
+    }
+
+    .navbartile {
+        background-color: $oag-moss;
+        li {
+            &.currentnavbarsection {
+                background-color: darken($oag-moss, 15%);
+            }
+        }
+    }
+
+    .mosaic-tile-content #accordion {
+        .portletHeader {
+            background-color: $oag-moss;
+        }
+    }
+
+    thead {
+        background-color: $oag-moss;
+        th {
+            color: white;
+        }
+    }
+}
+
+
+
+
+// Testing
+body.userrole-authenticated {
+.mosaic-grid-row {
+    border: 2px solid red;
+}
+.mosaic-tile {
+    border: 2px solid blue;
+}
+.mosaic-grid-cell {
+    border: 2px solid yellow;
+}
+}
+
+// .mosaic-grid-row:last-of-type {
+//     padding-bottom: 0;
+// }

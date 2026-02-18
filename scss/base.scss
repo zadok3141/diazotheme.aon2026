@@ -1,0 +1,16 @@
+// Use this file as base for base styling
+// for example to use with backend.xml
+
+// Bootstrap - imported with --load-path=node_modules
+@import "bootstrap/scss/bootstrap";
+
+// Plone backend or minimal styles
+@import "alerts";
+@import "forms";
+@import "collapsible";
+@import "controlpanels";
+@import "login";
+@import "toolbar";
+@import "grid";
+@import "content_base";
+@import "content_tables";

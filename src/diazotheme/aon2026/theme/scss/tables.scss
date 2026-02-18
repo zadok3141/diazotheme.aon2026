@@ -1,0 +1,33 @@
+// First, make sure our old styles using the bootstrap default .table class
+
+table.listing, table.plain, table.invisible, table.grid, table.vertical {
+    @extend .table;
+    }
+
+
+// No zebra striping for .vertical
+table.vertical > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-color-type: var(--bs-table-color);
+  --bs-table-bg-type: var(--bs-body-bg);
+}
+
+// override barceloneta plain bordering
+  table.plain  > :not(caption) > * {
+    border-width: 0 0;
+    > * {
+      border-width: 0 0;
+      }
+    }
+
+// Text align right for .grid
+table.grid > tbody > tr > td {
+  text-align: right;
+  }
+
+// Override bootstrap invisible style
+table.invisible {
+    visibility: visible !important;
+    > :not(caption) > * > * {
+      border-bottom-width: 0;
+      }
+}

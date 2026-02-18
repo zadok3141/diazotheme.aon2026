@@ -1,0 +1,44 @@
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-caret:                true !default;
+$enable-rounded:              true !default;
+$enable-shadows:              false !default;
+$enable-gradients:            false !default;
+$enable-transitions:          true !default;
+$enable-reduced-motion:       true !default;
+$enable-smooth-scroll:        true !default;
+$enable-grid-classes:         true !default;
+$enable-container-classes:    true !default;
+$enable-cssgrid:              false !default;
+$enable-button-pointers:      true !default;
+$enable-rfs:                  true !default;
+$enable-validation-icons:     true !default;
+$enable-negative-margins:     true !default;
+$enable-deprecation-messages: true !default;
+$enable-important-utilities:  false !default;
+
+$min-contrast-ratio: 7;
+// $min-contrast-ratio: 4.5;
+
+$link-shade-percentage: 50%;
+// $link-shade-percentage: 20%;
+
+$btn-hover-bg-shade-amount: 45%;
+// $btn-hover-bg-shade-amount: 15%;
+
+$btn-hover-bg-tint-amount: 45%;
+// $btn-hover-bg-tint-amount: 15%;
+
+$btn-active-bg-shade-amount: 60%;
+// $btn-active-bg-shade-amount: 20%;
+
+$btn-active-bg-tint-amount: 60%;
+// $btn-active-bg-tint-amount: 20%;
+
+$color-contrast-dark: #1a1a1a;
+// $color-contrast-dark: $black;
+
+$color-contrast-light: #eeeeee;
+// $color-contrast-light: $white

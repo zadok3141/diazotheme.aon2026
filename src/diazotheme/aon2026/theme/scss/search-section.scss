@@ -1,0 +1,10 @@
+/* For search section viewlet, activated by search section view in display menu
+used in auditing standards section */
+
+#portal-searchsection {
+    // from barceloneta #portal-searchbox
+    flex-shrink: 0;
+    .livesearch-results {
+        width: 100%;
+    }
+}

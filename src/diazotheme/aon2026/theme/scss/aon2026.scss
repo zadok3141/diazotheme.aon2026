@@ -1,0 +1,445 @@
+@use "sass:math";
+
+$oag-bark: #511e26;
+$oag-black: #333333;
+$oag-teal: #00837d;
+$oag-bottle: #627774;
+$oag-moss: #888374;
+
+@use "../../../../../scss/barceloneta.scss" as b with (
+  $navbar-barceloneta-background: $oag-bark
+  );
+
+$fa-font-path: "../webfonts";
+@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "@fortawesome/fontawesome-free/scss/solid.scss";
+@import "@fortawesome/fontawesome-free/scss/brands.scss";
+
+@import "mosaic.scss";
+
+@import "annualreport2019.scss";
+
+@import "static-content.scss";
+
+@import "callout.scss";
+
+@import "related-items.scss";
+
+@import "search-section.scss";
+
+@import "tables.scss";
+
+@import "accessibility-fixes.scss";
+
+@import "print.scss";
+
+/* OAG classes */
+
+/* Link styles */
+
+a {
+    text-decoration-line: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  a {
+    text-decoration-line: none !important;
+    }
+  }
+
+a.btn {
+  text-decoration-line: none !important;
+  }
+#content-core, #content {
+  a {
+    @extend .link-underline;
+    @extend .link-offset-2;
+    @extend .link-underline-opacity-25;
+    text-decoration-line: underline;
+    }
+  .autotoc-nav a {
+    text-decoration-line: none;
+    }
+  a.readmore{
+    text-decoration-line: none;
+    }
+  .contentlisting-tile {
+    a {
+      text-decoration-line: none;
+      }
+    }
+}
+
+/* AutoTOC styles */
+.pat-autotoc:not(.autotabs) .autotoc-nav {
+    max-width: 50%;
+}
+
+.autotoc-nav + .alert.w-50 {
+    width: calc(50% - 1.5rem) !important;
+}
+
+@include b.media-breakpoint-down(sm) {
+  .pat-autotoc:not(.autotabs) .autotoc-nav {
+    max-width: none;
+    margin-left: 0;
+    float: none;
+  }
+
+  .autotoc-nav + .alert.w-50 {
+    width: auto !important;
+    }
+}
+
+.pat-autotoc nav header {
+  .autotoc-heading {
+    font-style: normal;
+  }
+}
+
+/* Text styles */
+
+h4, h6, .h4, .h6 {
+  font-style: italic;
+  }
+
+.discreet {
+    font-size: b.$font-size-sm;
+}
+.pullquote {
+    font-family: b.$font-family-serif;
+    font-style: italic;
+    padding: 0.64em 1em 1em 0;
+    font-size: b.$font-size-lg;
+    &:before {
+        @extend %fa-icon;
+        @extend .fa-solid;
+        content: fa-content($fa-var-quote-left);
+        padding-right: 0.5em;
+        font-size: b.$h1-font-size;
+        color: $oag-bark;
+        vertical-align: -16%; // eyeballed
+    }
+}
+blockquote {
+    margin: 1rem 0;
+}
+/* Definition lists */
+#content-core {
+
+    dl:after {content:"";display:table;clear:both;}
+    dd {
+        padding:.5em 0;
+    }
+    dl {
+        width:100%;
+    }
+    dt, dd {
+        display:inline-block;
+        width:30%;
+    }
+    dt {
+        text-align:right;
+        font-weight:bold;
+        clear:left;
+        float:left;
+    }
+    dd {
+        width:70%;
+        padding-left:1em;
+        clear:right;
+    }
+    dd + dd {
+        float:right;
+        clear:both;
+    }
+    dt:first-child {
+        padding-top:.5em;
+    }
+    dd + dt {
+        clear:both;
+        padding-top:.5em;
+    }
+    dt + dt {
+        width: 100%;
+        float: none;
+        padding: 0 70% 0 0;
+    }
+    dt + dt + dd {
+        margin-top: -2em;
+    }
+    dt + dt + dd + dt {
+        margin-top: 2em;
+    }
+}
+
+/* Ordered list styles */
+
+#content-core ol ol {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+/* Seperator for breadcrumbs */
+
+.breadcrumb-item {
+    + .breadcrumb-item {
+        &::before {
+            content: "⟩";
+        }
+    }
+}
+
+/* Navigation portlets improvements */
+
+// Header
+.portletNavigationTree  {
+
+    .card-header {
+        padding: calc(b.$card-cap-padding-y * 1.5) b.$breadcrumb-padding-x;
+        font-size: b.$font-size-lg;
+    }
+}
+
+/* Old image alignment styles */
+.image-right {
+  @extend .float-end;
+  margin-left: 1rem !important;
+  margin-right: 0.5rem;
+  }
+
+.image-left {
+  @extend .float-start;
+  margin-right: 1rem !important;
+  }
+
+/* Home page styles */
+body.section-home article#content > header {
+  display: none;
+  }
+
+// Footer
+footer#portal-footer-wrapper {
+  background-color: var(--bs-body-bg);
+  color: var(--bas-body-color);
+
+  .site-actions ul li {
+    white-space: nowrap;
+    }
+  .colophon {
+    ul {
+    list-style: none;
+    margin-bottom: 0;
+    }
+    ul.oag-social {
+      margin-top: 0.5rem;
+      li {
+        list-style: none;
+        display: inline;
+        margin-right: 2rem;
+        }
+      }
+      }
+  }
+
+
+
+// Social media bar
+
+#hpsocial {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    li a {
+        font-size: b.$h2-font-size;
+    }
+}
+.hpsocial {
+    margin-top: 2em;
+}
+#hpsocial-facebook,
+#hpsocial-linkedin,
+#hpsocial-instagram,
+#hpsocial-oagrss,
+#hpsocial-oagsubs,
+#hpsocial-feedback {
+    a {
+        border-bottom-width: 0;
+    }
+}
+@include b.media-breakpoint-down(sm) {
+    #hpsocial {
+        width: 100%;
+        li a {
+            // font-size: @mosaic-font-size-title;
+        }
+    }
+}
+
+// Homepage feedback bar
+// Not bootstrap standardized
+// css is duplicated from mosaic.scss so is in twice until we retire mosaic
+
+.hpfeedback {
+  width: 100%;
+  background-color: $oag-bark;
+  margin: 1rem auto;
+  }
+.hpfeedback div {
+    margin: auto;
+    width: 66%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+.hpfeedback-b {
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 0 !important;
+}
+.hpemailsub-b {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 229px;
+    border-bottom: 0 !important;
+}
+.hppagetop-b {
+    float:right;
+    margin-top: -50px;
+    margin-right: 15px;
+    border-bottom: 0 !important;
+}
+@include b.media-breakpoint-down(md) {
+    .hppagetop-b {
+        margin-top: -23px;
+        img {
+            width: 42px;
+            height: 42px;
+        }
+    }
+}
+@include b.media-breakpoint-down(sm) {
+    .hppagetop-b {
+        margin-top: -10px;
+        img {
+        width: 29px;
+        height: 29px;
+        }
+    }
+}
+
+// Customized listing-view
+.oag-listing-title {
+  text-decoration-line: none !important;
+                  }
+
+// .image-inline had no styles in old Plone
+//  so we don't need it here
+
+/* Fix for old styles */
+.test {
+color: b.$navbar-barceloneta-background;
+}
+.cite, cite {
+       font-style: italic;
+       }
+pre {
+  white-space: pre-wrap;
+  word-break: normal;
+  display: block;
+  font-size: b.$font-size-base;
+  margin-top: var(--bs-alert-margin-bottom);
+  margin-bottom: 1rem;
+  padding: 1rem;
+  word-wrap: break-word;
+  background-color: b.$breadcrumb-bg;
+  border: 1px solid b.$border-color;
+  border-radius: b.$border-radius;
+}
+// Use in annual reports
+.big {
+  font-family: b.$font-family-serif;
+  font-size: b.$h1-font-size;
+  font-style: italic;
+  margin: 0.5rem 0 1rem 0;
+  }
+// Page updated style
+.updated {
+    font-size: b.$h6-font-size;
+}
+// text alignment styles
+.tiny-left {
+  text-align: left;
+  }
+
+.tiny-center {
+  text-align: center;
+  }
+
+.tiny-right {
+  text-align: right;
+  }
+
+.tiny-full {
+  text-align: justify;
+  }
+
+// Manual class can be removed when we add bark to the bootstrap utilities colors
+.text-bg-bark {
+  color: white;
+  background-color: $oag-bark;
+  }
+
+// Mosaic Iframe tile style works outside of Mosaic. Duplicate it here for when we remove Mosaic completely.
+// Iframe tile
+
+#iframetile {
+    aspect-ratio: 1.78;
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// Reports portlet
+aside.portletReportsPortlet div.portletContent {
+> a, > cite {
+      margin-left: 0.25rem;
+      margin-right: 0.25rem;
+      margin-bottom: 0.2rem;
+      font-weight: bold;
+      }
+> cite {
+  padding-left: 0.5rem;
+  .badge a {
+    font-size: b.$font-size-sm;
+    }
+  }
+}
+
+// Makes embedded video iframe fit its container
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25% !important; /* 16:9 */
+	padding-top: 25px !important;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}

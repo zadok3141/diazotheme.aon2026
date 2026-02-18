@@ -1,0 +1,22 @@
+/* Replace old related-items style with Bootstrap 5 secondary alert style */
+/* Without alert link animation as the related items have stretched links */
+#section-related {
+  --bs-alert-color: var(--bs-secondary-text-emphasis);
+  --bs-alert-bg: var(--bs-secondary-bg-subtle);
+  --bs-alert-border-color: var(--bs-secondary-border-subtle);
+  --bs-alert-link-color: var(--bs-secondary-text-emphasis);
+        --bs-alert-margin-bottom: 1rem;
+        --bs-alert-color: inherit;
+        --bs-alert-border: var(--bs-border-width) solid var(--bs-alert-border-color);
+        --bs-alert-border-radius: var(--bs-border-radius);
+        position: relative;
+        padding: 1rem 1rem;
+        margin-bottom: var(--bs-alert-margin-bottom);
+        color: var(--bs-alert-color);
+        background-color: var(--bs-alert-bg);
+        border: 3px solid var(--bs-alert-border-color);
+        border-radius: 0.25rem;
+        animation-fill-mode: forwards !important;
+        animation-delay: 1s !important;
+        animation: 1.5s ease-in alert-animation;
+}

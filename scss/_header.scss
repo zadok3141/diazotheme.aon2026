@@ -1,0 +1,119 @@
+// // DEBUG MEDIA QUERIES
+// @include media-breakpoint-up($nav-main-breakpoint) {
+//   #content-header::before {
+//     content: "main";
+//     position: sticky;
+//     top: 1em;
+//     left: 0;
+//   }
+// }
+// @include media-breakpoint-up(xs) {
+//   body::before {
+//     content: "xs";
+//     position: sticky;
+//     top: 0;
+//     left: 0;
+//   }
+// }
+// @include media-breakpoint-up(sm) {
+//   body::before {
+//     content: "sm";
+//     position: sticky;
+//     top: 0;
+//     left: 0;
+//   }
+// }
+// @include media-breakpoint-up(md) {
+//   body::before {
+//     content: "md";
+//     position: sticky;
+//     top: 0;
+//     left: 0;
+//   }
+// }
+// @include media-breakpoint-up(lg) {
+//   body::before {
+//     content: "lg";
+//     position: sticky;
+//     top: 0;
+//     left: 0;
+//   }
+// }
+
+//*// HEADER //*//
+
+
+#portal-languageselector {
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 5px 0 0 0;
+  list-style: none;
+  margin-left: $spacer;
+
+  li {
+    display: inline-block;
+    margin-left: 10px;
+  }
+}
+
+#portal-anontools {
+  padding-top: 5px;
+  margin-left: $spacer;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      margin-right: 10px;
+    }
+  }
+}
+
+#portal-membertools-wrapper {
+  margin-top: 5px;
+  margin-left: $spacer * 1.5;
+  margin-right: $spacer * 0.5;
+
+  ul {
+    margin: 0 0 $spacer $spacer;
+    padding-right: 0;
+  }
+}
+
+//*// Don't shrink search input when navigation has many items
+#portal-searchbox {flex-shrink: 0;}
+
+.livesearch-results {
+  margin-top: 1rem;
+  width: 100%;
+
+  @include media-breakpoint-up($nav-main-breakpoint) {
+    position: absolute;
+    z-index: $zindex-offcanvas + 1;
+    margin-top: 3rem;
+    right: 0;
+    width: 28rem;
+
+    @if $enable-shadows==true {
+      @include box-shadow($box-shadow);
+    }
+  }
+
+  .heading {
+    font-size: $h5-font-size;
+  }
+
+  .col.img {
+    flex: 0 0 auto;
+    max-width: 50%;
+    width: auto;
+  }
+}
+
+.pat-livesearch.show_images+.livesearch-results {
+  @include media-breakpoint-up($nav-main-breakpoint) {
+    width: 34rem;
+  }
+}
