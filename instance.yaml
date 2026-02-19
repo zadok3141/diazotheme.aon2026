@@ -3,3 +3,4 @@
 default_context:
     initial_user_password: 'admin'
     zcml_package_includes: 'diazotheme.aon2026'
+    debug_mode: true
