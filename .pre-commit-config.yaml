@@ -1,0 +1,89 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/asottile/pyupgrade
+    rev: v3.21.2
+    hooks:
+    -   id: pyupgrade
+        args: [--py310-plus]
+
+-   repo: https://github.com/pycqa/isort
+    rev: 7.0.0
+    hooks:
+    -   id: isort
+
+-   repo: https://github.com/psf/black
+    rev: 26.1.0
+    hooks:
+    -   id: black
+
+-   repo: https://github.com/collective/zpretty
+    rev: 3.1.1
+    hooks:
+    -   id: zpretty
+        exclude: '/.cache'
+
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: debug-statements
+      - id: check-builtin-literals
+      - id: check-docstring-first
+      - id: check-executables-have-shebangs
+      - id: check-json
+      - id: check-symlinks
+      - id: check-xml
+      - id: detect-aws-credentials
+      - id: detect-private-key
+      - id: mixed-line-ending
+
+-   repo: https://github.com/PyCQA/flake8
+    rev: 7.3.0
+    hooks:
+    -   id: flake8
+        args: ["--max-line-length=88"]
+
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.19.1
+    hooks:
+      -   id: mypy
+#          exclude: ^(docs/docs/conf.py)
+
+-   repo: https://github.com/KAUTH/git-lfs-hooks
+    rev: v3.3.0
+    hooks:
+    -   id: pre-push
+-   repo: https://github.com/mgedmin/check-manifest
+    rev: "0.51"
+    hooks:
+    -   id: check-manifest
+        stages: [manual, pre-push]
+-   repo: https://github.com/regebro/pyroma
+    rev: "5.0.1"
+    hooks:
+    -   id: pyroma
+        stages: [manual, pre-push]
+-   repo: https://github.com/mgedmin/check-python-versions
+    rev: "0.24.0"
+    hooks:
+    -   id: check-python-versions
+        args: ['--only', 'setup.py,pyproject.toml']
+        additional_dependencies: ['setuptools']
+-   repo: https://github.com/collective/i18ndude
+    rev: "6.3.0"
+    hooks:
+    -   id: i18ndude
+        exclude: '/search\.pt$'
+-   repo: local
+    hooks:
+      - id: todo-check
+        name: Check for TODOs
+        entry: bash -c 'if grep -n "TODO\|FIXME" "$@"; then echo "⚠️  Found TODOs above - remember to address them!"; fi; exit 0'
+        language: system
+        types: [text]
+        verbose: true # Always show output
+        pass_filenames: true
+        exclude: ^(\.pre-commit-config.yaml|src/diazotheme/aon2026/theme/css/barceloneta-toolbar.min.css.map|src/diazotheme/aon2026/theme/css/barceloneta-toolbar.css.map|src/diazotheme/aon2026/theme/css/theme.css.map|src/diazotheme/aon2026/theme/css/theme.min.css.map|backstop_data/showcase_current/html_report/index_bundle.js)
