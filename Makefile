@@ -41,6 +41,11 @@ export DOCKER_BUILDKIT := 1
 
 all: build
 
+.PHONY: egg-info
+egg-info: ## Generate .egg-info for buildout develop mode
+	@echo "$(GREEN)==> Generating .egg-info for buildout$(RESET)"
+	@python setup.py egg_info
+
 # Add the following 'help' target to your Makefile
 # And add help text after each target name starting with '\#\#'
 .PHONY: help
