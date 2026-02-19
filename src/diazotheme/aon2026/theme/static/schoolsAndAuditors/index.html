@@ -1,34 +1,99 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="generator" content="Observable Framework v1.13.3">
-<title>Schools and Auditors August 2025 | Schools and Auditors</title>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
-<link rel="preload" as="style" href="./_import/custom.2b251270.css">
-<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.ea9fd553.css">
-<link rel="preload" as="style" href="./_npm/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
-<link rel="stylesheet" type="text/css" href="./_import/custom.2b251270.css">
-<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.ea9fd553.css">
-<link rel="stylesheet" type="text/css" href="./_npm/leaflet@1.9.4/dist/leaflet.css">
-<link rel="modulepreload" href="./_observablehq/client.cc78147e.js">
-<link rel="modulepreload" href="./_observablehq/runtime.9393ab6d.js">
-<link rel="modulepreload" href="./_observablehq/stdlib.24b62b2e.js">
-<link rel="modulepreload" href="./_npm/leaflet@1.9.4/721623d8.js">
-<link rel="modulepreload" href="./_import/Leaflet.fullscreen.9b7d0525.js">
-<link rel="modulepreload" href="./_npm/@fortawesome/fontawesome-svg-core@7.0.0/750b31ca.js">
-<link rel="modulepreload" href="./_npm/@fortawesome/free-solid-svg-icons@7.0.0/1835f9e0.js">
-<link rel="modulepreload" href="./_import/components/utils.1af4d62d.js">
-<link rel="modulepreload" href="./_npm/htl@0.3.1/72f4716c.js">
-<link rel="modulepreload" href="./_observablehq/stdlib/inputs.90adaea0.js">
-<link rel="modulepreload" href="./_npm/lodash@4.17.21/1ecf91d1.js">
-<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/9cffc2bd.js">
-<link rel="modulepreload" href="./_npm/isoformat@0.2.1/18cbf477.js">
-<link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32"><link rel="prerender" href="./_file/Leaflet.fullscreen.174ad661.js">
-<script type="module">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="generator"
+          content="Observable Framework v1.13.3"
+    />
+    <title>Schools and Auditors August 2025 | Schools and Auditors</title>
+    <link crossorigin=""
+          href="https://fonts.gstatic.com"
+          rel="preconnect"
+    />
+    <link as="style"
+          crossorigin=""
+          href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap"
+          rel="preload"
+    />
+    <link as="style"
+          href="./_import/custom.2b251270.css"
+          rel="preload"
+    />
+    <link as="style"
+          href="./_observablehq/stdlib/inputs.ea9fd553.css"
+          rel="preload"
+    />
+    <link as="style"
+          href="./_npm/leaflet@1.9.4/dist/leaflet.css"
+          rel="preload"
+    />
+    <link crossorigin=""
+          href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap"
+          rel="stylesheet"
+          type="text/css"
+    />
+    <link href="./_import/custom.2b251270.css"
+          rel="stylesheet"
+          type="text/css"
+    />
+    <link href="./_observablehq/stdlib/inputs.ea9fd553.css"
+          rel="stylesheet"
+          type="text/css"
+    />
+    <link href="./_npm/leaflet@1.9.4/dist/leaflet.css"
+          rel="stylesheet"
+          type="text/css"
+    />
+    <link href="./_observablehq/client.cc78147e.js"
+          rel="modulepreload"
+    />
+    <link href="./_observablehq/runtime.9393ab6d.js"
+          rel="modulepreload"
+    />
+    <link href="./_observablehq/stdlib.24b62b2e.js"
+          rel="modulepreload"
+    />
+    <link href="./_npm/leaflet@1.9.4/721623d8.js"
+          rel="modulepreload"
+    />
+    <link href="./_import/Leaflet.fullscreen.9b7d0525.js"
+          rel="modulepreload"
+    />
+    <link href="./_npm/@fortawesome/fontawesome-svg-core@7.0.0/750b31ca.js"
+          rel="modulepreload"
+    />
+    <link href="./_npm/@fortawesome/free-solid-svg-icons@7.0.0/1835f9e0.js"
+          rel="modulepreload"
+    />
+    <link href="./_import/components/utils.1af4d62d.js"
+          rel="modulepreload"
+    />
+    <link href="./_npm/htl@0.3.1/72f4716c.js"
+          rel="modulepreload"
+    />
+    <link href="./_observablehq/stdlib/inputs.90adaea0.js"
+          rel="modulepreload"
+    />
+    <link href="./_npm/lodash@4.17.21/1ecf91d1.js"
+          rel="modulepreload"
+    />
+    <link href="./_npm/d3-dsv@3.0.1/9cffc2bd.js"
+          rel="modulepreload"
+    />
+    <link href="./_npm/isoformat@0.2.1/18cbf477.js"
+          rel="modulepreload"
+    />
+    <link href="./_file/observable.1af93621.png"
+          rel="icon"
+          sizes="32x32"
+          type="image/png"
+    /><link href="./_file/Leaflet.fullscreen.174ad661.js"
+          rel="prerender"
+    />
+    <script type="module">
 
 import {define} from "./_observablehq/client.cc78147e.js";
 import {registerFile} from "./_observablehq/stdlib.24b62b2e.js";
@@ -119,18 +184,18 @@ return {displayOptions};
 define({id: "b667cdb1", inputs: ["createDisplayRefresher","schools","filterState","schoolMarkerLayer","schoolMarkerReferences","schools_map","displayOptions","Inputs","html"], outputs: ["refreshView","resetButton","resetButtonContainer","fieldTablesContainer"], body: (createDisplayRefresher,schools,filterState,schoolMarkerLayer,schoolMarkerReferences,schools_map,displayOptions,Inputs,html) => {
 // Cell 6: Create refresh function and reset button
 const refreshView = createDisplayRefresher(
-    schools, 
-    filterState, 
-    schoolMarkerLayer, 
-    schoolMarkerReferences, 
-    schools_map, 
-    displayOptions, 
+    schools,
+    filterState,
+    schoolMarkerLayer,
+    schoolMarkerReferences,
+    schools_map,
+    displayOptions,
     ["field_tables_container1", "field_tables_container2"]
 );
 
 // Add reset button
 const resetButton = Inputs.button("Reset filters", {
-    value: null, 
+    value: null,
     reduce: () => {
         // Clear all filter selections
         filterState["ASP"] = [];
@@ -139,10 +204,10 @@ const resetButton = Inputs.button("Reset filters", {
         filterState["Regional council"] = [];
         filterState["Territorial authority"] = [];
         filterState["Financial Service Provider"] = [];
-        
+
         // Reset map to default view
         schools_map.setView([-40.9, 175.232], 5);
-        
+
         // Refresh the display with cleared filters
         refreshView();
     }
@@ -173,40 +238,59 @@ filterState;  // Reference filterState to make this cell depend on it
 refreshView();
 }});
 
-</script>
-</head>
-<body>
-<div id="observablehq-center">
-<main id="observablehq-main" class="observablehq">
-<div class="observablehq observablehq--block"><!--:69795b47:--></div>
-<div class="observablehq observablehq--block"><!--:25c8c69e:--></div>
-<div class="observablehq observablehq--block"><!--:1be8d621:--></div>
-<div class="observablehq observablehq--block"><!--:abcb23db:--></div>
-<div class="observablehq observablehq--block"><!--:4fb2a7b0:--></div>
-<div class="observablehq observablehq--block"><!--:b667cdb1:--></div>
-<div class="observablehq observablehq--block"><!--:af35670b:--></div>
-<style>
+    </script>
+  </head>
+  <body>
+    <div id="observablehq-center">
+      <main class="observablehq"
+            id="observablehq-main"
+      >
+        <div class="observablehq observablehq--block"><!--:69795b47:--></div>
+        <div class="observablehq observablehq--block"><!--:25c8c69e:--></div>
+        <div class="observablehq observablehq--block"><!--:1be8d621:--></div>
+        <div class="observablehq observablehq--block"><!--:abcb23db:--></div>
+        <div class="observablehq observablehq--block"><!--:4fb2a7b0:--></div>
+        <div class="observablehq observablehq--block"><!--:b667cdb1:--></div>
+        <div class="observablehq observablehq--block"><!--:af35670b:--></div>
+        <style>
 /* Add styling for schools with missing coordinates */
 .missing-coordinates {
   color: #ff0000;
   font-style: italic;
 }
-</style>
-<div class="field-tables-container" id="field_tables_container1">
-  <!-- Field tables will be inserted here by JavaScript -->
-</div>
-<div class="grid grid-cols-4" style="grid-auto-rows: auto;">
-  <div id="schools_div" class="card grid-colspan-2" style="height:625px;"></div>
-  <div class="card grid-colspan-2" id="table_div">
-  </div>
-</div>
-<div class="field-tables-container" id="field_tables_container2">
-  <!-- Field tables will be inserted here by JavaScript -->
-</div>
-</main>
-<footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-08-11T13:38:38">Aug 11, 2025</a>.</div>
-</footer>
-</div>
-</body>
+        </style>
+        <div class="field-tables-container"
+             id="field_tables_container1"
+        >
+          <!-- Field tables will be inserted here by JavaScript -->
+        </div>
+        <div class="grid grid-cols-4"
+             style="grid-auto-rows: auto;"
+        >
+          <div class="card grid-colspan-2"
+               id="schools_div"
+               style="height:625px;"
+          ></div>
+          <div class="card grid-colspan-2"
+               id="table_div"
+          >
+          </div>
+        </div>
+        <div class="field-tables-container"
+             id="field_tables_container2"
+        >
+          <!-- Field tables will be inserted here by JavaScript -->
+        </div>
+      </main>
+      <footer id="observablehq-footer">
+        <div>Built with
+          <a href="https://observablehq.com/"
+             rel="noopener noreferrer"
+             target="_blank"
+          >Observable</a>
+          on
+          <a title="2025-08-11T13:38:38">Aug 11, 2025</a>.</div>
+      </footer>
+    </div>
+  </body>
 </html>
