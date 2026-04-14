@@ -266,10 +266,8 @@ p {
 }
 
 abbr[title] {
-  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
   cursor: help;
-  -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
 }
 
@@ -560,11 +558,6 @@ legend + * {
 
 ::-webkit-color-swatch-wrapper {
   padding: 0;
-}
-
-::-webkit-file-upload-button {
-  font: inherit;
-  -webkit-appearance: button;
 }
 
 ::file-selector-button {
@@ -918,7 +911,6 @@ body.plone-toolbar-left #edit-zone .toolbar-label {
   body.plone-toolbar-left.plone-toolbar-left-expanded #edit-zone .toolbar-label {
     display: inline-block;
     white-space: initial;
-    -webkit-hyphens: auto;
     hyphens: auto;
     word-break: break-word;
     vertical-align: top;
@@ -1075,4 +1067,5 @@ body.plone-toolbar-top .toolbar-label {
     flex-direction: column-reverse !important;
   }
 }
+
 /*# sourceMappingURL=barceloneta-toolbar.css.map */
