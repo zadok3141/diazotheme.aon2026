@@ -117,6 +117,16 @@
                                      " />
                               </tal:cover>
                             </span>
+                            <span class="pe-3 d-none d-sm-block"
+                                  tal:condition="python: (not has_cover) and (not item_has_image) and (not is_blog)"
+                            >
+                              <img tal:attributes="
+                                     src string:${view/navigation_root_url}/gfx/default-thumbnail.jpg;
+                                     width string:128;
+                                     class string:img-fluid img-thumbnail mx-auto d-block;
+                                     alt image_text;
+                                   " />
+                            </span>
                           </div>
                           <div class="col-sm-10">
                             <div class="mb-3">
