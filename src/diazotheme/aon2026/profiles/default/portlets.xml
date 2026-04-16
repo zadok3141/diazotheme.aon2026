@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<portlets>
+  <portlet addview="diazotheme.aon2026.portlets.FindPersonPortlet"
+           description="A search portlet restricted to the Members folder."
+           title="Find a Person"
+  >
+    <for interface="plone.app.portlets.interfaces.IColumn" />
+  </portlet>
+</portlets>

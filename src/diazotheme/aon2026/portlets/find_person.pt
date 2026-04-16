@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      tal:omit-tag=""
+      i18n:domain="diazotheme.aon2026"
+>
+
+  <div class="card portlet portletFindPerson">
+
+    <div class="card-header">
+      <span class="tile"
+            i18n:translate=""
+      >Find a Person</span>
+    </div>
+
+    <div class="card-body">
+      <form id="findpersonform"
+            action="search"
+            style="min-width: auto;"
+            tal:attributes="
+              action view/search_action;
+            "
+      >
+        <input name="path"
+               type="hidden"
+               tal:attributes="
+                 value view/members_path;
+               "
+        />
+        <div class="input-group">
+          <input class="form-control"
+                 name="SearchableText"
+                 placeholder="Find a person"
+                 title="Find a Person"
+                 type="text"
+                 tal:attributes="
+                   value request/SearchableText|nothing;
+                 "
+                 i18n:attributes="title; placeholder"
+          />
+          <div class="input-group-append">
+            <button class="btn btn-primary"
+                    type="submit"
+                    i18n:translate=""
+            >Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</html>

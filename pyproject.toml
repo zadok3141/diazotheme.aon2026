@@ -31,7 +31,7 @@ classifiers = [
 dependencies = [
     "Products.CMFPlone",
     "plone.api",
-    
+
     "z3c.jbot",
 ]
 
@@ -208,7 +208,3 @@ profile = "plone"
 #  extra_configuration
 #  """
 ##
-
-[tool.black]
-target-version = ["py313"]
-

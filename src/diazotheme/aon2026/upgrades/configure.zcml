@@ -3,18 +3,16 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     >
 
-  <!-- Example upgrade step
   <genericsetup:upgradeSteps
       profile="diazotheme.aon2026:default"
       source="1000"
       destination="1001"
       >
     <genericsetup:upgradeDepends
-        title="Update registry value"
-        import_steps="plone.app.registry"
+        title="Register Find a Person portlet"
+        import_steps="portlets"
         />
   </genericsetup:upgradeSteps>
-  -->
 
   <!-- -*- extra stuff goes here -*- -->
 

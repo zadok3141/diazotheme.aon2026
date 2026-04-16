@@ -12,10 +12,10 @@ repos:
     hooks:
     -   id: isort
 
--   repo: https://github.com/psf/black
-    rev: 26.1.0
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.11.6
     hooks:
-    -   id: black
+    -   id: ruff-format
 
 -   repo: https://github.com/collective/zpretty
     rev: 3.1.1

@@ -32,6 +32,7 @@
   <include package=".indexers" />
   <include package=".vocabularies" />
   <include package=".browser" />
+  <include package=".portlets" />
 
   <!-- -*- extra stuff goes here -*- -->
 
