@@ -1,0 +1,119 @@
+# rsync exclude file for scripts/sync-from-oag2025.sh
+# Patterns are path-aware (rsync semantics, not fnmatch).
+# Anything not matched here ends up in the snapshot and surfaces as a sync candidate.
+
+# Tool state and caches
+.git/
+.serena/
+.claude/
+.envrc
+.envrc.local
+.mxdev_cache/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.venv/
+__pycache__/
+node_modules/
+*.egg-info/
+
+# Built artifacts (regenerated locally; never copied across)
+dist/
+build/
+theme/css/
+theme/js/
+backstop_data/
+backstop.json
+
+# OAG static content and brand assets (theme-internal)
+theme/static/
+theme/templates/
+theme/tinymce-templates/
+theme/tinymce/
+theme/webfonts/
+theme/roboto/
+theme/preview.png
+theme/oag2025-favicon.*
+theme/oag2025-apple-touch-icon*
+
+# OAG-specific code and content
+feedbackportlet.py
+feedbackportlet.pt
+browser/tiles.py
+setuphandlers/initial.py
+setuphandlers/initial/
+setuphandlers/examplecontent/
+upgrades/
+controlpanel/
+profiles/initial/
+
+# Per-project profile files (each project owns its own)
+profiles/default/browserlayer.xml
+profiles/default/portlets.xml
+profiles/default/types.xml
+profiles/default/controlpanel.xml
+profiles/default/metadata.xml
+
+# Per-project i18n
+locales/diazotheme.oag2025.pot
+*.po
+*.mo
+
+# Per-project metadata and config
+instance.yaml
+mx.ini
+requirements*.txt
+constraints-mxdev.txt
+setup.py
+MANIFEST.in
+bobtemplate.cfg
+.mrbob.ini
+pyproject.toml
+.flake8
+.pre-commit-config.yaml
+.editorconfig
+.gitignore
+.gitattributes
+
+# Project history and free-form docs (each project owns its own)
+news/
+CHANGELOG.md
+CHANGES.md
+CLAUDE.md
+CLAUDE_CHANGES.md
+CONTRIBUTORS.md
+LICENSE.GPL
+LICENSE.md
+README.md
+HOWTO_DEVELOP.md
+demo.md
+toolbar-demo.html
+docs/
+
+# Backups and work directories
+branding-new/
+tinified/
+exports/
+data/
+notes/
+planning/
+sources/
+analysis_*/
+2026-*
+*.fsz
+*.fsz-*.tgz
+*.tgz
+current-backup-*/
+latest/
+dl_backup.sh
+instance/
+
+# OAG-specific test scenarios (keep base config and notes)
+backstop.scenarios.json
+backstop.showcase.json
+backstop.features.json
+backstop.link-styles.json
+backstop.listing-view.json
+
+# GitHub workflows directory
+.github-notused/

@@ -43,3 +43,6 @@ var/
 /venv/
 constraints*.txt
 requirements*.txt
+
+# oag2025 sync tooling
+/.oag2025-sync-cache/

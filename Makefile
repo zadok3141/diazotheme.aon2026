@@ -147,3 +147,9 @@ release: $(VENV_FOLDER) ## Create a release
 	@echo "$(GREEN)==> Create a release$(RESET)"
 	@uv pip install -e ".[release]"
 	@uv run fullrelease
+
+# Sync from upstream diazotheme.oag2025 (read-only enumerator)
+.PHONY: sync-oag2025
+sync-oag2025: ## Enumerate divergences from ../diazotheme.oag2025 (read-only)
+	@echo "$(GREEN)==> Enumerating divergences from oag2025$(RESET)"
+	@bash scripts/sync-from-oag2025.sh
