@@ -52,7 +52,28 @@ $state-internally-published-color:  #883dfa!default; // is intranet
 
 // Plone
 // Bootstrap $primary color is Plone blue
-$primary:                           #007bb1!default; //plone blue made slightly darker for wcag 2.0
+// $primary:                           #007bb1!default; // plone blue made slightly darker for wcag 2.0
+
+$primary: #0d261d; // midnight forest
+// #6cdcb3; // sea foam
+// rgb(26,52,255); // Sea
+
+$secondary:     #eaeaea; // stone
+$success:       #6cdcb3; // sea foam
+$info:          #3ecece; // sky
+$warning:       #f8d652; // sunrise
+$danger:        #e3b5c5; // sunset
+$light:         $gray-100 !default;
+$dark:          #0d261d; // midnight forest
+
+// Midnight Forest dark colors
+$dark-text-emphasis: #3d514a;
+$dark-bg-subtle: #cfd4d2;
+$dark-border-subtle: #9ea8a5;
+
+// Decouple link color from primary
+$link-color: rgb(26,52,255);
+// mix($black,rgb(26,52,255),30%);
 
 $plone-link-color:                  $primary !default;
 $plone-link-color-on-dark:          #16a1e3!default; //plone blue
@@ -61,7 +82,7 @@ $plone-link-color-on-grey:          #086ca3!default; //valid wcag 2.0
 $plone-link-hover-color:            darken($plone-link-color, 15%)!default;
 
 $plone-light-color: $gray-100 !default;
-$plone-dark-color: $gray-900 !default;
+$plone-dark-color: $dark;
 
 // Portlets
 $plone-portlet-list-hover-bg:       #fcfcfd!default;
