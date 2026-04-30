@@ -13855,7 +13855,7 @@ figcaption {
   --bs-navbar-color: white;
   --bs-navbar-active-color: white;
   --bs-navbar-hover-color: white;
-  --bs-navbar-background: #0d261d;
+  --bs-navbar-background: #6cdcb3;
   --bs-navbar-active-background: rgba(0, 0, 0, 0.2);
   --bs-navbar-hover-background: rgba(0, 0, 0, 0.3);
   padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
@@ -24889,7 +24889,7 @@ h1.oagbannerheading {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  color: #0d261d;
+  color: #6cdcb3;
 }
 
 @media (max-width: 991.98px) {
@@ -24970,7 +24970,7 @@ h1.oagbannerheading {
 }
 
 .hp3portlets-h2 {
-  color: #0d261d;
+  color: #6cdcb3;
   font-weight: 700;
   text-align: center;
   margin-bottom: 3;
@@ -25086,7 +25086,7 @@ h1.oagbannerheading {
 }
 
 .hp6portlets-h2 {
-  color: #0d261d;
+  color: #6cdcb3;
   font-weight: 700;
   text-align: center;
   margin-bottom: 3;
@@ -25152,7 +25152,7 @@ h1.oagbannerheading {
 }
 
 .hp3verticals-h2 {
-  color: #0d261d;
+  color: #6cdcb3;
   font-weight: 700;
   text-align: center;
   margin-bottom: 3;
@@ -25200,7 +25200,7 @@ h1.oagbannerheading {
 
 .hpfeedback {
   width: 100%;
-  background-color: #0d261d;
+  background-color: #6cdcb3;
   margin-left: auto;
   margin-right: auto;
 }
@@ -25367,7 +25367,7 @@ h1.oagbannerheading {
   max-width: 80vw;
   margin-left: auto;
   margin-right: auto;
-  color: #0d261d;
+  color: #6cdcb3;
   font-weight: 700;
   text-align: center;
   margin-bottom: 3;
@@ -25376,7 +25376,7 @@ h1.oagbannerheading {
 
 .macaw-tabs.macaw-elegant-tabs {
   max-width: 80vw;
-  border-bottom: 2px solid #0d261d;
+  border-bottom: 2px solid #6cdcb3;
   padding-bottom: 0;
   margin-bottom: 1.5em;
 }
@@ -26045,7 +26045,7 @@ h4, h6, .h4, .h6 {
   content: "\f10d";
   padding-right: 0.5em;
   font-size: 2.5rem;
-  color: #0d261d;
+  color: #6cdcb3;
   vertical-align: -16%;
 }
 
@@ -26191,7 +26191,7 @@ footer#portal-footer-wrapper .colophon ul.oag-social li {
 }
 .hpfeedback {
   width: 100%;
-  background-color: #0d261d;
+  background-color: #6cdcb3;
   margin: 1rem auto;
 }
 
@@ -26253,7 +26253,7 @@ footer#portal-footer-wrapper .colophon ul.oag-social li {
 
 /* Fix for old styles */
 .test {
-  color: #0d261d;
+  color: #6cdcb3;
 }
 
 .cite, cite {
@@ -26303,7 +26303,7 @@ pre {
 
 .text-bg-bark {
   color: white;
-  background-color: #0d261d;
+  background-color: #6cdcb3;
 }
 
 #iframetile {
