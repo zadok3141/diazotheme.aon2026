@@ -26362,6 +26362,11 @@ body.portaltype-document .section-leadimage > h1 {
   padding: 0 2rem;
 }
 
+#portal-logo-wrapper {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
 #portal-logo {
   color: var(--brand-primary, #00271c);
 }
