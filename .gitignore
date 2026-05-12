@@ -11,7 +11,7 @@ __pycache__/
 .ruff_cache
 /build/
 coverage.xml
-dist/
+/dist/
 docs/_build
 node_modules/
 
