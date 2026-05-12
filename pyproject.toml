@@ -34,6 +34,16 @@ dependencies = [
 
     "z3c.jbot",
     "plone.app.drafts",
+    "collective.anonymouseditpatterns",
+    "plone.app.discussion",
+    "collective.easyform",
+    "plone.app.caching",
+    "Products.PloneKeywordManager",
+    "plone.app.mosaic",
+    "plone.restapi",
+    "plone.session",
+    "plone.app.iterate",
+    "plone.formwidget.recaptcha",
 ]
 
 [project.optional-dependencies]
