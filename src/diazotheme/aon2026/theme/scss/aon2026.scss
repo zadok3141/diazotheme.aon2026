@@ -13,7 +13,7 @@ $oag-sea: #1a34ff;
 $oag-sunset: #e2b5c5;
 $oag-stone: #eaeaea;
 
-$oag-bark: $oag-forest;
+$oag-bark: $oag-foam;
 
 @use "../../../../../scss/barceloneta.scss" as b with (
   $navbar-barceloneta-background: $oag-bark
@@ -476,6 +476,9 @@ body.portaltype-document .section-leadimage {
 }
 
 // SVG site logo
+#portal-logo-wrapper {
+    margin-top: 1em; margin-bottom:1em;
+}
 #portal-logo {
     color: var(--brand-primary, #00271c);
     img {
