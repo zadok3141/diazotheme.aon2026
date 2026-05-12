@@ -16,24 +16,24 @@ docs/_build
 node_modules/
 
 # venv / buildout related
-.eggs/
-.installed.cfg
-.mr.developer.cfg
-.venv/
-bin/
-develop-eggs/
-eggs/
-etc/
-include/
-lib/
-lib64
-parts/
-pyvenv.cfg
-var/
+/.eggs/
+/.installed.cfg
+/.mr.developer.cfg
+/.venv/
+/bin/
+/develop-eggs/
+/eggs/
+/etc/
+/include/
+/lib/
+/lib64
+/parts/
+/pyvenv.cfg
+/var/
 
 # mxdev
-.installed.txt
-.lock
+/.installed.txt
+/.lock
 /.mxdev_cache/
 /.make-sentinels/
 /*-mxdev.txt
@@ -41,8 +41,13 @@ var/
 /reports/
 /sources/
 /venv/
-constraints*.txt
-requirements*.txt
+/constraints*.txt
+/requirements*.txt
 
 # oag2025 sync tooling
 /.oag2025-sync-cache/
+
+# backups
+/2026-*
+/current-backup-*
+/latest/
