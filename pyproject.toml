@@ -33,6 +33,7 @@ dependencies = [
     "plone.api",
 
     "z3c.jbot",
+    "plone.app.drafts",
 ]
 
 [project.optional-dependencies]
