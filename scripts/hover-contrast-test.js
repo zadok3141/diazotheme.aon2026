@@ -757,7 +757,7 @@ function makeTimestamp() {
   return new Date().toISOString().replace(/[:.]/g, '-').replace('T', '_').slice(0, 19);
 }
 
-function writeJsonResults(results) {
+function writeJsonResults(results, ts) {
   fs.mkdirSync(RESULTS_DIR, { recursive: true });
 
   const output = {
@@ -781,10 +781,183 @@ function writeJsonResults(results) {
   console.error(`JSON results:  ${path.relative(ROOT, latestPath)}`);
 
   // Write timestamped archive
-  const ts = makeTimestamp();
   const archivePath = path.join(RESULTS_DIR, `hover_${ts}.json`);
   fs.writeFileSync(archivePath, JSON.stringify(output, null, 2));
   console.error(`JSON archive:  ${path.relative(ROOT, archivePath)}`);
+}
+
+// ---------------------------------------------------------------------------
+// HTML report
+// ---------------------------------------------------------------------------
+
+function writeHtmlReport(results, ts) {
+  const env = useProd ? 'production' : 'local';
+  const vpLabel = viewportArg || 'lg';
+  const generated = new Date().toISOString();
+
+  const totalChecked = results.reduce((s, r) => s + r.elementsChecked, 0);
+  const totalPass = results.reduce((s, r) => s + r.pass, 0);
+  const totalFail = results.reduce((s, r) => s + r.fail, 0);
+  const totalReview = results.reduce((s, r) => s + r.needsReview, 0);
+  const totalSkip = results.reduce((s, r) => s + r.skip, 0);
+  const totalErrors = results.filter(r => r.error).length;
+
+  // Collect all violations, passes, and review items across scenarios
+  const allViolations = [];
+  const allReviewItems = [];
+  const allPasses = [];
+
+  for (const r of results) {
+    if (r.error) continue;
+    for (const v of r.violations) {
+      allViolations.push({ ...v, scenario: r.scenario, viewport: r.viewport, url: r.url });
+    }
+    for (const item of r.needsReviewItems) {
+      allReviewItems.push({ ...item, scenario: r.scenario, viewport: r.viewport, url: r.url });
+    }
+    for (const p of r.passes) {
+      allPasses.push({ ...p, scenario: r.scenario, viewport: r.viewport, url: r.url });
+    }
+  }
+
+  function colorSwatch(css) {
+    if (!css) return '';
+    return '<span class="swatch" style="background:' + escapeHtml(css) + '"></span>';
+  }
+
+  function contrastResultRow(item, showStatus) {
+    const statusClass = item.status === 'fail' ? 'fail' : item.status === 'pass' ? 'pass' : 'review';
+    const statusLabel = item.status === 'fail' ? 'FAIL' : item.status === 'pass' ? 'PASS' : 'REVIEW';
+
+    // needs-review items don't have contrast data
+    if (item.status === 'needs-review') {
+      return '<tr class="' + statusClass + '">'
+        + '<td>' + (showStatus ? '<span class="badge badge-' + statusClass + '">' + statusLabel + '</span>' : '') + '</td>'
+        + '<td><code>' + escapeHtml(item.selector) + '</code></td>'
+        + '<td>' + escapeHtml(item.textContent || '').slice(0, 60) + '</td>'
+        + '<td colspan="4">Needs manual review: ' + escapeHtml(item.reason) + '</td>'
+        + '<td>' + escapeHtml(item.scenario) + '</td>'
+        + '</tr>';
+    }
+
+    return '<tr class="' + statusClass + '">'
+      + '<td>' + (showStatus ? '<span class="badge badge-' + statusClass + '">' + statusLabel + '</span>' : '') + '</td>'
+      + '<td><code>' + escapeHtml(item.selector) + '</code></td>'
+      + '<td>' + escapeHtml(item.textContent || '').slice(0, 60) + '</td>'
+      + '<td>'
+        + colorSwatch(item.defaultState.fgColor) + ' '
+        + colorSwatch(item.defaultState.bgColor)
+        + ' ' + item.defaultState.contrastRatio + ':1'
+      + '</td>'
+      + '<td>'
+        + colorSwatch(item.hoverState.fgColor) + ' '
+        + colorSwatch(item.hoverState.bgColor)
+        + ' ' + item.hoverState.contrastRatio + ':1'
+      + '</td>'
+      + '<td>' + item.requiredRatio + ':1'
+        + (item.isLargeText ? ' <small>(large text)</small>' : '')
+      + '</td>'
+      + '<td>' + item.fontSize + ' / ' + item.fontWeight + '</td>'
+      + '<td>' + escapeHtml(item.scenario) + '</td>'
+      + '</tr>';
+  }
+
+  const violationRows = allViolations.map(v => contrastResultRow(v, true)).join('\n');
+  const reviewRows = allReviewItems.map(v => contrastResultRow(v, true)).join('\n');
+
+  // Build collapsible passes section (can be large)
+  const passRows = allPasses.map(p => contrastResultRow(p, false)).join('\n');
+
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hover Contrast Report — ${escapeHtml(env)} — ${escapeHtml(generated)}</title>
+<style>
+  :root { --pass: #2e7d32; --fail: #c62828; --review: #e65100; --bg: #fafafa; --border: #ddd; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 1.5rem; background: var(--bg); color: #212121; line-height: 1.5; }
+  h1 { font-size: 1.4rem; margin: 0 0 0.25rem; }
+  h2 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; }
+  .meta { color: #666; font-size: 0.85rem; margin-bottom: 1rem; }
+  .summary { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .stat { background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 0.75rem 1.25rem; min-width: 100px; }
+  .stat .num { font-size: 1.6rem; font-weight: 700; }
+  .stat .label { font-size: 0.8rem; color: #666; text-transform: uppercase; }
+  .stat.fail .num { color: var(--fail); }
+  .stat.pass .num { color: var(--pass); }
+  .stat.review .num { color: var(--review); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; background: #fff; }
+  th, td { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--border); }
+  th { background: #f5f5f5; font-weight: 600; position: sticky; top: 0; }
+  tr.fail td { background: #ffebee; }
+  tr.review td { background: #fff3e0; }
+  code { font-size: 0.8rem; word-break: break-all; }
+  .swatch { display: inline-block; width: 14px; height: 14px; border: 1px solid #999; border-radius: 2px; vertical-align: middle; }
+  .badge { display: inline-block; padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.75rem; font-weight: 700; color: #fff; }
+  .badge-fail { background: var(--fail); }
+  .badge-pass { background: var(--pass); }
+  .badge-review { background: var(--review); }
+  details { margin-top: 1rem; }
+  summary { cursor: pointer; font-weight: 600; font-size: 1rem; padding: 0.5rem 0; }
+  .empty { color: #999; font-style: italic; padding: 1rem; }
+</style>
+</head>
+<body>
+<h1>Hover-State Contrast Report (WCAG SC 1.4.3)</h1>
+<p class="meta">Environment: <strong>${escapeHtml(env)}</strong> &middot; Viewport: <strong>${escapeHtml(vpLabel)}</strong> &middot; Generated: ${escapeHtml(generated)}</p>
+
+<div class="summary">
+  <div class="stat"><div class="num">${totalChecked}</div><div class="label">Checked</div></div>
+  <div class="stat pass"><div class="num">${totalPass}</div><div class="label">Pass</div></div>
+  <div class="stat fail"><div class="num">${totalFail}</div><div class="label">Fail</div></div>
+  <div class="stat review"><div class="num">${totalReview}</div><div class="label">Review</div></div>
+  <div class="stat"><div class="num">${totalSkip}</div><div class="label">Skip</div></div>
+  ${totalErrors > 0 ? '<div class="stat fail"><div class="num">' + totalErrors + '</div><div class="label">Errors</div></div>' : ''}
+</div>
+
+<h2>Violations (${allViolations.length})</h2>
+${allViolations.length > 0 ? `
+<table>
+<thead><tr><th>Status</th><th>Selector</th><th>Text</th><th>Default (fg/bg)</th><th>Hover (fg/bg)</th><th>Required</th><th>Size / Weight</th><th>Scenario</th></tr></thead>
+<tbody>
+${violationRows}
+</tbody>
+</table>` : '<p class="empty">No violations found.</p>'}
+
+${allReviewItems.length > 0 ? `
+<h2>Needs Review (${allReviewItems.length})</h2>
+<table>
+<thead><tr><th>Status</th><th>Selector</th><th>Text</th><th colspan="4">Reason</th><th>Scenario</th></tr></thead>
+<tbody>
+${reviewRows}
+</tbody>
+</table>` : ''}
+
+<details>
+<summary>Passing Elements (${allPasses.length})</summary>
+${allPasses.length > 0 ? `
+<table>
+<thead><tr><th></th><th>Selector</th><th>Text</th><th>Default (fg/bg)</th><th>Hover (fg/bg)</th><th>Required</th><th>Size / Weight</th><th>Scenario</th></tr></thead>
+<tbody>
+${passRows}
+</tbody>
+</table>` : '<p class="empty">No passing elements.</p>'}
+</details>
+
+</body>
+</html>`;
+
+  fs.mkdirSync(RESULTS_DIR, { recursive: true });
+
+  const htmlPath = path.join(RESULTS_DIR, 'latest.html');
+  fs.writeFileSync(htmlPath, html);
+  console.error(`HTML report:   ${path.relative(ROOT, htmlPath)}`);
+
+  const archivePath = path.join(RESULTS_DIR, `hover_${ts}.html`);
+  fs.writeFileSync(archivePath, html);
+  console.error(`HTML archive:  ${path.relative(ROOT, archivePath)}`);
 }
 
 // ---------------------------------------------------------------------------
@@ -835,7 +1008,9 @@ async function main() {
   const { text, totalFail, totalErrors } = formatConsoleSummary(allResults);
   console.log(text);
 
-  writeJsonResults(allResults);
+  const ts = makeTimestamp();
+  writeJsonResults(allResults, ts);
+  writeHtmlReport(allResults, ts);
 
   // Exit code: 0 = pass, 1 = violations, 2 = fatal
   if (totalFail > 0 || totalErrors > 0) {

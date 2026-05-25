@@ -41,6 +41,11 @@ export DOCKER_BUILDKIT := 1
 
 all: build
 
+.PHONY: egg-info
+egg-info: ## Generate .egg-info for buildout develop mode
+	@echo "$(GREEN)==> Generating .egg-info for buildout$(RESET)"
+	@python setup.py egg_info
+
 # Add the following 'help' target to your Makefile
 # And add help text after each target name starting with '\#\#'
 .PHONY: help
@@ -57,7 +62,7 @@ $(VENV_FOLDER): requirements-mxdev.txt ## Install dependencies
 ifdef CI
 	@uv venv $(VENV_FOLDER)
 else
-	@uv venv --python=3.10 $(VENV_FOLDER)
+	@uv venv --python=3.13 $(VENV_FOLDER)
 endif
 	@uv pip install -r requirements-mxdev.txt
 
@@ -142,3 +147,9 @@ release: $(VENV_FOLDER) ## Create a release
 	@echo "$(GREEN)==> Create a release$(RESET)"
 	@uv pip install -e ".[release]"
 	@uv run fullrelease
+
+# Sync from upstream diazotheme.oag2025 (read-only enumerator)
+.PHONY: sync-oag2025
+sync-oag2025: ## Enumerate divergences from ../diazotheme.oag2025 (read-only)
+	@echo "$(GREEN)==> Enumerating divergences from oag2025$(RESET)"
+	@bash scripts/sync-from-oag2025.sh

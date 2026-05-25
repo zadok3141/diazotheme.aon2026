@@ -730,10 +730,10 @@ progress {
 
 :root,
 [data-bs-theme=light] {
-  --plone-link-color: #0d6efd;
+  --plone-link-color: #0d261d;
   --plone-link-color-on-dark: #16a1e3;
   --plone-link-color-on-grey: #086ca3;
-  --plone-link-hover-color: rgb(1.5532786885, 76.887295082, 187.9467213115);
+  --plone-link-hover-color: black;
   --plone-portlet-list-hover-bg: #fcfcfd;
   --plone-portlet-footer-bg: #fcfcfd;
   --plone-portlet-list-bullet: #64bee8;
@@ -748,7 +748,7 @@ progress {
   --plone-link-color: #007bb1;
   --plone-link-color-on-dark: #16a1e3;
   --plone-link-color-on-grey: #086ca3;
-  --plone-link-hover-color: rgb(1.5532786885, 76.887295082, 187.9467213115);
+  --plone-link-hover-color: black;
   --plone-portlet-list-hover-bg: #161719;
   --plone-portlet-footer-bg: #161719;
   --plone-portlet-list-bullet: #64bee8;
@@ -1075,4 +1075,5 @@ body.plone-toolbar-top .toolbar-label {
     flex-direction: column-reverse !important;
   }
 }
+
 /*# sourceMappingURL=barceloneta-toolbar.css.map */

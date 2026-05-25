@@ -2,4 +2,23 @@
 
 .breadcrumb-item a {
     color: b.$plone-link-color-on-grey;
+//   color: $oag-forest;
+}
+
+// Tweak button text color
+.btn-secondary, .btn-success, .btn-danger, .btn-warning, .btn-info, .btn-light {
+  --bs-btn-color: #{b.$dark};
+}
+
+.btn-outline-success, .btn-outline-danger {
+//  --bs-btn-hover-color: #{b.$color-contrast-light};
+  }
+
+
+.badge.bg-secondary, .badge.bg-success, .badge.bg-danger {
+    --bs-badge-color: #{b.$dark};
+}
+
+.btn-primary {
+  --bs-btn-color: #{$oag-foam};
 }

@@ -1,7 +1,40 @@
 @media print {
-    #portal-searchsection, #portal-column-one, #portal-column-two, #section-next-prev {
+    #portal-searchsection, #portal-column-one, #portal-column-two, #section-next-prev, nav.autotoc-nav, .portletReportsPortlet, .btn {
         display: none;
         visibility: hidden;
     }
-
+  #content-header {
+      display:block;
+      visibility:visible;
+  }
+  .container {
+      margin-left: 0;
+      margin-right: 0;
+      max-width:fit-content;
+  }
+  /* Page break control */
+  p, blockquote, li, pre, code,
+  figure, img, table, tr {
+      break-inside: avoid;
+  }
+  h1, h2, h3, h4, h5, h6 {
+      break-inside: avoid;
+      break-after: avoid;
+  }
+  p {
+      orphans: 3;
+      widows: 3;
+  }
+  table {
+      break-inside: avoid;
+  }
+  thead {
+      display: table-header-group; /* repeat header on every page */
+  }
+  tfoot {
+      display: table-footer-group; /* repeat footer on every page */
+  }
+  tr {
+      break-inside: avoid; /* don't split a row across pages */
+  }
 }

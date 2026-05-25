@@ -1,18 +1,40 @@
-<section class="float-md-end"
-         id="section-leadimage"
-         tal:condition="view/available"
+<tal:leadimage define="
+                 portal_type context/portal_type;
+                 is_page python: portal_type == 'Document';
+                 images context/@@images;
+               "
+               condition="view/available"
 >
-  <figure class="newsImageContainer ms-md-3"
-          tal:define="
-            images context/@@images;
-          "
+  <!-- Hero-style lead image for Pages -->
+  <section class="section-leadimage text-center"
+           tal:condition="is_page"
   >
-    <img tal:replace="structure python: images.tag('image', scale='mini', css_class='figure-img img-fluid')" />
-    <figcaption class="figure-caption"
-                tal:condition="python: getattr(context, 'image_caption', None)"
-                tal:content="python: context.image_caption"
+    <img class="d-block img-fluid w-100 mb-4"
+         tal:attributes="
+           src string:${context/absolute_url}/@@images/image;
+           alt context/image_caption | context/title;
+         "
+    />
+    <h1 class="display-5 fw-bold"
+        tal:condition="python: getattr(context, 'image_caption', None)"
+        tal:content="python: context.image_caption"
     >
-        Image caption
-    </figcaption>
-  </figure>
-</section>
+          Image caption
+    </h1>
+  </section>
+
+  <!-- Floated thumbnail lead image for News Items and other types -->
+  <section class="section-leadimage float-md-end"
+           tal:condition="not: is_page"
+  >
+    <figure class="newsImageContainer ms-md-3">
+      <img tal:replace="structure python: images.tag('image', scale='mini', css_class='figure-img img-fluid')" />
+      <figcaption class="figure-caption"
+                  tal:condition="python: getattr(context, 'image_caption', None)"
+                  tal:content="python: context.image_caption"
+      >
+          Image caption
+      </figcaption>
+    </figure>
+  </section>
+</tal:leadimage>

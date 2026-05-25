@@ -454,6 +454,7 @@ $homepage-video-height: 288px !default;
     p {
         // font-size: @mosaic-font-size-body;
         color: $mosaic-color-body;
+        padding-right: 0.5em;
     }
 }
 .hp2portlets-v {
@@ -1116,6 +1117,12 @@ body.section-2023.subsection-annual-report {
             color: white;
         }
     }
+    .contentlisting-tile .card-header {
+      background: $oag-moss;
+      a {
+        color: white;
+        }
+      }
 }
 
 

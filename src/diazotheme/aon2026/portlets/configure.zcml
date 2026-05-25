@@ -1,0 +1,20 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    >
+
+  <include package="plone.app.portlets" />
+
+  <!-- -*- extra stuff goes here -*- -->
+
+  <plone:portlet
+      name="diazotheme.aon2026.portlets.FindPersonPortlet"
+      interface=".find_person.IFindPersonPortlet"
+      assignment=".find_person.Assignment"
+      renderer=".find_person.Renderer"
+      addview=".find_person.AddForm"
+      view_permission="zope2.View"
+      edit_permission="cmf.ManagePortal"
+      />
+
+</configure>

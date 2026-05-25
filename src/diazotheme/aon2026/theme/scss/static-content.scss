@@ -1,7 +1,7 @@
 /* Static content styles */
 
 /* Campaign Manager email form Iframe */
-/* - https://oag.parliament.nz/contact-us/email-subs */
+/* - https://ao.parliament.nz/contact-us/email-subs */
 #emailsubs {
     height: 28em;
     iframe {
@@ -14,7 +14,7 @@
 }
 
 /* 2021 Housing report */
-/*  - https://oag.parliament.nz/2021/housing/roles-and-responsibilities */
+/*  - https://ao.parliament.nz/2021/housing/roles-and-responsibilities */
 #housingroles {
     position: relative;
     padding-bottom: 118.8889%;
@@ -35,7 +35,7 @@
 }
 
 /* Our work by region */
-/* - https://oag.parliament.nz/reports/region */
+/* - https://ao.parliament.nz/reports/region */
 #ar93 { // aspect ratio 0.9278 x:2010 y:1865
     position: relative;
     padding-top: 1px;
@@ -56,39 +56,48 @@
     }
 }
 
-/* Schools audit map */
-/* - https://oag.parliament.nz/data/schools/index.htm */
-#schoolsauditmap-p {
-    margin-top: -4rem;
-}
-
-#schoolsauditmap-div {
-    min-height: 1100px;
-}
-
-#schoolsauditmap-iframe {
-    position: absolute;
-    top: 15rem;
-    left: 0;
-    border: 0 none transparent;
-    padding: 0;
+/* Responsive iframe - full width, unknown height content */
+/* Used for: Schools audit map, and other data viz iframes */
+/* CSS fallback heights; overridden by JS postMessage from iframe content. */
+/* Iframe content should include:
+ *   window.parent.postMessage({type: 'iframeHeight', height: document.body.scrollHeight}, '*');
+ * Listener in aon2026.js sets inline height on both container and iframe. */
+.responsive-iframe {
     width: 100%;
-    height: 100%;
-    margin-top: -7rem;
+    min-height: 800px;
+
+    iframe {
+        display: block;
+        width: 100%;
+        height: 800px;
+        border: 0 none transparent;
+        padding: 0;
+    }
 }
 
+/* Narrow screens: data viz content reflows taller */
+@media (max-width: 768px) {
+    .responsive-iframe {
+        min-height: 1200px;
+        iframe {
+            height: 1200px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .responsive-iframe {
+        min-height: 1600px;
+        iframe {
+            height: 1600px;
+        }
+    }
+}
+
+/* TinyMCE editor: static and visible for content editing */
 .mce-content-body {
-    #schoolsauditmap-p {
-        margin-top: 0;
-    }
-    #schoolsauditmap-iframe {
-        position: static;
-        margin-top: 0;
-    }
-}
-
-@media (max-width: 360px) {
-    #schoolsauditmap-iframe {
-        top: 25rem;
+    .responsive-iframe iframe {
+        height: auto;
+        min-height: 400px;
     }
 }

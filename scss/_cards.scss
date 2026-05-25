@@ -11,3 +11,13 @@
   text-align: center;
   padding-top: 1.25rem;
 }
+
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+
+  > .btn:last-child {
+    margin-top: auto;
+    align-self: flex-start;
+  }
+}
