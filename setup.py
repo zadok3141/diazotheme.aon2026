@@ -4,14 +4,20 @@ All real metadata lives in pyproject.toml (hatchling backend).
 This file exists only because zc.buildout requires setup.py
 and pkg_resources requires .egg-info metadata to discover packages.
 """
+
+from pathlib import Path
+from setuptools import find_namespace_packages
+from setuptools import setup
+
 import re
 import subprocess
 import sys
+import tomllib
 
-from pathlib import Path
 
-from setuptools import find_namespace_packages
-from setuptools import setup
+def get_pyproject():
+    pyproject = Path(__file__).parent / "pyproject.toml"
+    return tomllib.loads(pyproject.read_text())
 
 
 def get_version():
@@ -27,7 +33,7 @@ def ensure_egg_info():
     egg_info_dir = Path(__file__).parent / "src" / "diazotheme.aon2026.egg-info"
     if not egg_info_dir.exists() and "egg_info" not in sys.argv:
         subprocess.run(
-            [sys.executable, __file__, "egg_info"],
+            [sys.executable, __file__, "egg_info"],  # noqa: S603
             cwd=str(Path(__file__).parent),
             check=False,
             capture_output=True,
@@ -36,16 +42,14 @@ def ensure_egg_info():
 
 ensure_egg_info()
 
+pyproject = get_pyproject()
+
 setup(
     name="diazotheme.aon2026",
     version=get_version(),
     package_dir={"": "src"},
     packages=find_namespace_packages(where="src"),
-    install_requires=[
-        "Products.CMFPlone",
-        "plone.api",
-        "z3c.jbot",
-    ],
+    install_requires=pyproject["project"].get("dependencies", []),
     entry_points={
         "plone.autoinclude.plugin": ["target = plone"],
     },

@@ -1,0 +1,45 @@
+# Package contents
+recursive-include src/diazotheme *
+include *.md *.rst *.js *.json *.html
+include pyproject.toml
+global-exclude *.pyc
+
+# News fragments (towncrier was removed but keep guard)
+recursive-exclude news *
+exclude news
+
+# Frontend toolchain
+prune scss
+prune node_modules
+prune webpack
+exclude package.json
+exclude pnpm-lock.yaml
+exclude pnpm-workspace.yaml
+exclude postcss.config.js
+exclude .stylelint*
+
+# BackstopJS
+prune backstop_data
+exclude backstop*.json
+exclude backstop.testing.md
+
+# Scripts
+recursive-exclude scripts *.js
+
+# Buildout / mxdev artifacts
+prune instance
+prune sources
+prune dist
+prune data
+prune latest
+exclude mx.ini
+exclude instance.yaml
+exclude requirements*.txt
+exclude constraints-mxdev.txt
+exclude dl_backup.sh
+exclude *.tgz
+
+# Local config
+exclude .envrc
+exclude .flake8
+exclude .editorconfig
