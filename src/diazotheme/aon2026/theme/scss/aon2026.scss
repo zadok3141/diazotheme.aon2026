@@ -16,7 +16,10 @@ $oag-stone: #eaeaea;
 $oag-bark: $oag-foam;
 
 @use "../../../../../scss/barceloneta.scss" as b with (
-  $navbar-barceloneta-background: $oag-bark
+  $navbar-barceloneta-background: $oag-bark,
+  $navbar-barceloneta-color: $oag-forest,
+  $navbar-barceloneta-hover-color: $oag-forest,
+  $navbar-barceloneta-active-color: $oag-foam
   );
 
 $fa-font-path: "../webfonts";
@@ -49,6 +52,7 @@ $fa-font-path: "../webfonts";
 a {
     text-decoration-line: none;
 }
+
 
 h1,h2,h3,h4,h5,h6 {
   a {
