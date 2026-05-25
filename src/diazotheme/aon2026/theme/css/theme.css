@@ -13852,9 +13852,9 @@ figcaption {
 }
 
 .navbar-barceloneta {
-  --bs-navbar-color: white;
-  --bs-navbar-active-color: white;
-  --bs-navbar-hover-color: white;
+  --bs-navbar-color: #0d261d;
+  --bs-navbar-active-color: #6cdcb3;
+  --bs-navbar-hover-color: #0d261d;
   --bs-navbar-background: #6cdcb3;
   --bs-navbar-active-background: rgba(0, 0, 0, 0.2);
   --bs-navbar-hover-background: rgba(0, 0, 0, 0.3);
