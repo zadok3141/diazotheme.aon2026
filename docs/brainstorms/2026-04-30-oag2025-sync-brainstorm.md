@@ -1,7 +1,7 @@
 ---
 date: 2026-04-30
 topic: oag2025-sync
-status: Approved
+status: Completed
 ---
 
 # One-Shot Sync from diazotheme.oag2025

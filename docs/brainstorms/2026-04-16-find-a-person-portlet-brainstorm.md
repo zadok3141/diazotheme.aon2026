@@ -1,6 +1,7 @@
 ---
 date: 2026-04-16
 topic: find-a-person-portlet
+status: Completed
 ---
 
 # Find a Person Portlet
