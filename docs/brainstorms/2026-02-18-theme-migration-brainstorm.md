@@ -1,3 +1,9 @@
+---
+date: 2026-02-18
+topic: theme-migration
+status: Completed
+---
+
 # Theme Migration Brainstorm
 
 **Date:** 2026-02-18
