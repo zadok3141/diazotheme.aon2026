@@ -1,9 +1,10 @@
 #+CATEGORY: diazotheme.aon2026
 #+NEXT_ID: 2
 
-* DA-1 Create missing aon2026-favicon.svg referenced by theme index.html  :theme:
+* [#A] DA-1 Create missing aon2026-favicon.svg referenced by theme index.html  :theme:
 :PROPERTIES:
 :ADDED:   [2026-07-03 Fri]
+:EFFORT:  0:30
 :END:
 
 - Aim :: Eliminate the 404 for =++theme++aon2026/aon2026-favicon.svg= — either create the SVG favicon or drop the =<link>= tag so browsers fall back to the existing ICO.
