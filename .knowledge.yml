@@ -8,3 +8,4 @@ topics:
 context: >
   Diazo theme for the AON 2026 Plone intranet.
 topics_policy: location
+id_prefix: DA

@@ -61,3 +61,6 @@ backstop.json
 /2026-*
 /current-backup-*
 /latest/
+
+# Per-task worktrees (one task = one worktree = one branch).
+.claude/worktrees/
