@@ -41,7 +41,18 @@ Either port the scripts across or drop the entries.
 
 | Script | Location | Note |
 |---|---|---|
-| `dl_backup.sh` | repo root | Downloads and installs a Plone backup from S3, pinned to this site's bucket prefix. Every OAG/AO repo carries its own copy and the copies have **drifted**. |
+| `dl_backup.sh` | repo root | Downloads and installs a Plone backup from S3. **Byte-identical in all nine OAG/AO repos** since v2.0.1; this site's bucket and storage paths live in `dl_backup.env` beside it. |
 | `domain-rename.sh` | `scripts/` | Byte-identical in four repos. |
+
+`./dl_backup.sh --version` reports the script version and the config schema it
+requires; `--help` prints this repo's actual bucket and paths. **To change how
+the script behaves, edit it here and copy the file to the other eight repos** —
+the `dl_backup.env` files stay put. That is the point of the split: this script
+previously existed in four divergent generations because its config was baked
+in, so no copy could ever be replaced wholesale.
+
+This repo's layout differs from the buildout repos — `instance/var/filestorage`
+and `instance/var/blobs`, not `var/filestorage` and `var/blobstorage`. That
+difference now lives in `dl_backup.env` instead of in the code.
 
 Full cross-repo picture: **"Work repo scripts index"** in the knowledge vault.
