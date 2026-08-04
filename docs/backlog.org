@@ -1,0 +1,12 @@
+#+CATEGORY: diazotheme.aon2026
+#+NEXT_ID: 2
+
+* [#A] DA-1 Decide how to resolve the missing aon2026-favicon.svg 404  :theme:
+:PROPERTIES:
+:ADDED:   [2026-07-03 Fri]
+:EFFORT:  0:30
+:END:
+
+- Aim :: Eliminate the 404 for =++theme++aon2026/aon2026-favicon.svg= — either create the SVG favicon or drop the =<link>= tag so browsers fall back to the existing ICO.
+- Next :: Decide whether to create the SVG favicon or drop the =<link>= tag; if creating, check whether diazotheme.oag2025 has an SVG favicon to adapt, or export one from the AON logo assets.
+- Notes :: Flagged as FOLLOW-UP in =docs/sync/2026-04-30-oag2025-sync-log.md= (theme/index.html row). =theme/index.html= references both =aon2026-favicon.svg= (line 6) and =aon2026-favicon.ico= (line 10); only the =.ico= exists in =src/diazotheme/aon2026/theme/=.

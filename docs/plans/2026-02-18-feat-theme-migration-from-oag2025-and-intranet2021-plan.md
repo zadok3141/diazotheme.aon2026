@@ -1,9 +1,17 @@
 ---
 title: "feat: Migrate theme from oag2025 and intranet2021 into aon2026"
 type: feat
-status: active
+status: completed
 date: 2026-02-18
+completed: 2026-07-03
 ---
+
+> **Completion note (2026-07-03):** All migration work shipped and was released in
+> 1.0.0. The task checkboxes below were never ticked during execution, but completion
+> was verified against the repo: build toolchain (`webpack/`, `package.json`, `scss/`),
+> testing scripts (`scripts/`, `backstop.*.json`), theme skeleton, browser code, and
+> overrides all exist; `grep -r oag2025 src/ scss/ webpack/` returns no leftover
+> references; `theme/js/aon2026.js` and compiled CSS are built.
 
 # Migrate Theme from oag2025 and intranet2021 into aon2026
 

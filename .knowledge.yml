@@ -1,0 +1,11 @@
+# .knowledge.yml — project topic declaration (W6). Topics are controlled-
+# vocabulary entries (knowledge-platform bin/kb-vault/taxonomy.yml).
+topics:
+  - t/oag
+  - t/plone
+  - t/css
+  - t/web
+context: >
+  Diazo theme for the AON 2026 Plone intranet.
+topics_policy: location
+id_prefix: DA

@@ -1,8 +1,9 @@
 ---
 title: "feat: OAG2025 Source Sync Tooling and Runbook"
 type: feat
-status: active
+status: completed
 date: 2026-04-30
+completed: 2026-07-03
 upstream-pin: oag2025@ab06ff8c81fb433e3908a9b29b1f8e9830fdaf7b
 brainstorm: docs/brainstorms/2026-04-30-oag2025-sync-brainstorm.md
 revised-after: multi-agent review (simplicity, architecture, spec-flow, pattern, agent-native, learnings)
