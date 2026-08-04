@@ -33,8 +33,8 @@
     />
     <!-- Don't use Plone icons, use the theme's -->
     <drop css:content="head link[rel='apple-touch-icon']" />
-    <drop css:content="head link[rel='mark-icon']" />
-    <drop css:content="head link[rel='preload icon']" />
+    <drop css:content="head link[rel='mask-icon']" />
+    <drop css:content="head link[rel~='icon']" />
     <!-- CSS -->
     <after css:content="head link"
            css:theme-children="head"

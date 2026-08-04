@@ -34,7 +34,6 @@ dependencies = [
 
     "z3c.jbot",
     "plone.app.drafts",
-    "collective.anonymouseditpatterns",
     "plone.app.discussion",
     "collective.easyform",
     "plone.app.caching",
