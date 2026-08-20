@@ -1,7 +1,7 @@
 #+CATEGORY: diazotheme.aon2026
 #+NEXT_ID: 2
 
-* [#A] DA-1 Decide how to resolve the missing aon2026-favicon.svg 404  :theme:
+* DA-1 Decide how to resolve the missing aon2026-favicon.svg 404      :theme:
 :PROPERTIES:
 :ADDED:   [2026-07-03 Fri]
 :EFFORT:  0:30
