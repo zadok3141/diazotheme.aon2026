@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.1 (unreleased)
+## 1.0.1 (2026-09-02)
 
 
 - dl_backup.sh script is now standardized across projects.
