@@ -3,6 +3,10 @@
 ## 1.0.1 (unreleased)
 
 
+- dl_backup.sh script is now standardized across projects.
+
+- fix: favicon Diazo drop rules for Plone 6.2.0
+
 - Upgrade the dev environment to Plone 6.2.0: Makefile `PLONE_VERSION`
   6.1.3 -> 6.2.0, `cookiecutter-zope-instance` 2.1.1 -> 3.1.0 (2.x predates
   Zope 6.1), and `mx.ini` version-overrides carrying the eight post-6.2.0
