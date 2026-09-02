@@ -87,3 +87,18 @@ repos:
         verbose: true # Always show output
         pass_filenames: true
         exclude: ^(\.pre-commit-config.yaml|src/diazotheme/aon2026/theme/css/barceloneta-toolbar.min.css.map|src/diazotheme/aon2026/theme/css/barceloneta-toolbar.css.map|src/diazotheme/aon2026/theme/css/theme.css.map|src/diazotheme/aon2026/theme/css/theme.min.css.map|backstop_data/showcase_current/html_report/index_bundle.js)
+
+# This repo's .git/hooks/pre-commit is owned by the pre-commit framework, so it
+# does not run ~/.git-templates/hooks/pre-commit and does not inherit the
+# duplicate-backlog-ID guard from there. Registering it here restores that
+# coverage. Resolution order matches the template hook's; a missing checker
+# fails open, exactly as the template hook does. See SC-1 in
+# ~/scripts/docs/backlog.org.
+-   repo: local
+    hooks:
+      - id: check-backlog-ids
+        name: Check for duplicate backlog item IDs
+        entry: bash -c 'for c in "$HOME/scripts/kb-vault/check-backlog-ids" "$HOME/projects/knowledge-platform/bin/kb-vault/check-backlog-ids"; do [ -x "$c" ] && exec "$c"; done; echo "check-backlog-ids not found; skipping" >&2; exit 0'
+        language: system
+        files: ^docs/backlog\.org$
+        pass_filenames: false

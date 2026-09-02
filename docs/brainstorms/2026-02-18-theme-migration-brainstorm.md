@@ -1,7 +1,13 @@
+---
+date: 2026-02-18
+topic: theme-migration
+status: Completed
+---
+
 # Theme Migration Brainstorm
 
 **Date:** 2026-02-18
-**Status:** Approved
+**Status:** Completed (implemented via `docs/plans/2026-02-18-feat-theme-migration-from-oag2025-and-intranet2021-plan.md`, shipped in 1.0.0)
 
 ## What We're Building
 
