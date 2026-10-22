@@ -4,6 +4,7 @@ type: feat
 status: completed
 date: 2026-02-18
 completed: 2026-07-03
+updated: 2026-07-03
 ---
 
 > **Completion note (2026-07-03):** All migration work shipped and was released in
