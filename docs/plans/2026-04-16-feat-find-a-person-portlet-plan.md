@@ -3,6 +3,7 @@ title: "feat: Add Find a Person portlet"
 type: feat
 status: completed
 date: 2026-04-16
+updated: 2026-04-16
 ---
 
 # feat: Add Find a Person Portlet
