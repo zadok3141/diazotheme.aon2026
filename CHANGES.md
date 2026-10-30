@@ -1,9 +1,24 @@
 # Changelog
 
-## 1.0.2 (unreleased)
+## 1.1.0 (2026-10-30)
 
 
-- Nothing changed yet.
+- Figure and table captions now sit above the figure or table, matching the
+   public site (ported from diazotheme.oag2025, DO-12); add `.caption-bottom`
+   in hand-authored markup to keep one below. `.table-borderless` and
+   `table.invisible-grid` get the public site's cell spacing. No existing
+   intranet content moves: the 2026-10-06 export has no `<caption>` or
+   `<figcaption>`. (DA-2)
+
+- Replace the favicon set with icons drawn from the intranet logo (seafoam
+   `#53c0a3` house/speech-bubble/monitor glyph) instead of the superseded 2021
+   mark: add the missing `aon2026-favicon.svg` (was a 404) and redraw
+   `aon2026-favicon.ico` and `aon2026-apple-touch-icon.png`. Remove the five
+   unreferenced `aon2026-apple-touch-icon-*precomposed.png` files. (DA-1)
+
+- `dl_backup.env`: restores now download from
+   `s3://oag-backups/from_intranet.ao.parliament.nz/` (the new instance)
+   instead of `from_wpintranet03.oag.net`.
 
 
 ## 1.0.1 (2026-09-02)
