@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.2 (unreleased)
+## 1.1.0 (2026-10-30)
 
 
 - Figure and table captions now sit above the figure or table, matching the
