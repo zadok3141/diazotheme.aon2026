@@ -25906,6 +25906,14 @@ table.invisible > :not(caption) > * > * {
   border-bottom-width: 0;
 }
 
+.table-borderless {
+  margin-bottom: 1rem;
+}
+
+.table-borderless > :not(caption) > * > *, table.invisible-grid > :not(caption) > * > * {
+  padding-bottom: 1rem;
+}
+
 .breadcrumb-item a {
   color: #086ca3;
 }
@@ -26379,6 +26387,35 @@ body.portaltype-document .section-leadimage > h1 {
   #portal.logo {
     color: var(--brand-on-dark, #fff);
   }
+}
+figure,
+.figure {
+  display: table;
+}
+
+figcaption,
+.figure-caption {
+  display: table-caption;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: inherit;
+  color: var(--bs-secondary-color);
+  text-align: left;
+  caption-side: top;
+}
+figcaption:empty,
+.figure-caption:empty {
+  display: none;
+}
+
+table {
+  caption-side: top;
+}
+
+.caption-bottom,
+.caption-bottom figcaption,
+.caption-bottom .figure-caption {
+  caption-side: bottom;
 }
 
 /*# sourceMappingURL=theme.css.map */

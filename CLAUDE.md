@@ -45,6 +45,12 @@ make add behavior
 - **XML/ZCML formatting**: zpretty
 - **Code style**: Black-compatible via Ruff
 
+## SCSS Comments
+
+- Use silent `//` comments in SCSS by default. Sass strips them from the build, whereas `/* */` comments are copied into the compiled `theme.css` (the minifier drops them; `/*! */` survives even that).
+- Reserve `/* */` for text that has a definite reason to reach the shipped CSS, such as a licence banner or a section marker meant for someone reading the built file, and say why in the comment.
+- Rationale, history and backlog references are always `//`.
+
 ## Architecture
 
 ### Package Layout (`src/diazotheme/aon2026/`)

@@ -493,3 +493,60 @@ body.portaltype-document .section-leadimage {
 @media (prefers-color-scheme: dark) {
     #portal.logo { color: var(--brand-on-dark, #fff); }
 }
+
+// Figure and table captions (DA-2, 2026-10-09; ported from diazotheme.oag2025
+// DO-12 so intranet content renders captions the way the public site does)
+// Convention: the caption sits above the figure or table, always.
+// - <table><caption>: tables default to caption-side: top here (Bootstrap's
+//   reboot says bottom).
+// - <figure><figcaption>: caption-side: top regardless of DOM order, so the
+//   figcaption Plone's caption checkbox emits *after* the image renders above
+//   it too; hand-authored markup needs nothing special.
+// - Opt-out: class="caption-bottom" on the <figure> or <table> (mirror of
+//   Bootstrap's .caption-top, which still works). It survives only in
+//   hand-authored markup: Plone's image dialog rebuilds the <img> class list
+//   from its own vocabulary and discards anything else, so a caption-bottom
+//   added through source view is lost on the next edit of that image.
+// figcaption reuses the reboot `caption` style so both read the same.
+// The 2026-10-06 intranet content export (14,984 items) has no <caption> and
+// no <figcaption>, so nothing already published moves. Its 22 img.captioned
+// hits are Plone's legacy caption class, which this block does not style.
+
+// Bootstrap's .figure is inline-block, which outranks the bare
+// `figure { display: table }` from scss/_content_base.scss and leaves the
+// table-caption box with no table to size against, so it collapses to one
+// word per line. Reclaim the table layout: the caption is then bound to the
+// image width. (.figure / .figure-caption win over Bootstrap's own rules by
+// source order at equal specificity.)
+figure,
+.figure {
+  display: table;
+}
+
+figcaption,
+.figure-caption {
+  display: table-caption;
+  padding-top: b.$table-cell-padding-y;
+  padding-bottom: b.$table-cell-padding-y;
+  font-size: inherit; // .figure-caption alone would shrink it to .875em
+  color: b.$table-caption-color;
+  text-align: left;
+  caption-side: top;
+
+  &:empty {
+    display: none;
+  }
+}
+
+table {
+  caption-side: top;
+}
+
+// Opt-out for a caption below the figure or table. caption-side is inherited,
+// which is enough for <table> (the reboot `caption` rule sets no side), but
+// figcaption sets its own side above, hence the descendant selectors.
+.caption-bottom,
+.caption-bottom figcaption,
+.caption-bottom .figure-caption {
+  caption-side: bottom;
+}
